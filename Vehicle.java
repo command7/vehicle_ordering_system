@@ -10,7 +10,7 @@
 *@version   1.0
 */
 import java.util.*;
-public class Vehicle
+public class Vehicle implements Vinfo
 {
    /** Stores the model of the vehicle */
    private String model;
