@@ -108,6 +108,14 @@ public class Truck extends Vehicle
    }//end of engineSizeMenu() method
    
 /**
+*  Estimates the mileage of the Truck
+*/
+   public double gasMileage()
+   {
+      return 50 - (Math.sqrt(this.getCost())/10.0);
+   }
+   
+/**
 *  Method that is used to specify the print statement of truck object.
 */
    public String toString()
