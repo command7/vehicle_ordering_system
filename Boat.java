@@ -141,7 +141,18 @@ public class Boat extends Vehicle
 */
    public double gasMileage()
    {
-      
+      if(this.getBoatType() == "Pontoon")
+      {
+         return mpgEstimation[0];
+      }
+      else if (this.getBoatType() == "PWC")
+      {
+         return mpgEstimation[1];
+      }
+      else if (this.getBoatType() == "SailBoat")
+      {
+         return mpgEstimation[2];
+      }
    }
    
 /**
