@@ -19,6 +19,8 @@ public class Car extends Vehicle
    final String [] typesOfCars = {"Sedan", "Coupe", "Wagon"};
    /** An array containing possible answers for the user to select */
    final String [] towingCapability = {"Towing Package", "No towing package"};
+   /** An array containing mileage for different car types */
+   final double [] mpgEstimation = {23.7, 28.2, 19.5};
 
 /**
 *  Constructor uses methods to asks user for the model, color, cost, car type, towing package existence
@@ -104,6 +106,25 @@ public class Car extends Vehicle
       setTowingPackage(towingPackageIndex);
    }//end of towingPackageMenu() method
    
+/**
+*  Estimates the mileage of the Car
+*/
+   public double gasMileage()
+   {
+      if(this.getCarType() == "Sedan")
+      {
+         return mpgEstimation[0];
+      }
+      else if (this.getCarType() == "Coupe")
+      {
+         return mpgEstimation[1];
+      }
+      else
+      {
+         return mpgEstimation[2];
+      }
+   }
+
 /**
 *  Method that specifies the printing statement of Car object
 */   
