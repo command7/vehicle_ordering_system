@@ -17,8 +17,6 @@ public class Boat extends Vehicle
    private int boatType = -1;
    /** Saves the index of construction type of the boat */
    private int boatConstruction = -1;
-   /** Saves mileage details about the boat */
-   private int mpg = -1;
    /** A String array containing options for types of boat menu*/
    final String [] typesOfBoat = {"Pontoon", "PWC", "Sailboat"};
    /** A String array containing options for construction types of boat menu */
@@ -68,21 +66,6 @@ public class Boat extends Vehicle
    }//end of getBoatConstruction() method
    
 /**
-*  Accessor method that returns the mileage of the boat
-*/
-   public double getMpg()
-   {
-//       if(mpg == -1)
-//       {
-//          return "";
-//       }
-//       else
-//       {
-         return mpgEstimation[mpg];
-//       }
-   }
-   
-/**
 *  Mutator method that is used to set/modify the type of the boat.
 */
    public void setBoatType(int _boatType)
@@ -103,17 +86,6 @@ public class Boat extends Vehicle
          this.boatConstruction = _boatConstruction;
       }
    }//end of setBoatConstruction() method
-   
-/**
-*  Mutator method that is used to set/modify mileage details of the boat
-*/
-   public void setMpg(int _mpg)
-   {
-      if(_mpg >= 0 && _mpg < mpgEstimation.length)
-      {
-         this.mpg = _mpg;
-      }
-   }
    
 /**
 *  Input method that is used to request the type of the boat from the user,
