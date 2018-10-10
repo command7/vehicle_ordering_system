@@ -149,7 +149,7 @@ public class Boat extends Vehicle
       {
          return mpgEstimation[1];
       }
-      else if (this.getBoatType() == "SailBoat")
+      else
       {
          return mpgEstimation[2];
       }
