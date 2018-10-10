@@ -194,6 +194,15 @@ public abstract class Vehicle implements Vinfo
      }
    }//end of showMenu() method.
    
+/**
+*  Abstract class that estimates the mileage of a vehicle.
+*  Will be used by child classes.
+*/
+   public abstract double gasMileage();
+   
+/**
+*  Print Statement for vehicle class
+*/
    public String toString()
    {
    return String.format("%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f","","Model:",this.getModel(),"","Color:", this.getColor(),"", "Cost:", this.getCost());

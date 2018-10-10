@@ -17,10 +17,14 @@ public class Boat extends Vehicle
    private int boatType = -1;
    /** Saves the index of construction type of the boat */
    private int boatConstruction = -1;
+   /** Saves mileage details about the boat */
+   private int mpg = -1;
    /** A String array containing options for types of boat menu*/
    final String [] typesOfBoat = {"Pontoon", "PWC", "Sailboat"};
-   /**A String array containing options for construction types of boat menu */
+   /** A String array containing options for construction types of boat menu */
    final String [] typesOfBoatConstruction = {"Wood", "Fiberglass", "Steel"};
+   /** A float array containing miles per gallon for types of boats */
+   final double [] mpgEstimation = {3.5, 2.2, 0};
    
 /**
 *  Constructor asks the details of the boat and stores them in respective
@@ -64,6 +68,21 @@ public class Boat extends Vehicle
    }//end of getBoatConstruction() method
    
 /**
+*  Accessor method that returns the mileage of the boat
+*/
+   public double getMpg()
+   {
+//       if(mpg == -1)
+//       {
+//          return "";
+//       }
+//       else
+//       {
+         return mpgEstimation[mpg];
+//       }
+   }
+   
+/**
 *  Mutator method that is used to set/modify the type of the boat.
 */
    public void setBoatType(int _boatType)
@@ -86,6 +105,17 @@ public class Boat extends Vehicle
    }//end of setBoatConstruction() method
    
 /**
+*  Mutator method that is used to set/modify mileage details of the boat
+*/
+   public void setMpg(int _mpg)
+   {
+      if(_mpg >= 0 && _mpg < mpgEstimation.length)
+      {
+         this.mpg = _mpg;
+      }
+   }
+   
+/**
 *  Input method that is used to request the type of the boat from the user,
 *  and store it in its respective variable.
 */
@@ -105,6 +135,14 @@ public class Boat extends Vehicle
       int boatConstructionMenuIndex = super.showMenu("What is the boat's construction? ", typesOfBoatConstruction);
       setBoatConstruction(boatConstructionMenuIndex);
    }//end of boatConstructionMenu() method
+   
+/**
+*  Estimates the mileage of the boat
+*/
+   public double gasMileage()
+   {
+      
+   }
    
 /**
 *  Method that specifies the printing statement of boat object
