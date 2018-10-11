@@ -13,6 +13,8 @@ public class MercedesBenz extends Vehicle
    public MercedesBenz ()
    {
       super.generalDetailsMenu();
+      typeOfMakeMenu();
+      typeOfDriveMenu();
       
    }
    
@@ -80,7 +82,18 @@ public class MercedesBenz extends Vehicle
          mileage -= awdMileageReduction;
       }
       return mileage;
-      
+   }
+   
+   public void typeOfMakeMenu()
+   {
+      int typeOfMakeIndex = super.showMenu("What type of Car is this?", allMakes);
+      setTypeOfMake(typeOfMakeIndex);
+   }
+   
+   public void typeOfDriveMenu()
+   {
+      int typeOfDriveIndex = super.showMenu("What type of Drive is this?", allDrives);
+      setTypeOfDrive(typeOfDriveIndex);
    }
    
    public String toString()
