@@ -12,6 +12,8 @@ public class MercedesBenz extends Vehicle
    
    public MercedesBenz ()
    {
+      super.generalDetailsMenu();
+      
    }
    
    public String getTypeOfMake()
@@ -40,10 +42,18 @@ public class MercedesBenz extends Vehicle
    
    public void setTypeOfMake(int _typeOfMake)
    {
+      if (_typeOfMake >= 0 && _typeOfMake < allMakes.length)
+      {
+         this.typeOfMake = _typeOfMake;
+      }
    }
    
    public void setTypeOfDrive(int _typeOfDrive)
    {
+      if (_typeOfDrive >= 0 && _typeOfDrive < allDrives.length)
+      {
+         this.typeOfDrive = _typeOfDrive;
+      }
    }
    
    public double gasMileage()
