@@ -21,8 +21,12 @@ public class Boat extends Vehicle
    final String [] typesOfBoat = {"Pontoon", "PWC", "Sailboat"};
    /** A String array containing options for construction types of boat menu */
    final String [] typesOfBoatConstruction = {"Wood", "Fiberglass", "Steel"};
-   /** A float array containing miles per gallon for types of boats */
-   final double [] mpgEstimation = {3.5, 2.2, 0};
+   /** Mileage of a Pontoon */
+   final double pontoonMpg = 3,5;
+   /** Mileage of a PWC */
+   final double pwcMpg = 2.2;
+   /** Mileage of a SailBoat */
+   final double sailBoatMpt = 0;
    
 /**
 *  Constructor asks the details of the boat and stores them in respective
