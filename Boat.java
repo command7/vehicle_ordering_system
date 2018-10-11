@@ -22,11 +22,11 @@ public class Boat extends Vehicle
    /** A String array containing options for construction types of boat menu */
    final String [] typesOfBoatConstruction = {"Wood", "Fiberglass", "Steel"};
    /** Mileage of a Pontoon */
-   final double pontoonMpg = 3,5;
+   final double pontoonMpg = 3.5;
    /** Mileage of a PWC */
    final double pwcMpg = 2.2;
    /** Mileage of a SailBoat */
-   final double sailBoatMpt = 0;
+   final double sailBoatMpg = 0;
    
 /**
 *  Constructor asks the details of the boat and stores them in respective
@@ -117,17 +117,17 @@ public class Boat extends Vehicle
 */
    public double gasMileage()
    {
-      if(this.getBoatType() == "Pontoon")
+      if (this.getBoatType().equals("Pontoon"))
       {
-         return mpgEstimation[0];
+         return pontoonMpg;
       }
-      else if (this.getBoatType() == "PWC")
+      else if (this.getBoatType().equals("PWC"))
       {
-         return mpgEstimation[1];
+         return pwcMpg;
       }
       else
       {
-         return mpgEstimation[2];
+         return sailBoatMpg;
       }
    }
    

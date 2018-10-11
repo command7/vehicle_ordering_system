@@ -117,19 +117,24 @@ public class Car extends Vehicle
 */
    public double gasMileage()
    {
-      private double mileage = 0;
-      if(this.getCarType() == "Sedan")
+      double mileage = 0;
+      if (this.getCarType().equals("Sedan"))
       {
-         return mpgEstimation[0];
+         mileage = sedanMpg;
       }
-      else if (this.getCarType() == "Coupe")
+      else if (this.getCarType().equals("Coupe"))
       {
-         return mpgEstimation[1];
+         mileage = coupeMpg;
       }
-      else
+      else 
       {
-         return mpgEstimation[2];
+         mileage = wagonMpg;
       }
+      if (this.getTowingPackage().equals("Towing Package"))
+      {
+         mileage -= towingMpg;
+      }
+      return mileage;
    }
 
 /**
