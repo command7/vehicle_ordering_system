@@ -21,6 +21,11 @@ public abstract class Vehicle implements Vinfo
    /** Scanner object to request user input */
    Scanner scan = new Scanner(System.in);
    
+   public Vehicle()
+   {
+      generalDetailsMenu();
+   }
+   
 /**
 *  Accessor method that returns the model of the vehicle.
 */

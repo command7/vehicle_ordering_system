@@ -29,7 +29,7 @@ public class Truck extends Vehicle
 */
    public Truck()
    {
-      super.generalDetailsMenu();
+      super();
       truckSizeMenu();
       engineSizeMenu();
    }

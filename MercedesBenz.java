@@ -12,7 +12,7 @@ public class MercedesBenz extends Vehicle
    
    public MercedesBenz ()
    {
-      super.generalDetailsMenu();
+      super();
       typeOfMakeMenu();
       typeOfDriveMenu();
       

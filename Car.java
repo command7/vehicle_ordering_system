@@ -26,7 +26,7 @@ public class Car extends Vehicle
 */
    public Car()
    {
-      super.generalDetailsMenu();
+      super();
       typeOfCarMenu();
       towingPackageMenu();   
    }//end of Car constructor

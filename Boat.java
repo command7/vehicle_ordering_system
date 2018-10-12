@@ -28,7 +28,7 @@ public class Boat extends Vehicle
 */
    public Boat()
    { 
-      super.generalDetailsMenu();
+      super();
       typeOfBoatMenu();
       boatConstructionMenu();
    }//end of constructor
