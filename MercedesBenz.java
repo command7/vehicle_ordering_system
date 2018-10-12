@@ -4,11 +4,6 @@ public class MercedesBenz extends Vehicle
    private int typeOfDrive = -1;
    private static final String [] allMakes = {"Coupe", "Sedan", "SUV", "Cabriolet"};
    private static final String [] allDrives = {"FWD", "4Matic"};
-   final double coupeMpg = 20.8;
-   final double sedanMpg = 19.0;
-   final double suvMpg = 18.0;
-   final double cabrioletMpg = 20.0;
-   final double awdMileageReduction = 2.0;
    
    public MercedesBenz ()
    {
@@ -63,23 +58,23 @@ public class MercedesBenz extends Vehicle
       double mileage = 0;
       if (this.getTypeOfMake().equals("Coupe"))
       {
-         mileage = coupeMpg;
+         mileage = benzCoupeMpg;
       }
       else if (this.getTypeOfMake().equals("Sedan"))
       {
-         mileage = sedanMpg;
+         mileage = benzSedanMpg;
       }
       else if (this.getTypeOfMake().equals("SUV"))
       {
-         mileage = suvMpg;
+         mileage = benzSuvMpg;
       }
       else
       {
-         mileage = cabrioletMpg;
+         mileage = benzCabrioletMpg;
       }
       if (this.getTypeOfDrive().equals("4Matic"))
       {
-         mileage -= awdMileageReduction;
+         mileage -= benzAwdMileageReduction;
       }
       return mileage;
    }
