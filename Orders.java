@@ -49,6 +49,11 @@ public class Orders
             Boat orderedBoat = (Boat)vehicle;
             System.out.println(orderedBoat);
          }
+         else if (vehicle instanceof MercedesBenz)
+         {
+            MercedesBenz orderedMbenz = (MercedesBenz)vehicle;
+            System.out.println(orderedMbenz);
+         }
          else
          {
             System.out.println("Invalid object type");
@@ -68,7 +73,7 @@ public class Orders
       System.out.println("Java for Programmers ISTE-200 2018-Fall \nHomework # 4\n");
       while(true)
       {
-         System.out.print("Do you want to order a Truck (T/t) or Car (C/c) or Boat (B/b)? ");
+         System.out.print("Do you want to order a Truck (T/t) or Car (C/c) or Boat (B/b) or Mercedes Benz (M/m)? ");
          if(!scan.hasNextLine())
          {
             System.out.println("Please enter a valid input");
@@ -141,6 +146,35 @@ public class Orders
                while(true)
                {
                   System.out.print("\nDo you want to order another vehicle? ");
+                  userInput = scan.nextLine();
+                  if (userInput.equals("Y") || userInput.equals("y") || userInput.equals("n") || userInput.equals("N"))
+                  {
+                     break;    
+                  }
+                  else
+                  {
+                     System.out.println("Enter valid input.");
+                     continue;
+                  }
+               }
+               if (userInput.equals("Y") || userInput.equals("y"))
+               {
+                 continue;    
+               }
+               else
+               {
+                  break;
+               }
+
+            }
+            else if (userInput.equals("M") || userInput.equals("m"))
+            {
+               System.out.println("Entering Mercedes Benz order:");
+               MercedesBenz newMbenz = new MercedesBenz();
+               ordersMade.add(newMbenz);
+               while(true)
+               {
+                  System.out.print("Do you want to order another vehicle? ");
                   userInput = scan.nextLine();
                   if (userInput.equals("Y") || userInput.equals("y") || userInput.equals("n") || userInput.equals("N"))
                   {

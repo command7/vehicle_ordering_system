@@ -1,4 +1,5 @@
 public interface Vinfo {
+   /** Mileage of a Sedan car */
    final static double sedanMpg = 23.7;
    /** Mileage of a Coupe car*/
    final static double coupeMpg = 28.2;

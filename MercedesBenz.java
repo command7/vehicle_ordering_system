@@ -93,7 +93,7 @@ public class MercedesBenz extends Vehicle
    
    public String toString()
    {
-      return "Mercedes Benz\n" + super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n",
-      "", " Car Type:", this.getTypeOfMake(),"", "Drive Type:", this.getTypeOfDrive());
+      return "Mercedes Benz:\n" + super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n",
+      "", "Car Type:", this.getTypeOfMake(),"", "Drive Type:", this.getTypeOfDrive());
    }
 }
