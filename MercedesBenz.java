@@ -2,8 +2,8 @@ public class MercedesBenz extends Vehicle
 {
    private int typeOfMake = -1;
    private int typeOfDrive = -1;
-   private final String [] allMakes = {"Coupe", "Sedan", "SUV", "Cabriolet"};
-   private final String [] allDrives = {"FWD", "4Matic"};
+   private static final String [] allMakes = {"Coupe", "Sedan", "SUV", "Cabriolet"};
+   private static final String [] allDrives = {"FWD", "4Matic"};
    final double coupeMpg = 20.8;
    final double sedanMpg = 19.0;
    final double suvMpg = 18.0;
