@@ -19,14 +19,6 @@ public class Car extends Vehicle
    final String [] typesOfCars = {"Sedan", "Coupe", "Wagon"};
    /** An array containing possible answers for the user to select */
    final String [] towingCapability = {"Towing Package", "No towing package"};
-   /** Mileage of a Sedan */
-//    final double sedanMpg = 23.7;
-//    /** Mileage of a Coupe */
-//    final double coupeMpg = 28.2;
-//    /** Mileage of a Wagon */
-//    final double wagonMpg = 19.5;
-//    /** Mileage that is to be deducted if it has towing capability */
-//    final double towingMpg = 3;
 
 /**
 *  Constructor uses methods to asks user for the model, color, cost, car type, towing package existence
@@ -142,8 +134,8 @@ public class Car extends Vehicle
 */   
    public String toString()
    {
-      return "Car\n" + super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n%5s%-10s %s%n",
-      "", "Type:", this.getCarType(),"", "Towing:", this.getTowingPackage(),"","MPG/GPH:", this.gasMileage());
+      return "Car\n" + super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n",
+      "", "Type:", this.getCarType(),"", "Towing:", this.getTowingPackage());
    }//end of toString() method
 
 }//end class Car
