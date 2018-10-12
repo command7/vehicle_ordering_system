@@ -93,8 +93,7 @@ public class Truck extends Vehicle
 */
    public void truckSizeMenu()
    {
-      int truckSizeIndex = super.showMenu("What size truck is this? ",allTruckSizes);
-      setTruckSize(truckSizeIndex);
+      setTruckSize(super.showMenu("What size truck is this? ",allTruckSizes));
    }//end of truckSizeMenu() method
    
 /**
@@ -103,8 +102,7 @@ public class Truck extends Vehicle
 */
    public void engineSizeMenu()
    {
-      int engineSizeIndex = super.showMenu("What is the engine size of the truck? ",allEngineSizes);
-      setEngineSize(engineSizeIndex);
+      setEngineSize(super.showMenu("What is the engine size of the truck? ",allEngineSizes));
    }//end of engineSizeMenu() method
    
 /**

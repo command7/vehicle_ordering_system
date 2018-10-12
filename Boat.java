@@ -91,9 +91,7 @@ public class Boat extends Vehicle
 */
    public void typeOfBoatMenu()
    {
-      int typeOfBoatIndex = super.showMenu("What type of boat is this? ", typesOfBoat);
-      setBoatType(typeOfBoatIndex);
-      
+      setBoatType(super.showMenu("What type of boat is this? ", typesOfBoat));
    }//end of typeOfBoatMenu() method
    
 /**
@@ -102,8 +100,7 @@ public class Boat extends Vehicle
 */
    public void boatConstructionMenu()
    {
-      int boatConstructionMenuIndex = super.showMenu("What is the boat's construction? ", typesOfBoatConstruction);
-      setBoatConstruction(boatConstructionMenuIndex);
+      setBoatConstruction(super.showMenu("What is the boat's construction? ", typesOfBoatConstruction));
    }//end of boatConstructionMenu() method
    
 /**

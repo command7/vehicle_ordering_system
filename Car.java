@@ -90,8 +90,7 @@ public class Car extends Vehicle
 */
    public void typeOfCarMenu()
    {
-      int typeOfCarIndex = super.showMenu("What type of Car is this?", typesOfCars);
-      setCarType(typeOfCarIndex);
+      setCarType(super.showMenu("What type of Car is this?", typesOfCars));
    }//end of typeOfCarMenu() method
    
 /**
@@ -100,8 +99,7 @@ public class Car extends Vehicle
 */   
    public void towingPackageMenu()
    {
-      int towingPackageIndex = super.showMenu("Does this car have a towing package? ",towingCapability);
-      setTowingPackage(towingPackageIndex);
+      setTowingPackage(super.showMenu("Does this car have a towing package? ",towingCapability));
    }//end of towingPackageMenu() method
    
 /**
