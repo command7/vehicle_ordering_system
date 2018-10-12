@@ -134,7 +134,7 @@ public class Car extends Vehicle
 */   
    public String toString()
    {
-      return "Car\n" + super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n",
+      return "Car:\n" + super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n",
       "", "Type:", this.getCarType(),"", "Towing:", this.getTowingPackage());
    }//end of toString() method
 
