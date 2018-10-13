@@ -110,7 +110,7 @@ public class Truck extends Vehicle
 */
    public double gasMileage()
    {
-      return 50 - (Math.sqrt(this.getCost())/10.0);
+      return 50 - (Math.sqrt(this.getVehicleCost())/10.0);
    }
    
 /**
