@@ -55,10 +55,7 @@ public abstract class Vehicle implements Vinfo
 */
    public void setModel(String _model)
    {
-      if (_model instanceof String)
-      {
-         this.model = _model;
-      }
+      this.model = _model;
    }//end of setModel() method
    
 /**
@@ -66,10 +63,7 @@ public abstract class Vehicle implements Vinfo
 */
    public void setColor(String _color)
    {
-      if (_color instanceof String)
-      {
-         this.color = _color;
-      }
+      this.color = _color;
    }//end of setColor() method
    
 /**
