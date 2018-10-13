@@ -156,7 +156,8 @@ public abstract class Vehicle implements Vinfo
 
 /**
 *  This method is used to print menus and obtain input from the user
-*  based on the menu choices.
+*  based on the menu choices. It takes the choice number as input 
+*  and outputs index (-1)
 *  @param prompt The prompt that is to be displayed to the user.
 *  @param choices choices that need to be displayed to that user.
 */
@@ -167,30 +168,36 @@ public abstract class Vehicle implements Vinfo
       {
          System.out.println((i+1) + ". " + choices[i]);
       }
-     while(true)
-     {
-        System.out.print(String.format("%5s%-5s","","Choice: "));
-        if (!scan.hasNextInt())
-        {
-           System.out.println("Please enter a valid choice.");
-           scan.nextLine();
-           continue;
-        }
-        else
-        {
-           int userInput = scan.nextInt();
-           scan.nextLine();
-           if (userInput > 0 && userInput <=(choices.length + 1))
-           {
-              return (userInput-1);
-           }
-           else
-           {
-              System.out.println("Please enter a valid choice.");
-              continue;
-           }
-        } 
-     }
+      boolean controlVar = true;
+      int userInput = 0;
+      do
+      {
+         try
+         {
+            System.out.print(String.format("%5s%-5s","","Choice: "));
+            userInput = scan.nextInt();
+            scan.nextLine();
+            if (userInput > 0 && userInput <=(choices.length))
+            {
+               controlVar = false;
+            }
+            else
+            {
+               System.out.println("Please select a choice from the given options.");
+            }  
+         }
+         catch (InputMismatchException ime)
+         {
+            System.out.println("Only numeric characters are allowed.");
+            scan.nextLine();
+         }
+         catch (Exception e)
+         {
+            System.out.println("Invalid Input");
+            scan.nextLine();
+         }
+     }while(controlVar);
+     return (userInput-1);
    }//end of showMenu() method.
    
 /**
