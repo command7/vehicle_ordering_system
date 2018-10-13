@@ -13,11 +13,11 @@ import java.util.*;
 public abstract class Vehicle implements Vinfo
 {
    /** Stores the model of the vehicle */
-   private String model;
+   private String vehicleModel;
    /** Stroes the color of the vehicle */
-   private String color;
+   private String vehicleColor;
    /** Stores the cost of the vehicle */
-   private double cost;
+   private double vehicleCost;
    /** Scanner object to request user input */
    Scanner scan = new Scanner(System.in);
    
@@ -29,53 +29,53 @@ public abstract class Vehicle implements Vinfo
 /**
 *  Accessor method that returns the model of the vehicle.
 */
-   public String getModel()
+   public String getVehicleModel()
    {
-      return this.model;
-   }//end of getModel() method
+      return this.vehicleModel;
+   }//end of getVehicleModel() method
    
 /**
 *  Accessor method that returns the color of the vehicle.
 */
-   public String getColor()
+   public String getVehicleColor()
    {
-      return this.color;
-   }//end of getColor() method
+      return this.vehicleColor;
+   }//end of getVehicleColor() method
    
 /**
 *  Accessor method that returns the cost of the vehicle.
 */
-   public double getCost()
+   public double getVehicleCost()
    {
-      return this.cost;
-   }//end of getCost() method
+      return this.vehicleCost;
+   }//end of getVehicleCost() method
    
 /**
 *  Mutator method that is used to set/modify the model of the vehicle.
 */
-   public void setModel(String _model)
+   public void setVehicleModel(String _vehicleModel)
    {
-      this.model = _model;
-   }//end of setModel() method
+      this.vehicleModel = _vehicleModel;
+   }//end of setVehicleModel() method
    
 /**
 *  Mutator method that is used to set/modify the color of the vehicle.
 */
-   public void setColor(String _color)
+   public void setVehicleColor(String _vehicleColor)
    {
-      this.color = _color;
-   }//end of setColor() method
+      this.vehicleColor = _vehicleColor;
+   }//end of setVehicleColor() method
    
 /**
 *  Mutator method that is used to set/modify the cost of the vehicle.
 */
-   public void setCost(double _cost)
+   public void setVehicleCost(double _vehicleCost)
    {
-      if (_cost > 0)
+      if (_vehicleCost > 0)
       {
-         this.cost = _cost;
+         this.vehicleCost = _vehicleCost;
       }      
-   }//end of setCost() method
+   }//end of setVehicleCost() method
    
 /**
 *  Input method that is used to request general details such as model name, color,
@@ -93,15 +93,15 @@ public abstract class Vehicle implements Vinfo
          }
          else
          {
-            String carModelInput = scan.nextLine();
-            if (carModelInput.equals(""))
+            String vehicleModelInput = scan.nextLine();
+            if (vehicleModelInput.equals(""))
             {
                System.out.println("You cannot leave this field blank.");
                continue;
             }
             else
             {
-               setModel(carModelInput);
+               setVehicleModel(vehicleModelInput);
                break;
             }
          }
@@ -116,15 +116,15 @@ public abstract class Vehicle implements Vinfo
          }
          else
          {
-            String carColorInput = scan.nextLine();
-            if (carColorInput.equals(""))
+            String vehicleColorInput = scan.nextLine();
+            if (vehicleColorInput.equals(""))
             {
                System.out.println("You cannot leave this field blank.");
                continue;
             }
             else
             {
-               setColor(carColorInput);
+               setVehicleColor(vehicleColorInput);
                break;
             }
          }
@@ -141,7 +141,7 @@ public abstract class Vehicle implements Vinfo
          {
             try
             {
-               setCost(Double.parseDouble(scan.nextLine()));
+               setVehicleCost(Double.parseDouble(scan.nextLine()));
                break;
             }
             catch (NumberFormatException nfe)
@@ -156,7 +156,8 @@ public abstract class Vehicle implements Vinfo
 
 /**
 *  This method is used to print menus and obtain input from the user
-*  based on the menu choices.
+*  based on the menu choices. It takes the choice number as input 
+*  and outputs index (-1)
 *  @param prompt The prompt that is to be displayed to the user.
 *  @param choices choices that need to be displayed to that user.
 */
@@ -167,30 +168,36 @@ public abstract class Vehicle implements Vinfo
       {
          System.out.println((i+1) + ". " + choices[i]);
       }
-     while(true)
-     {
-        System.out.print(String.format("%5s%-5s","","Choice: "));
-        if (!scan.hasNextInt())
-        {
-           System.out.println("Please enter a valid choice.");
-           scan.nextLine();
-           continue;
-        }
-        else
-        {
-           int userInput = scan.nextInt();
-           scan.nextLine();
-           if (userInput > 0 && userInput <=(choices.length + 1))
-           {
-              return (userInput-1);
-           }
-           else
-           {
-              System.out.println("Please enter a valid choice.");
-              continue;
-           }
-        } 
-     }
+      boolean controlVar = true;
+      int userInput = 0;
+      do
+      {
+         try
+         {
+            System.out.print(String.format("%5s%-5s","","Choice: "));
+            userInput = scan.nextInt();
+            scan.nextLine();
+            if (userInput > 0 && userInput <= (choices.length))
+            {
+               controlVar = false;
+            }
+            else
+            {
+               System.out.println("Please select a choice from the given options.");
+            }  
+         }
+         catch (InputMismatchException ime)
+         {
+            System.out.println("Only numeric characters are allowed.");
+            scan.nextLine();
+         }
+         catch (Exception e)
+         {
+            System.out.println("Invalid Input");
+            scan.nextLine();
+         }
+     }while(controlVar);
+     return (userInput-1);
    }//end of showMenu() method.
    
 /**
@@ -204,7 +211,7 @@ public abstract class Vehicle implements Vinfo
 */
    public String toString()
    {
-   return String.format("%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %s","","Model:",this.getModel(),"","Color:", this.getColor(),"", "Cost:", this.getCost(),"","MPG/GPH:", this.gasMileage());
+   return String.format("%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %s","","Model:",this.getVehicleModel(),"","Color:", this.getVehicleColor(),"", "Cost:", this.getVehicleCost(),"","MPG/GPH:", this.gasMileage());
    }
 
 }// end class Vehicle
