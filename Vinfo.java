@@ -14,13 +14,9 @@ public interface Vinfo {
    /** Mileage of a SailBoat */
    final static double sailBoatMpg = 0;
    /** Mileage of a benz Coupe */
-   final static double benzCoupeMpg = 20.8;
+   final static double benzPetrolMpg = 20.8;
    /** Mileage of a benz Sedan */
-   final static double benzSedanMpg = 19.0;
-   /** Mileage of a benz SUV */
-   final static double benzSuvMpg = 18.0;
-   /** Mileage of a benz Cabriolet */
-   final static double benzCabrioletMpg = 20.0;
+   final static double benzDieselMpg = 22.0;
    /** Mileage reduction for benz 4matic All Wheel Drive */
    final static double benzAwdMileageReduction = 2.0;
    /** Calculates and returns the Mileage of a vehicle */

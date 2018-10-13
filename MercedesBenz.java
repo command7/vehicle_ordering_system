@@ -1,6 +1,6 @@
 /**
 *Purpose:   This program is used to create a MercedesBenz order. It will ask
-*           the user for the model, color, cost, make of car and type of drive
+*           the user for the model, color, cost, fuel type and type of drive
 *           and store it. <br/>
 *                         <br/>
 *Caveats:   This class uses Vehicle class to accept certain input.
@@ -14,11 +14,11 @@
 public class MercedesBenz extends Vehicle
 {
    /** Stores the index of the type of make  */
-   private int typeOfMake = -1;
+   private int typeOfFuel = -1;
    /** Stores the index of the type of drive */
    private int typeOfDrive = -1;
    /** Contains all options of makes */
-   private static final String [] allMakes = {"Coupe", "Sedan", "SUV", "Cabriolet"};
+   private static final String [] fuelTypes = {"Unleaded Petrol", "Diesel"};
    /** Contains all driving types available */
    private static final String [] allDrives = {"FWD", "4Matic"};
    
@@ -29,22 +29,22 @@ public class MercedesBenz extends Vehicle
    public MercedesBenz ()
    {
       super();
-      typeOfMakeMenu();
+      typeOfFuelMenu();
       typeOfDriveMenu();   
    }//end of constructor
    
 /**
 *  Accessor method that returns the make
 */
-   public String getTypeOfMake()
+   public String getTypeOfFuel()
    {
-      if (this.typeOfMake == -1)
+      if (this.typeOfFuel == -1)
       {
          return "";
       }
       else
       {
-         return allMakes[this.typeOfMake];
+         return fuelTypes[this.typeOfFuel];
       }
    }//end of getTypeOfMake() method
    
@@ -53,7 +53,7 @@ public class MercedesBenz extends Vehicle
 */
    public String getTypeOfDrive()
    {
-      if (this. typeOfDrive == -1)
+      if (this.typeOfDrive == -1)
       {
          return "";
       }
@@ -66,13 +66,13 @@ public class MercedesBenz extends Vehicle
 /**
 * Accessor method that sets/modifes the type of make  
 */
-   public void setTypeOfMake(int _typeOfMake)
+   public void setTypeOfFuel(int _typeOfFuel)
    {
-      if (_typeOfMake >= 0 && _typeOfMake < allMakes.length)
+      if (_typeOfFuel >= 0 && _typeOfFuel < fuelTypes.length)
       {
-         this.typeOfMake = _typeOfMake;
+         this.typeOfFuel = _typeOfFuel;
       }
-   }//end of setTypeOfMake() method
+   }//end of setTypeOfFuel() method
    
 /**
 *  Accessor method that sets/modifies the type of drive
@@ -89,33 +89,24 @@ public class MercedesBenz extends Vehicle
 *  This method estimates the mileage based on the type of make and type of drive
 */
 /* gasMileage Constants for this class 
-      final static double benzSedanMpg = 19.0;
-      final static double benzSuvMpg = 18.0;
-      final static double benzCabrioletMpg = 20.0;
+      final static double benzPetrolMpg = 20.8;
+      final static double benzDieselMpg = 22.0;
       final static double benzAwdMileageReduction = 2.0; 
 */
    public double gasMileage()
    {
       double mileage = 0;
-      if (this.getTypeOfMake().equals("Coupe"))
+      if (this.getTypeOfFuel().equals("Unleaded Petrol"))
       {
-         mileage = benzCoupeMpg;
+         mileage = benzPetrolMpg;
       }
-      else if (this.getTypeOfMake().equals("Sedan"))
+      else 
       {
-         mileage = benzSedanMpg;
-      }
-      else if (this.getTypeOfMake().equals("SUV"))
-      {
-         mileage = benzSuvMpg;
-      }
-      else
-      {
-         mileage = benzCabrioletMpg;
+         mileage = benzDieselMpg;
       }
       if (this.getTypeOfDrive().equals("4Matic"))
       {
-         mileage -= benzAwdMileageReduction;
+         mileage -=  benzAwdMileageReduction;
       }
       return mileage;
    }//end of gasMileage() method
@@ -124,10 +115,10 @@ public class MercedesBenz extends Vehicle
 *  Input method used to request the type of make from the user
 *  and store it in respective variables.
 */
-   public void typeOfMakeMenu()
+   public void typeOfFuelMenu()
    {
-      setTypeOfMake(super.showMenu("What type of Car is this?", allMakes));
-   }//end of typeOfMakeMenu() method
+      setTypeOfFuel(super.showMenu("What type of fuel is used?", fuelTypes));
+   }//end of typeOfFuelMenu() method
    
 /**
 *  Input method used to request the type of drive from the user
@@ -144,7 +135,7 @@ public class MercedesBenz extends Vehicle
    public String toString()
    {
       return "Mercedes Benz:\n" + super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n",
-      "", "Car Type:", this.getTypeOfMake(),"", "Drive Type:", this.getTypeOfDrive());
+      "", "Fuel Type:", this.getTypeOfFuel(),"", "Drive:", this.getTypeOfDrive());
    }//end of toString() method
    
 }//end class MercedesBenz
