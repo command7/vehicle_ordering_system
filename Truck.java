@@ -19,9 +19,9 @@ public class Truck extends Vehicle
    /** Stores the  index for engine size of the truck */
    private int engineSize = -1;
    /** Stores various sizes of truck as menu options for the user to select from */ 
-   final static String [] allTruckSizes = {"Half-ton", "Full ton"};
+   final static String [] ALL_TRUCK_SIZES = {"Half-ton", "Full ton"};
    /** Stores various engine sizes as menu options for the user to select from  */
-   final static String [] allEngineSizes = {"1000cc", "2000cc"};
+   final static String [] ALL_ENGINE_SIZES = {"1000cc", "2000cc"};
    
 /**
 *  Constructor asks the details of the truck and stores them in respective
@@ -45,7 +45,7 @@ public class Truck extends Vehicle
       }
       else
       {
-         return allTruckSizes[truckSize];
+         return ALL_TRUCK_SIZES[truckSize];
       }
    }//end of getTruckSize() method
    
@@ -60,7 +60,7 @@ public class Truck extends Vehicle
       }
       else
       {
-         return allEngineSizes[engineSize];
+         return ALL_ENGINE_SIZES[engineSize];
       }
    }//end of getEngineSize() method
       
@@ -69,7 +69,7 @@ public class Truck extends Vehicle
 */
    public void setTruckSize(int _truckSize) 
    {
-      if (_truckSize >= 0 && _truckSize < allTruckSizes.length)
+      if (_truckSize >= 0 && _truckSize < ALL_TRUCK_SIZES.length)
       {
          this.truckSize = _truckSize;
       }  
@@ -81,7 +81,7 @@ public class Truck extends Vehicle
 */
    public void setEngineSize(int _engineSize)
    {
-      if (_engineSize >= 0 && _engineSize < allEngineSizes.length)
+      if (_engineSize >= 0 && _engineSize < ALL_ENGINE_SIZES.length)
       {
          this.engineSize = _engineSize;
       }  
@@ -93,7 +93,7 @@ public class Truck extends Vehicle
 */
    public void truckSizeMenu()
    {
-      setTruckSize(super.showMenu("What size truck is this? ",allTruckSizes));
+      setTruckSize(super.showMenu("What size truck is this? ",ALL_TRUCK_SIZES));
    }//end of truckSizeMenu() method
    
 /**
@@ -102,7 +102,7 @@ public class Truck extends Vehicle
 */
    public void engineSizeMenu()
    {
-      setEngineSize(super.showMenu("What is the engine size of the truck? ",allEngineSizes));
+      setEngineSize(super.showMenu("What is the engine size of the truck? ",ALL_ENGINE_SIZES));
    }//end of engineSizeMenu() method
    
 /**

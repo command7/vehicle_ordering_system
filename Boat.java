@@ -18,9 +18,9 @@ public class Boat extends Vehicle
    /** Saves the index of construction type of the boat */
    private int boatConstruction = -1;
    /** A String array containing options for types of boat menu*/
-   final static String [] typesOfBoat = {"Pontoon", "PWC", "Sailboat"};
+   final static String [] TYPES_OF_BOATS = {"Pontoon", "PWC", "Sailboat"};
    /** A String array containing options for construction types of boat menu */
-   final static String [] typesOfBoatConstruction = {"Wood", "Fiberglass", "Steel"};
+   final static String [] TYPES_OF_BOAT_CONSTRUCTION = {"Wood", "Fiberglass", "Steel"};
    
 /**
 *  Constructor asks the details of the boat and stores them in respective
@@ -44,7 +44,7 @@ public class Boat extends Vehicle
       }
       else
       {
-         return typesOfBoat[boatType];
+         return TYPES_OF_BOATS[boatType];
       }
    }// end of getBoatType() method
    
@@ -59,7 +59,7 @@ public class Boat extends Vehicle
       }
       else
       {
-         return typesOfBoatConstruction[boatConstruction];
+         return TYPES_OF_BOAT_CONSTRUCTION[boatConstruction];
       }
    }//end of getBoatConstruction() method
    
@@ -68,7 +68,7 @@ public class Boat extends Vehicle
 */
    public void setBoatType(int _boatType)
    {
-      if(_boatType >=0 && _boatType < typesOfBoat.length)
+      if(_boatType >=0 && _boatType < TYPES_OF_BOATS.length)
       {
          this.boatType = _boatType;
       }
@@ -79,7 +79,7 @@ public class Boat extends Vehicle
 */
    public void setBoatConstruction(int _boatConstruction)
    {
-      if(_boatConstruction >= 0 && _boatConstruction < typesOfBoatConstruction.length)
+      if(_boatConstruction >= 0 && _boatConstruction < TYPES_OF_BOAT_CONSTRUCTION.length)
       {
          this.boatConstruction = _boatConstruction;
       }
@@ -91,7 +91,7 @@ public class Boat extends Vehicle
 */
    public void typeOfBoatMenu()
    {
-      setBoatType(super.showMenu("What type of boat is this? ", typesOfBoat));
+      setBoatType(super.showMenu("What type of boat is this? ", TYPES_OF_BOATS));
    }//end of typeOfBoatMenu() method
    
 /**
@@ -100,7 +100,7 @@ public class Boat extends Vehicle
 */
    public void boatConstructionMenu()
    {
-      setBoatConstruction(super.showMenu("What is the boat's construction? ", typesOfBoatConstruction));
+      setBoatConstruction(super.showMenu("What is the boat's construction? ", TYPES_OF_BOAT_CONSTRUCTION));
    }//end of boatConstructionMenu() method
    
 /**
@@ -110,15 +110,15 @@ public class Boat extends Vehicle
    {
       if (this.getBoatType().equals("Pontoon"))
       {
-         return pontoonMpg;
+         return PONTOON_MPG;
       }
       else if (this.getBoatType().equals("PWC"))
       {
-         return pwcMpg;
+         return PWC_MPG;
       }
       else
       {
-         return sailBoatMpg;
+         return SAIL_BOAT_MPG;
       }
    }
    

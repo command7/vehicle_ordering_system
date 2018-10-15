@@ -16,9 +16,9 @@ public class Car extends Vehicle
    /** Stores the index for whether towing package is included or not. */
    private int towingPackage = -1;
    /** An array containing types of cars for the user to select one*/
-   final static String [] typesOfCars = {"Sedan", "Coupe", "Wagon"};
+   final static String [] TYPES_OF_CARS = {"Sedan", "Coupe", "Wagon"};
    /** An array containing possible answers for the user to select */
-   final static String [] towingCapability = {"Towing Package", "No towing package"};
+   final static String [] TOWING_CAPABILITY = {"Towing Package", "No towing package"};
 
 /**
 *  Constructor uses methods to asks user for the model, color, cost, car type, towing package existence
@@ -42,7 +42,7 @@ public class Car extends Vehicle
       }
       else
       {
-         return typesOfCars[carType];
+         return TYPES_OF_CARS[carType];
       }
    }//end of getCarType() method
    
@@ -57,7 +57,7 @@ public class Car extends Vehicle
       }
       else
       {
-         return towingCapability[towingPackage];
+         return TOWING_CAPABILITY[towingPackage];
       }
    }//end of getTowingPackage() method
    
@@ -66,7 +66,7 @@ public class Car extends Vehicle
 */
    public void setCarType(int _carType)
    {
-      if (_carType >=0 && _carType < typesOfCars.length)
+      if (_carType >=0 && _carType < TYPES_OF_CARS.length)
       {
          this.carType = _carType;
       }
@@ -77,7 +77,7 @@ public class Car extends Vehicle
 */
    public void setTowingPackage(int _towingPackage)
    {
-      if (_towingPackage >= 0 && _towingPackage < towingCapability.length)
+      if (_towingPackage >= 0 && _towingPackage < TOWING_CAPABILITY.length)
       {
          this.towingPackage = _towingPackage;
       }
@@ -90,7 +90,7 @@ public class Car extends Vehicle
 */
    public void typeOfCarMenu()
    {
-      setCarType(super.showMenu("What type of Car is this?", typesOfCars));
+      setCarType(super.showMenu("What type of Car is this?", TYPES_OF_CARS));
    }//end of typeOfCarMenu() method
    
 /**
@@ -99,7 +99,7 @@ public class Car extends Vehicle
 */   
    public void towingPackageMenu()
    {
-      setTowingPackage(super.showMenu("Does this car have a towing package? ",towingCapability));
+      setTowingPackage(super.showMenu("Does this car have a towing package? ",TOWING_CAPABILITY));
    }//end of towingPackageMenu() method
    
 /**
@@ -110,19 +110,19 @@ public class Car extends Vehicle
       double mileage = 0;
       if (this.getCarType().equals("Sedan"))
       {
-         mileage = sedanMpg;
+         mileage = SEDAN_MPG;
       }
       else if (this.getCarType().equals("Coupe"))
       {
-         mileage = coupeMpg;
+         mileage = COUPE_MPG;
       }
       else 
       {
-         mileage = wagonMpg;
+         mileage = WAGON_MPG;
       }
       if (this.getTowingPackage().equals("Towing Package"))
       {
-         mileage -= towingMpg;
+         mileage -= TOWING_MPG_REDUCTION;
       }
       return mileage;
    }

@@ -18,9 +18,9 @@ public class MercedesBenz extends Vehicle
    /** Stores the index of the type of drive */
    private int typeOfDrive = -1;
    /** Contains all options of makes */
-   private static final String [] fuelTypes = {"Unleaded Petrol", "Diesel"};
+   private static final String [] FUEL_TYPES = {"Unleaded Petrol", "Diesel"};
    /** Contains all driving types available */
-   private static final String [] allDrives = {"FWD", "4Matic"};
+   private static final String [] ALL_DRIVES = {"FWD", "4Matic"};
    
 /**
 *  Constructor asks the details of the Benz and stores them in respective
@@ -44,7 +44,7 @@ public class MercedesBenz extends Vehicle
       }
       else
       {
-         return fuelTypes[this.typeOfFuel];
+         return FUEL_TYPES[this.typeOfFuel];
       }
    }//end of getTypeOfMake() method
    
@@ -59,7 +59,7 @@ public class MercedesBenz extends Vehicle
       }
       else
       {
-         return allDrives[this.typeOfDrive];
+         return ALL_DRIVES[this.typeOfDrive];
       }
    }//end of getTypeOfDrive() method
    
@@ -68,7 +68,7 @@ public class MercedesBenz extends Vehicle
 */
    public void setTypeOfFuel(int _typeOfFuel)
    {
-      if (_typeOfFuel >= 0 && _typeOfFuel < fuelTypes.length)
+      if (_typeOfFuel >= 0 && _typeOfFuel < FUEL_TYPES.length)
       {
          this.typeOfFuel = _typeOfFuel;
       }
@@ -79,7 +79,7 @@ public class MercedesBenz extends Vehicle
 */
    public void setTypeOfDrive(int _typeOfDrive)
    {
-      if (_typeOfDrive >= 0 && _typeOfDrive < allDrives.length)
+      if (_typeOfDrive >= 0 && _typeOfDrive < ALL_DRIVES.length)
       {
          this.typeOfDrive = _typeOfDrive;
       }
@@ -98,15 +98,15 @@ public class MercedesBenz extends Vehicle
       double mileage = 0;
       if (this.getTypeOfFuel().equals("Unleaded Petrol"))
       {
-         mileage = benzPetrolMpg;
+         mileage = BENZ_PETROL_MPG;
       }
       else 
       {
-         mileage = benzDieselMpg;
+         mileage = BENZ_DIESEL_MPG;
       }
       if (this.getTypeOfDrive().equals("4Matic"))
       {
-         mileage -=  benzAwdMileageReduction;
+         mileage -=  BENZ_AWD_MILEAGE_REDUCTION;
       }
       return mileage;
    }//end of gasMileage() method
@@ -117,7 +117,7 @@ public class MercedesBenz extends Vehicle
 */
    public void typeOfFuelMenu()
    {
-      setTypeOfFuel(super.showMenu("What type of fuel is used?", fuelTypes));
+      setTypeOfFuel(super.showMenu("What type of fuel is used?", FUEL_TYPES));
    }//end of typeOfFuelMenu() method
    
 /**
@@ -126,7 +126,7 @@ public class MercedesBenz extends Vehicle
 */
    public void typeOfDriveMenu()
    {
-      setTypeOfDrive(super.showMenu("What type of Drive is this?", allDrives));
+      setTypeOfDrive(super.showMenu("What type of Drive is this?", ALL_DRIVES));
    }//end of typeOfDriveMenu() method
    
 /**
