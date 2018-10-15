@@ -203,7 +203,7 @@ public abstract class Vehicle implements Vinfo
 */
    public String toString()
    {
-   return String.format("%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %s","","Model:",this.getVehicleModel(),"","Color:", this.getVehicleColor(),"", "Cost:", this.getVehicleCost(),"","MPG/GPH:", this.gasMileage());
+   return String.format("%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %.1f","","Model:",this.getVehicleModel(),"","Color:", this.getVehicleColor(),"", "Cost:", this.getVehicleCost(),"","MPG/GPH:", this.gasMileage());
    }
 
 }// end class Vehicle
