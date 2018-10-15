@@ -139,7 +139,12 @@ public abstract class Vehicle implements Vinfo
             }
             catch (NumberFormatException nfe)
             {
-               System.out.println("Only integers or decimals are allowed");
+               System.out.println("Invalid dollar amount. Do not use $ or , for the cost. Try again.");
+               continue;
+            }
+            catch (Exception e)
+            {
+               System.out.println("Invalid Input");
                continue;
             }
       }   
@@ -175,7 +180,7 @@ public abstract class Vehicle implements Vinfo
             }
             else
             {
-               System.out.println("Please select a choice from the given options.");
+               System.out.println("Please enter a number from 1 through " + choices.length);
             }  
          }
          catch (InputMismatchException ime)
@@ -203,7 +208,9 @@ public abstract class Vehicle implements Vinfo
 */
    public String toString()
    {
-   return String.format("%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %.1f","","Model:",this.getVehicleModel(),"","Color:", this.getVehicleColor(),"", "Cost:", this.getVehicleCost(),"","MPG/GPH:", this.gasMileage());
+      return String.format("%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %.1f","",
+      "Model:",this.getVehicleModel(),"","Color:", this.getVehicleColor(),"", "Cost:", 
+      this.getVehicleCost(),"","MPG/GPH:", this.gasMileage());
    }
 
 }// end class Vehicle
