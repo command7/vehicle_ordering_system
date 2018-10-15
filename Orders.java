@@ -54,6 +54,11 @@ public class Orders
             MercedesBenz orderedMbenz = (MercedesBenz)vehicle;
             System.out.println(orderedMbenz);
          }
+         else if (vehicle instanceof Sled)
+         {
+            Sled orderedSled = (Sled)vehicle;
+            System.out.println(orderedSled);
+         }
          else
          {
             System.out.println("Invalid object type");
