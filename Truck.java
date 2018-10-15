@@ -19,9 +19,9 @@ public class Truck extends Vehicle
    /** Stores the  index for engine size of the truck */
    private int engineSize = -1;
    /** Stores various sizes of truck as menu options for the user to select from */ 
-   final static String [] ALL_TRUCK_SIZES = {"Half-ton", "Full ton"};
+   private static final String [] ALL_TRUCK_SIZES = {"Half-ton", "Full ton"};
    /** Stores various engine sizes as menu options for the user to select from  */
-   final static String [] ALL_ENGINE_SIZES = {"1000cc", "2000cc"};
+   private static final String [] ALL_ENGINE_SIZES = {"1000cc", "2000cc"};
    
 /**
 *  Constructor asks the details of the truck and stores them in respective

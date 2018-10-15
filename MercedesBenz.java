@@ -18,9 +18,9 @@ public class MercedesBenz extends Vehicle
    /** Stores the index of the type of drive */
    private int typeOfDrive = -1;
    /** Contains all options of makes */
-   private static final String [] FUEL_TYPES = {"Unleaded Petrol", "Diesel"};
+   private final static String [] FUEL_TYPES = {"Unleaded Petrol", "Diesel"};
    /** Contains all driving types available */
-   private static final String [] ALL_DRIVES = {"FWD", "4Matic"};
+   private final static String [] ALL_DRIVES = {"FWD", "4Matic"};
    
 /**
 *  Constructor asks the details of the Benz and stores them in respective
