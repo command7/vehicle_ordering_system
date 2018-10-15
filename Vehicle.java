@@ -131,25 +131,17 @@ public abstract class Vehicle implements Vinfo
       }
       while(true)
       { 
-         System.out.print(String.format("%5s%-5s","","Cost: "));
-         if(!scan.hasNextLine())
-         {
-            System.out.println("Enter valid input.");
-            continue;
-         }
-         else
-         {
             try
             {
+               System.out.print(String.format("%5s%-5s","","Cost: "));
                setVehicleCost(Double.parseDouble(scan.nextLine()));
                break;
             }
             catch (NumberFormatException nfe)
             {
-               System.out.println("Enter valid numbers.");
+               System.out.println("Only integers or decimals are allowed");
                continue;
             }
-         }
       }   
    }//end of generalDetailsMenu() method
 
