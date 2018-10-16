@@ -1,8 +1,3 @@
-/* Observations preventing incorporation with my program
-1) Different name used for method that is used to ask the user for 
-the model, color and cost of the vehicle.
-*/
-
 /* Purpose: This class holds all of the attributes specific to the Sled class and is
 *           a child (subclass) of Vehicle. This class also has a toString() method that is used to format
 *           information to be printed to the user by combining Vehicle's toString() method and the variables

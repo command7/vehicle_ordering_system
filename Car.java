@@ -15,10 +15,6 @@ public class Car extends Vehicle
    private int carType = -1;
    /** Stores the index for whether towing package is included or not. */
    private int towingPackage = -1;
-   /** An array containing types of cars for the user to select one*/
-   private static final String [] TYPES_OF_CARS = {"Sedan", "Coupe", "Wagon"};
-   /** An array containing possible answers for the user to select */
-   private static final String [] TOWING_CAPABILITY = {"Towing Package", "No towing package"};
 
 /**
 *  Constructor uses methods to asks user for the model, color, cost, car type, towing package existence
