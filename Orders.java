@@ -75,7 +75,7 @@ public class Orders
    {
       String userInput =  null;
       System.out.println("Vijay Raj Saravanan Radhakrishnan");
-      System.out.println("Java for Programmers ISTE-200 2018-Fall \nHomework # 4\n");
+      System.out.println("Java for Programmers ISTE-200 2018-Fall");
       while(true)
       {
          System.out.print("Do you want to order a Truck (T/t) or Car (C/c) or Boat (B/b) or Mercedes Benz (M/m) or Sled (s/S)? ");
