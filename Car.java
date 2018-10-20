@@ -9,7 +9,8 @@
 */
 
 import java.util.*;
-public class Car extends Vehicle
+import java.io.*;
+public class Car extends Vehicle implements Serializable
 {
    /** Stores the index for type of the car. */
    private int carType = -1;

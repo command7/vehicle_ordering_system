@@ -25,6 +25,7 @@ public class Orders
    {
       placeOrder();
       printAllOrders();
+      saveOrders();
    }//end of Order Constructor
    
 /**
@@ -79,7 +80,7 @@ public class Orders
 //       
 //    }
    
-   public void saveOrder()
+   public void saveOrders()
    {
       try
       {

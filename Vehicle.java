@@ -10,6 +10,7 @@
 *@version   1.0
 */
 import java.util.*;
+import java.io.*;
 public abstract class Vehicle implements Vinfo
 {
    /** Stores the model of the vehicle */

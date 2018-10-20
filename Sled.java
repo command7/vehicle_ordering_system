@@ -10,8 +10,9 @@
 * @version  1.0
 */
 
-
-public class Sled extends Vehicle{
+import java.io.*;
+public class Sled extends Vehicle implements Serializable
+{
    // Attributes
    private String use;
    private String category;
