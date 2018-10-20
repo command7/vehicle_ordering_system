@@ -27,54 +27,57 @@ public class Orders
       placeOrder();
       printAllOrders();
       saveOrders();
-      //writeOutput();
+      writeOrders();
    }//end of Order Constructor
    
    
-  // public void writeOutput()
-//   {
-//       try
-//       {
-//          ObjectOutputStream writer = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("VehicleOrders.txt")));
-//          for (Object vehicle: ordersMade)
-//          {
-//             if (vehicle instanceof Car)
-//             {
-//                Car orderedCar = (Car)vehicle;
-//                writer.writeObject(orderedCar); 
-//             }
-// //             else if (vehicle instanceof Truck)
-// //             {
-// //                Truck orderedTruck = (Truck)vehicle;
-// //                System.out.println(orderedTruck);
-// //             }
-// //             else if (vehicle instanceof Boat)
-// //             {
-// //                Boat orderedBoat = (Boat)vehicle;
-// //                System.out.println(orderedBoat);
-// //             }
-// //             else if (vehicle instanceof MercedesBenz)
-// //             {
-// //                MercedesBenz orderedMbenz = (MercedesBenz)vehicle;
-// //                System.out.println(orderedMbenz);
-// //             }
-// //             else if (vehicle instanceof Sled)
-// //             {
-// //                Sled orderedSled = (Sled)vehicle;
-// //                System.out.println(orderedSled);
-// //             }
-// //             else
-// //             {
-// //                System.out.println("Invalid object type");
-// //             }
-//          }
-// 
-//       }
-//       catch (Exception e)
-//       {
-//          e.printStackTrace();
-//       }
-//   }
+  public void writeOrders()
+  {
+      try
+      {
+         BufferedWriter writer = new BufferedWriter(new FileWriter("VehicleOrders.txt"));
+         for (Object vehicle: ordersMade)
+         {
+            if (vehicle instanceof Car)
+            {
+               Car orderedCar = (Car)vehicle;
+               writer.write(orderedCar.toString(),0, orderedCar.toString().length());
+               writer.newLine(); 
+            }
+            else if (vehicle instanceof Truck)
+            {
+               Truck orderedTruck = (Truck)vehicle;
+               writer.write(orderedTruck.toString(),0, orderedTruck.toString().length());
+               writer.newLine();
+            }
+            else if (vehicle instanceof Boat)
+            {
+               Boat orderedBoat = (Boat)vehicle;
+               writer.write(orderedBoat.toString(),0, orderedBoat.toString().length());
+               writer.newLine();
+            }
+            else if (vehicle instanceof MercedesBenz)
+            {
+               MercedesBenz orderedMbenz = (MercedesBenz)vehicle;
+               writer.write(orderedMbenz.toString(),0, orderedMbenz.toString().length());
+               writer.newLine();
+            }
+            else if (vehicle instanceof Sled)
+            {
+               Sled orderedSled = (Sled)vehicle;
+               writer.write(orderedSled.toString(),0, orderedSled.toString().length());
+               writer.newLine();
+            }
+         }
+         writer.flush();
+         writer.close();
+
+      }
+      catch (Exception e)
+      {
+         e.printStackTrace();
+      }
+  }
 /**
 *  This method loops through the Arraylist and prints out each object after checking 
 *  if it is a valid object.
@@ -86,7 +89,10 @@ public class Orders
          if (vehicle instanceof Car)
          {
             Car orderedCar = (Car)vehicle;
-            System.out.println(orderedCar); 
+            System.out.println(orderedCar);
+//             String output = orderedCar.toString(); 
+//             System.out.println(output);
+//             System.out.println(output.getClass().getName());
          }
          else if (vehicle instanceof Truck)
          {
