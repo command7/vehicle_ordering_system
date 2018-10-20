@@ -23,7 +23,7 @@ public class Sled extends Vehicle{
    // Constructor
    public Sled(){
       System.out.println("Entering Sled order:");  
-      this.makeVehicle();
+      //this.makeVehicle();
       this.setUse( USE[this.showMenu(ques1, USE)] ); 
       this.setCategory( CATEGORY[this.showMenu(ques2, CATEGORY)] );
    }

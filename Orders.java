@@ -9,6 +9,7 @@
 */
 
 import java.util.*;
+import java.io.*;
 public class Orders
 {
    /** Scanner object to get user input. */
@@ -80,41 +81,56 @@ public class Orders
    
    public void saveOrder()
    {
-      ObjectOutputStream objWriter = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("VehicleOrders.dat")));
-      for (Object vehicle: ordersMade)
+      try
       {
-         if (vehicle instanceof Car)
+         ObjectOutputStream objWriter = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("VehicleOrders.dat")));
+         for (Object vehicle: ordersMade)
          {
-            Car orderedCar = (Car)vehicle;
-            objWriter.writeObject(orderedCar); 
+            if (vehicle instanceof Car)
+            {
+               Car orderedCar = (Car)vehicle;
+               objWriter.writeObject(orderedCar); 
+            }
+            else if (vehicle instanceof Truck)
+            {
+               Truck orderedTruck = (Truck)vehicle;
+               objWriter.writeObject(orderedTruck);
+            }
+            else if (vehicle instanceof Boat)
+            {
+               Boat orderedBoat = (Boat)vehicle;
+               objWriter.writeObject(orderedBoat);
+            }
+            else if (vehicle instanceof MercedesBenz)
+            {
+               MercedesBenz orderedMbenz = (MercedesBenz)vehicle;
+               objWriter.writeObject(orderedMbenz);
+            }
+            else if (vehicle instanceof Sled)
+            {
+               Sled orderedSled = (Sled)vehicle;
+               objWriter.writeObject(orderedSled);
+            }
+            else
+            {
+               System.out.println("Invalid object type");
+            }
          }
-         else if (vehicle instanceof Truck)
-         {
-            Truck orderedTruck = (Truck)vehicle;
-            objWriter.writeObject(orderedTruck);
-         }
-         else if (vehicle instanceof Boat)
-         {
-            Boat orderedBoat = (Boat)vehicle;
-            objWriter.writeObject(orderedBoat);
-         }
-         else if (vehicle instanceof MercedesBenz)
-         {
-            MercedesBenz orderedMbenz = (MercedesBenz)vehicle;
-            objWriter.writeObject(orderedMbenz);
-         }
-         else if (vehicle instanceof Sled)
-         {
-            Sled orderedSled = (Sled)vehicle;
-            objWriter.writeObject(orderedSled);
-         }
-         else
-         {
-            System.out.println("Invalid object type");
-         }
-
-      objWriter.flush();
-      objWriter.close();
+         objWriter.flush();
+         objWriter.close();
+      }
+      catch (IOException ioe)
+      {
+         System.out.println("IOEXCEPTION");
+      }
+//       catch (FileNotFoundException fnfe)
+//       { 
+//          System.out.println("FILENOTFOUNDEXCEPTION");
+//       }
+      catch (Exception e)
+      {
+         System.out.print("Unknown Error");
+      }
    } 
 /**
 *  This method asks the user if a car or truck is to be ordered. Based on the user's
