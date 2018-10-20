@@ -219,8 +219,8 @@ public abstract class Vehicle implements Vinfo, Serializable
 */
    public String toString()
    {
-      return String.format("%s%n%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %.1f","",
-      "Model:",this.getVehicleModel(),this.getVehIs(),"","Color:", this.getVehicleColor(),"", "Cost:", 
+      return String.format("%s%n%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %.1f",this.getVehIs(),"",
+      "Model:",this.getVehicleModel(),"","Color:", this.getVehicleColor(),"", "Cost:", 
       this.getVehicleCost(),"","MPG/GPH:", this.gasMileage());
    }
 
