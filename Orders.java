@@ -78,8 +78,8 @@ public class Orders
          if (file.exists())
          {
             ObjectInputStream objReader = new ObjectInputStream(new BufferedInputStream(new FileInputStream("VehicleOrders.dat")));
-            Object data = objReader.readObject();
-            System.out.println(data);
+            ordersMade = (ArrayList)objReader.readObject();
+            System.out.println(ordersMade);
             objReader.close();
          }
          else
@@ -103,38 +103,7 @@ public class Orders
       try
       {
          ObjectOutputStream objWriter = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("VehicleOrders.dat")));
-         for (Object vehicle: ordersMade)
-         {
-            if (vehicle instanceof Car)
-            {
-               Car orderedCar = (Car)vehicle;
-               objWriter.writeObject(orderedCar); 
-            }
-            else if (vehicle instanceof Truck)
-            {
-               Truck orderedTruck = (Truck)vehicle;
-               objWriter.writeObject(orderedTruck);
-            }
-            else if (vehicle instanceof Boat)
-            {
-               Boat orderedBoat = (Boat)vehicle;
-               objWriter.writeObject(orderedBoat);
-            }
-            else if (vehicle instanceof MercedesBenz)
-            {
-               MercedesBenz orderedMbenz = (MercedesBenz)vehicle;
-               objWriter.writeObject(orderedMbenz);
-            }
-            else if (vehicle instanceof Sled)
-            {
-               Sled orderedSled = (Sled)vehicle;
-               objWriter.writeObject(orderedSled);
-            }
-            else
-            {
-               System.out.println("Invalid object type");
-            }
-         }
+         objWriter.writeObject(ordersMade);
          objWriter.flush();
          objWriter.close();
       }
