@@ -23,9 +23,10 @@ public class Orders
 */
    public Orders()
    {
+      loadOrders();
       placeOrder();
       printAllOrders();
-      saveOrders();
+//       saveOrders();
    }//end of Order Constructor
    
 /**
@@ -69,16 +70,32 @@ public class Orders
       System.out.println("Thank you for using Vijay Raj Saravanan's Ordering System.");
    }// end of printAllOrders() method
    
-//    public void loadOrder() 
-//    {
-//       File file = new File("VehicleOrders.dat");
-//       if (file.exists())
-//       {
-//          ObjectInputStream reader = new ObjectInputStream(new BufferedInputStream(new FileInputStream("VehicleOrders.dat")));
-//          reader.readObject();
-//       }
-//       
-//    }
+   public void loadOrders() 
+   {
+      try
+      {
+         File file = new File("VehicleOrders.dat");
+         if (file.exists())
+         {
+            ObjectInputStream objReader = new ObjectInputStream(new BufferedInputStream(new FileInputStream("VehicleOrders.dat")));
+            Object data = objReader.readObject();
+            System.out.println(data);
+         }
+         else
+         {
+            System.out.println("File not found");
+         }
+      }
+      catch (IOException ioe) 
+      {
+         System.out.println("IOEXCEPTION");
+      }
+      catch (Exception e)
+      {
+         System.out.println("UKNOWN");
+      }
+      
+   }
    
    public void saveOrders()
    {
@@ -124,10 +141,6 @@ public class Orders
       {
          System.out.println("IOEXCEPTION");
       }
-//       catch (FileNotFoundException fnfe)
-//       { 
-//          System.out.println("FILENOTFOUNDEXCEPTION");
-//       }
       catch (Exception e)
       {
          System.out.print("Unknown Error");

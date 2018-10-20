@@ -11,7 +11,7 @@
 */
 import java.util.*;
 import java.io.*;
-public abstract class Vehicle implements Vinfo
+public abstract class Vehicle implements Vinfo, Serializable
 {
    /** Stores the model of the vehicle */
    private String vehicleModel;
