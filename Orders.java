@@ -67,6 +67,55 @@ public class Orders
       System.out.println("Thank you for using Vijay Raj Saravanan's Ordering System.");
    }// end of printAllOrders() method
    
+//    public void loadOrder() 
+//    {
+//       File file = new File("VehicleOrders.dat");
+//       if (file.exists())
+//       {
+//          ObjectInputStream reader = new ObjectInputStream(new BufferedInputStream(new FileInputStream("VehicleOrders.dat")));
+//          reader.readObject();
+//       }
+//       
+//    }
+   
+   public void saveOrder()
+   {
+      ObjectOutputStream objWriter = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("VehicleOrders.dat")));
+      for (Object vehicle: ordersMade)
+      {
+         if (vehicle instanceof Car)
+         {
+            Car orderedCar = (Car)vehicle;
+            objWriter.writeObject(orderedCar); 
+         }
+         else if (vehicle instanceof Truck)
+         {
+            Truck orderedTruck = (Truck)vehicle;
+            objWriter.writeObject(orderedTruck);
+         }
+         else if (vehicle instanceof Boat)
+         {
+            Boat orderedBoat = (Boat)vehicle;
+            objWriter.writeObject(orderedBoat);
+         }
+         else if (vehicle instanceof MercedesBenz)
+         {
+            MercedesBenz orderedMbenz = (MercedesBenz)vehicle;
+            objWriter.writeObject(orderedMbenz);
+         }
+         else if (vehicle instanceof Sled)
+         {
+            Sled orderedSled = (Sled)vehicle;
+            objWriter.writeObject(orderedSled);
+         }
+         else
+         {
+            System.out.println("Invalid object type");
+         }
+
+      objWriter.flush();
+      objWriter.close();
+   } 
 /**
 *  This method asks the user if a car or truck is to be ordered. Based on the user's
 *  selection, it creates the respective object.
