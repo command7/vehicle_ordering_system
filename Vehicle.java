@@ -20,7 +20,7 @@ public abstract class Vehicle implements Vinfo, Serializable
    /** Stores the cost of the vehicle */
    private double vehicleCost;
    /** Scanner object to request user input */
-   Scanner scan = new Scanner(System.in);
+   transient Scanner scan = new Scanner(System.in);
    
    public Vehicle()
    {

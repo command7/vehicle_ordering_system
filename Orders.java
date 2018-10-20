@@ -26,7 +26,7 @@ public class Orders
       loadOrders();
       placeOrder();
       printAllOrders();
-//       saveOrders();
+      saveOrders();
    }//end of Order Constructor
    
 /**
@@ -80,6 +80,7 @@ public class Orders
             ObjectInputStream objReader = new ObjectInputStream(new BufferedInputStream(new FileInputStream("VehicleOrders.dat")));
             Object data = objReader.readObject();
             System.out.println(data);
+            objReader.close();
          }
          else
          {
@@ -88,7 +89,7 @@ public class Orders
       }
       catch (IOException ioe) 
       {
-         System.out.println("IOEXCEPTION");
+         ioe.printStackTrace();
       }
       catch (Exception e)
       {
@@ -139,7 +140,7 @@ public class Orders
       }
       catch (IOException ioe)
       {
-         System.out.println("IOEXCEPTION");
+         ioe.printStackTrace();
       }
       catch (Exception e)
       {
