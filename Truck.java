@@ -19,6 +19,7 @@ public class Truck extends Vehicle implements Serializable
    private int truckSize = -1;
    /** Stores the  index for engine size of the truck */
    private int engineSize = -1;
+   final static String VEHICLE_IS = "Truck";
    
 /**
 *  Constructor asks the details of the truck and stores them in respective
@@ -26,7 +27,7 @@ public class Truck extends Vehicle implements Serializable
 */
    public Truck()
    {
-      super();
+      super(VEHICLE_IS);
       truckSizeMenu();
       engineSizeMenu();
    }
@@ -115,7 +116,7 @@ public class Truck extends Vehicle implements Serializable
 */
    public String toString()
    {
-      return "Truck:\n" + super.toString() +String.format("%n%5s%-10s %s%n%5s%-10s %s%n"
+      return super.toString() +String.format("%n%5s%-10s %s%n%5s%-10s %s%n"
                            ,"", "Load:", this.getTruckSize(),"", "Engine:", this.getEngineSize());
    }//end of toString() method
 }// end class Truck

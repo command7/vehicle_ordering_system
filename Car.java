@@ -16,6 +16,7 @@ public class Car extends Vehicle implements Serializable
    private int carType = -1;
    /** Stores the index for whether towing package is included or not. */
    private int towingPackage = -1;
+   final static String VEHICLE_IS = "Car";
 
 /**
 *  Constructor uses methods to asks user for the model, color, cost, car type, towing package existence
@@ -23,7 +24,7 @@ public class Car extends Vehicle implements Serializable
 */
    public Car()
    {
-      super();
+      super(VEHICLE_IS);
       typeOfCarMenu();
       towingPackageMenu();   
    }//end of Car constructor
@@ -129,7 +130,7 @@ public class Car extends Vehicle implements Serializable
 */   
    public String toString()
    {
-      return "Car:\n" + super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n",
+      return super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n",
       "", "Type:", this.getCarType(),"", "Towing:", this.getTowingPackage());
    }//end of toString() method
 

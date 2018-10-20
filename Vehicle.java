@@ -21,10 +21,11 @@ public abstract class Vehicle implements Vinfo, Serializable
    private double vehicleCost;
    /** Scanner object to request user input */
    transient Scanner scan = new Scanner(System.in);
+   private String vehIs;
    
-   public Vehicle()
+   public Vehicle(String typeOfVehicle)
    {
-      generalDetailsMenu();
+      generalDetailsMenu(typeOfVehicle);
    }
    
 /**
@@ -51,6 +52,10 @@ public abstract class Vehicle implements Vinfo, Serializable
       return this.vehicleCost;
    }//end of getVehicleCost() method
    
+   public String getVehIs()
+   {
+      return this.vehIs;
+   }
 /**
 *  Mutator method that is used to set/modify the model of the vehicle.
 */
@@ -78,11 +83,15 @@ public abstract class Vehicle implements Vinfo, Serializable
       }      
    }//end of setVehicleCost() method
    
+   public void setVehIs(String _vehIs)
+   {
+      this.vehIs = _vehIs;
+   }
 /**
 *  Input method that is used to request general details such as model name, color,
 *  and cost of the vehicle from the user.
 */
-   public void generalDetailsMenu()
+   public void generalDetailsMenu(String typeOfVehicle)
    {
       while(true)
       {
@@ -148,7 +157,8 @@ public abstract class Vehicle implements Vinfo, Serializable
                System.out.println("Invalid Input");
                continue;
             }
-      }   
+      }
+      this.setVehIs(typeOfVehicle);   
    }//end of generalDetailsMenu() method
 
 
@@ -209,8 +219,8 @@ public abstract class Vehicle implements Vinfo, Serializable
 */
    public String toString()
    {
-      return String.format("%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %.1f","",
-      "Model:",this.getVehicleModel(),"","Color:", this.getVehicleColor(),"", "Cost:", 
+      return String.format("%s%n%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %.1f","",
+      "Model:",this.getVehicleModel(),this.getVehIs(),"","Color:", this.getVehicleColor(),"", "Cost:", 
       this.getVehicleCost(),"","MPG/GPH:", this.gasMileage());
    }
 

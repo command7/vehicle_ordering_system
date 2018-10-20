@@ -27,8 +27,54 @@ public class Orders
       placeOrder();
       printAllOrders();
       saveOrders();
+      //writeOutput();
    }//end of Order Constructor
    
+   
+  // public void writeOutput()
+//   {
+//       try
+//       {
+//          ObjectOutputStream writer = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("VehicleOrders.txt")));
+//          for (Object vehicle: ordersMade)
+//          {
+//             if (vehicle instanceof Car)
+//             {
+//                Car orderedCar = (Car)vehicle;
+//                writer.writeObject(orderedCar); 
+//             }
+// //             else if (vehicle instanceof Truck)
+// //             {
+// //                Truck orderedTruck = (Truck)vehicle;
+// //                System.out.println(orderedTruck);
+// //             }
+// //             else if (vehicle instanceof Boat)
+// //             {
+// //                Boat orderedBoat = (Boat)vehicle;
+// //                System.out.println(orderedBoat);
+// //             }
+// //             else if (vehicle instanceof MercedesBenz)
+// //             {
+// //                MercedesBenz orderedMbenz = (MercedesBenz)vehicle;
+// //                System.out.println(orderedMbenz);
+// //             }
+// //             else if (vehicle instanceof Sled)
+// //             {
+// //                Sled orderedSled = (Sled)vehicle;
+// //                System.out.println(orderedSled);
+// //             }
+// //             else
+// //             {
+// //                System.out.println("Invalid object type");
+// //             }
+//          }
+// 
+//       }
+//       catch (Exception e)
+//       {
+//          e.printStackTrace();
+//       }
+//   }
 /**
 *  This method loops through the Arraylist and prints out each object after checking 
 *  if it is a valid object.
@@ -79,7 +125,6 @@ public class Orders
          {
             ObjectInputStream objReader = new ObjectInputStream(new BufferedInputStream(new FileInputStream("VehicleOrders.dat")));
             ordersMade = (ArrayList)objReader.readObject();
-            System.out.println(ordersMade);
             objReader.close();
          }
          else

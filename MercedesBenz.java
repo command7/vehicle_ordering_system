@@ -18,6 +18,7 @@ public class MercedesBenz extends Vehicle implements Serializable
    private int typeOfFuel = -1;
    /** Stores the index of the type of drive */
    private int typeOfDrive = -1;
+   final static String VEHICLE_IS = "Mercedes Benz";
 
    
 /**
@@ -26,7 +27,7 @@ public class MercedesBenz extends Vehicle implements Serializable
 */
    public MercedesBenz ()
    {
-      super();
+      super(VEHICLE_IS);
       typeOfFuelMenu();
       typeOfDriveMenu();   
    }//end of constructor
@@ -132,7 +133,7 @@ public class MercedesBenz extends Vehicle implements Serializable
 */
    public String toString()
    {
-      return "Mercedes Benz:\n" + super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n",
+      return super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n",
       "", "Fuel Type:", this.getTypeOfFuel(),"", "Drive:", this.getTypeOfDrive());
    }//end of toString() method
    

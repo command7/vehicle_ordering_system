@@ -18,6 +18,7 @@ public class Boat extends Vehicle implements Serializable
    private int boatType = -1;
    /** Saves the index of construction type of the boat */
    private int boatConstruction = -1;
+   final static String VEHICLE_IS = "Boat";
    
 /**
 *  Constructor asks the details of the boat and stores them in respective
@@ -25,7 +26,7 @@ public class Boat extends Vehicle implements Serializable
 */
    public Boat()
    { 
-      super();
+      super(VEHICLE_IS);
       typeOfBoatMenu();
       boatConstructionMenu();
    }//end of constructor
@@ -124,7 +125,7 @@ public class Boat extends Vehicle implements Serializable
 */
    public String toString()
    {
-      return "Boat:\n" + super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n","", "Type:",
+      return super.toString() + String.format("%n%5s%-10s %s%n%5s%-10s %s%n","", "Type:",
       this.getBoatType(),"", "Made of:", this.getBoatConstruction());
    }//end of toString() method
    

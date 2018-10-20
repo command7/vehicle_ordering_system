@@ -20,10 +20,12 @@ public class Sled extends Vehicle implements Serializable
    private final static String[] CATEGORY = {"Inflatable Sled", "Toboggan", "Bobsled"};
    private final String ques1 = "What is this sled used for?";
    private final String ques2 = "What kind of sled is this?";
+   final static String VEHICLE_IS = "Sled";
    
    // Constructor
    public Sled(){
-      System.out.println("Entering Sled order:");  
+      //System.out.println("Entering Sled order:");
+      super(VEHICLE_IS);  
       //this.makeVehicle();
       this.setUse( USE[this.showMenu(ques1, USE)] ); 
       this.setCategory( CATEGORY[this.showMenu(ques2, CATEGORY)] );
@@ -68,7 +70,7 @@ public class Sled extends Vehicle implements Serializable
       a string that will be returned for printing
    */
    public String toString(){
-      String output = "Sled" + super.toString() + "\n   Use:      " + this.getUse() + "\n   Category: " + this.getCategory();
+      String output = super.toString() + "\n   Use:      " + this.getUse() + "\n   Category: " + this.getCategory();
       return output;
    } //end toString()
 }// Ends Sled Class
