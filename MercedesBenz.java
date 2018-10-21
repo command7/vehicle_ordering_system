@@ -12,7 +12,7 @@
 */
 
 import java.io.*;
-public class MercedesBenz extends Vehicle implements Serializable
+public class MercedesBenz extends Vehicle
 {
    /** Stores the index of the type of make  */
    private int typeOfFuel = -1;

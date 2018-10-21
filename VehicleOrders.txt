@@ -1,40 +1,24 @@
 Car
-     Model:     asdf
+     Model:     afd
      Color:     asfd
-     Cost:      $123.00
+     Cost:      $1234.00
      MPG/GPH:   20.7
      Type:      Sedan
      Towing:    Towing Package
 
-Boat
+Mercedes Benz
      Model:     asdf
      Color:     asdf
+     Cost:      $12000.00
+     MPG/GPH:   20.8
+     Fuel Type: Unleaded Petrol
+     Drive:     FWD
+
+Boat
+     Model:     ASF
+     Color:     ASD
      Cost:      $123.00
      MPG/GPH:   3.5
      Type:      Pontoon
      Made of:   Wood
-
-Mercedes Benz
-     Model:     asfd
-     Color:     asdf
-     Cost:      $123.00
-     MPG/GPH:   20.8
-     Fuel Type: Unleaded Petrol
-     Drive:     FWD
-
-Car
-     Model:     asfd
-     Color:     asfd
-     Cost:      $123.00
-     MPG/GPH:   20.7
-     Type:      Sedan
-     Towing:    Towing Package
-
-Mercedes Benz
-     Model:     last
-     Color:     one
-     Cost:      $1.00
-     MPG/GPH:   20.8
-     Fuel Type: Unleaded Petrol
-     Drive:     FWD
 

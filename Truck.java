@@ -13,7 +13,7 @@
 
 import java.util.*;
 import java.io.*;
-public class Truck extends Vehicle implements Serializable
+public class Truck extends Vehicle 
 {
    /** Stores the index for size of the truck. */
    private int truckSize = -1;

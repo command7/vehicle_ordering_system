@@ -10,7 +10,7 @@
 
 import java.util.*;
 import java.io.*;
-public class Car extends Vehicle implements Serializable
+public class Car extends Vehicle 
 {
    /** Stores the index for type of the car. */
    private int carType = -1;

@@ -12,7 +12,7 @@
 */
 
 import java.io.*;
-public class Boat extends Vehicle implements Serializable
+public class Boat extends Vehicle 
 {
    /** Saves the index of type of boat */
    private int boatType = -1;

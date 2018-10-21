@@ -11,7 +11,7 @@
 */
 
 import java.io.*;
-public class Sled extends Vehicle implements Serializable
+public class Sled extends Vehicle
 {
    // Attributes
    private String use;
