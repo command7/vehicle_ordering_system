@@ -175,7 +175,9 @@ public class Orders
    {
       String userInput =  null;
       System.out.println("Vijay Raj Saravanan Radhakrishnan");
-      System.out.println("Java for Programmers ISTE-200 2018-Fall");
+      System.out.println("218-01 Q:024");
+      System.out.println("Homework # 6");
+      System.out.println("Prof. Tanweer Alam\n");
       while(true)
       {
          System.out.print("Do you want to order a Truck (T/t) or Car (C/c) or Boat (B/b) or Mercedes Benz (M/m) or Sled (s/S)? ");
