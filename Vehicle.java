@@ -172,16 +172,20 @@ public abstract class Vehicle implements Vinfo, Serializable
    public int showMenu(String prompt, String [] choices)
    {
       System.out.println(prompt);
-      for (int i = 0; i<choices.length; i++)
-      {
-         System.out.println((i+1) + ". " + choices[i]);
-      }
+      // for (int i = 0; i<choices.length; i++)
+//       {
+//          System.out.println((i+1) + ". " + choices[i]);
+//       }
       boolean controlVar = true;
       int userInput = 0;
       do
       {
          try
          {
+            for (int i = 0; i<choices.length; i++)
+            {
+               System.out.println((i+1) + ". " + choices[i]);
+            }
             System.out.print(String.format("%5s%-5s","","Choice: "));
             userInput = scan.nextInt();
             scan.nextLine();
@@ -219,7 +223,8 @@ public abstract class Vehicle implements Vinfo, Serializable
 */
    public String toString()
    {
-      return String.format("%s%n%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %.1f",this.getVehIs(),"",
+      return String.format("%s%n%5s%-10s %s%n%5s%-10s %s%n%5s%-10s $%.2f%n%5s%-10s %.1f",this.getVehIs(),
+"",
       "Model:",this.getVehicleModel(),"","Color:", this.getVehicleColor(),"", "Cost:", 
       this.getVehicleCost(),"","MPG/GPH:", this.gasMileage());
    }

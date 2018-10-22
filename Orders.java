@@ -331,10 +331,9 @@ public class Orders
                   break;
                }
             }
-
             else
             {
-               System.out.println("Please enter a valid input");
+               System.out.println("Invalid vehicle type.\nTry again.");
                continue;
             }          
          }         
