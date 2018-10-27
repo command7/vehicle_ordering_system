@@ -12,6 +12,14 @@ public class OrdersScreen extends JFrame
    private JLabel modelLabel;
    private JComboBox modelComboBox;
    private JPanel comboBoxes = new JPanel();
+   private JPanel bottomButtons = new JPanel();
+   private JButton saveButton;
+   private JButton firstButton;
+   private JButton prevButton;
+   private JButton nextButton;
+   private JButton lastButton;
+   private JButton exitButton;
+   
    public OrdersScreen()
    {
       createFrame();
@@ -35,10 +43,30 @@ public class OrdersScreen extends JFrame
       this.add(modelLabel);
       this.add(modelComboBox);
       
+      saveButton = new JButton("SAVE");
+      firstButton = new JButton("FIRST");
+      prevButton = new JButton("PREV");
+      nextButton = new JButton("NEXT");
+      lastButton = new JButton("LAST");
+      exitButton = new JButton("Exit");
+      
+      //middle menus
       comboBoxes.setLayout(new FlowLayout(FlowLayout.CENTER));
       comboBoxes.add(vehicleTypeComboBox);
       comboBoxes.add(modelComboBox);
       this.add(comboBoxes,BorderLayout.EAST);
+      
+      //bottom Jpanel
+      bottomButtons.setLayout(new FlowLayout());
+      bottomButtons.add(saveButton);
+      bottomButtons.add(firstButton);
+      bottomButtons.add(prevButton);
+      bottomButtons.add(nextButton);
+      bottomButtons.add(lastButton);
+      bottomButtons.add(exitButton);
+      this.add(bottomButtons, BorderLayout.SOUTH);
+      
+      
       
       this.setTitle("Orders Screen");
       this.setSize(600,300);
