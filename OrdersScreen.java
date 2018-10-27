@@ -33,12 +33,12 @@ public class OrdersScreen extends JFrame implements ActionListener
    private JButton nextButton;
    private JButton lastButton;
    private JButton exitButton;
-   private JMenuBar menuBar = new JMenuBar();
-   private JMenu fileMenu = new JMenu("File");
-   private JMenu helpMenu = new JMenu("Help");
-   private JMenuItem loadMenuItem = new JMenuItem("Load");
-   private JMenuItem exitMenuItem = new JMenuItem("Exit");
-   private JMenuItem aboutMenuItem = new JMenuItem("About");
+   private JMenuBar menuBar;
+   private JMenu fileMenu;
+   private JMenu helpMenu;
+   private JMenuItem loadMenuItem;
+   private JMenuItem exitMenuItem;
+   private JMenuItem aboutMenuItem;
    
    public OrdersScreen()
    {
@@ -58,26 +58,32 @@ public class OrdersScreen extends JFrame implements ActionListener
       vehicleTypeComboBox.addActionListener(this);
       vehicleTypeComboBox.insertItemAt("", 0);
       vehicleTypeComboBox.setSelectedIndex(0);
+      vehicleTypeComboBox.setPreferredSize(new Dimension(250,20));
       
       modelLabel = new JLabel("Model", SwingConstants.RIGHT);
       modelComboBox = new JComboBox();
       modelLabel.setLabelFor(modelComboBox);
+      modelComboBox.setPreferredSize(new Dimension(250,20));
       
       colorLabel = new JLabel("Color", SwingConstants.RIGHT);
       colorComboBox = new JComboBox();
       colorLabel.setLabelFor(colorComboBox);
+      colorComboBox.setPreferredSize(new Dimension(250,20));
       
       costLabel = new JLabel("Cost", SwingConstants.RIGHT);
       costComboBox = new JComboBox();
       costLabel.setLabelFor(costComboBox);
+      costComboBox.setPreferredSize(new Dimension(250,20));
       
       optionOneLabel = new JLabel("", SwingConstants.RIGHT);
       optionOneComboBox = new JComboBox();
       optionOneLabel.setLabelFor(optionOneComboBox);
+      optionOneComboBox.setPreferredSize(new Dimension(250,20));
       
       optionTwoLabel = new JLabel("", SwingConstants.RIGHT);
       optionTwoComboBox = new JComboBox();
       optionTwoLabel.setLabelFor(optionTwoComboBox);
+      optionTwoComboBox.setPreferredSize(new Dimension(250,20));
  
       saveButton = new JButton("SAVE");
       firstButton = new JButton("FIRST");
@@ -86,6 +92,14 @@ public class OrdersScreen extends JFrame implements ActionListener
       lastButton = new JButton("LAST");
       exitButton = new JButton("Exit");
       exitButton.addActionListener(this);
+      
+      menuBar = new JMenuBar();
+      fileMenu = new JMenu("File");
+      helpMenu = new JMenu("Help");
+      loadMenuItem = new JMenuItem("Load");
+      exitMenuItem = new JMenuItem("Exit");
+      aboutMenuItem = new JMenuItem("About");
+      exitMenuItem.addActionListener(this);
       
       //menu
       this.setJMenuBar(menuBar);
@@ -128,7 +142,7 @@ public class OrdersScreen extends JFrame implements ActionListener
       comboContainer.add(optionOneComboContainer);
       comboContainer.add(optionTwoComboContainer);
       comboContainer.setPreferredSize(new Dimension(350,400));
-      this.add(comboContainer, BorderLayout.CENTER);
+      this.add(comboContainer, BorderLayout.EAST);
       
       //bottom Jpanel
       bottomButtons.setLayout(new FlowLayout());
@@ -138,12 +152,10 @@ public class OrdersScreen extends JFrame implements ActionListener
       bottomButtons.add(nextButton);
       bottomButtons.add(lastButton);
       bottomButtons.add(exitButton);
-      this.add(bottomButtons, BorderLayout.SOUTH);
-         
-      exitMenuItem.addActionListener(this);   
+      this.add(bottomButtons, BorderLayout.SOUTH);   
          
       this.setTitle("Orders Screen");
-      this.setSize(600,300);
+      this.setSize(600,400);
       this.setVisible(true);
       this.setDefaultCloseOperation(this.EXIT_ON_CLOSE); 
    }
