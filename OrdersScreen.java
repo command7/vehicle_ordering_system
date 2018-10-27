@@ -15,8 +15,10 @@ public class OrdersScreen extends JFrame
    private JComboBox colorComboBox;
    private JLabel costLabel;
    private JComboBox costComboBox;
-   private JPanel comboBoxOne = new JPanel();
-   private JPanel comboBoxTwo = new JPanel();
+   private JPanel typeComboContainer = new JPanel();
+   private JPanel modelComboContainer = new JPanel();
+   private JPanel colorComboContainer = new JPanel();
+   private JPanel costComboContainer = new JPanel();
    private JPanel comboContainer = new JPanel();
    private JPanel bottomButtons = new JPanel();
    private JButton saveButton;
@@ -64,22 +66,32 @@ public class OrdersScreen extends JFrame
       exitButton = new JButton("Exit");
       
       //middle menus
-      comboBoxOne.setLayout(new FlowLayout(FlowLayout.LEFT));
-      comboBoxOne.add(vehicleTypeLabel);
-      comboBoxOne.add(vehicleTypeComboBox);
+      typeComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
+      typeComboContainer.add(vehicleTypeLabel);
+      typeComboContainer.add(vehicleTypeComboBox);
       
-      comboBoxTwo.setLayout(new FlowLayout(FlowLayout.LEFT));
-      comboBoxTwo.add(modelLabel);
-      comboBoxTwo.add(modelComboBox);
+      modelComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
+      modelComboContainer.add(modelLabel);
+      modelComboContainer.add(modelComboBox);
+      
+      colorComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
+      colorComboContainer.add(colorLabel);
+      colorComboContainer.add(colorComboBox);
+      
+      costComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
+      costComboContainer.add(costLabel);
+      costComboContainer.add(costComboBox);
       // comboBoxes.add(colorLabel);
 //       comboBoxes.add(colorComboBox);
 //       comboBoxes.add(costLabel);
 //       comboBoxes.add(costComboBox);
       
-      comboContainer.setLayout(new FlowLayout(FlowLayout.LEFT));
-      comboContainer.add(comboBoxOne);
-      comboContainer.add(comboBoxTwo);
-      comboContainer.setPreferredSize(new Dimension(280,400));
+      comboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
+      comboContainer.add(typeComboContainer);
+      comboContainer.add(modelComboContainer);
+      comboContainer.add(colorComboContainer);
+      comboContainer.add(costComboContainer);
+      comboContainer.setPreferredSize(new Dimension(350,400));
       this.add(comboContainer, BorderLayout.EAST);
       
       //bottom Jpanel
