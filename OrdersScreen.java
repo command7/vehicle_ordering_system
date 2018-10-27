@@ -151,12 +151,59 @@ public class OrdersScreen extends JFrame implements ActionListener
          switch(vehicleTypeSelection) 
          {
             case "Truck":
-               modelComboBox.addItem("");
+               optionOneLabel.setText("Truck size");
+               optionOneComboBox.removeAllItems();
+               optionOneComboBox.addItem("Half Ton");
+               optionOneComboBox.addItem("Full Ton");
+               optionTwoLabel.setText("Engine size");
+               optionTwoComboBox.removeAllItems();
+               optionTwoComboBox.addItem("1000cc");
+               optionTwoComboBox.addItem("2000cc");
                break;
             case "Car":
+               optionOneLabel.setText("Car type");
+               optionOneComboBox.removeAllItems();
+               optionOneComboBox.addItem("Sedan");
+               optionOneComboBox.addItem("Coupe");
+               optionOneComboBox.addItem("Wagon");
+               optionTwoLabel.setText("Towing");
+               optionTwoComboBox.removeAllItems();
+               optionTwoComboBox.addItem("Towing package");
+               optionTwoComboBox.addItem("No towing package");
+               break;
             case "Sled":
+               optionOneLabel.setText("Sled purpose");
+               optionOneComboBox.removeAllItems();
+               optionOneComboBox.addItem("Recreational Sledding");
+               optionOneComboBox.addItem("Competitive Sledding");
+               optionTwoLabel.setText("Sled type");
+               optionTwoComboBox.removeAllItems();
+               optionTwoComboBox.addItem("Inflatable Sled");
+               optionTwoComboBox.addItem("Toboggan");
+               optionTwoComboBox.addItem("Bob Sled");
+               break;
             case "Boat":
+               optionOneLabel.setText("Type of boat");
+               optionOneComboBox.removeAllItems();
+               optionOneComboBox.addItem("Pontoon");
+               optionOneComboBox.addItem("PWC");
+               optionOneComboBox.addItem("Sailboat");
+               optionTwoLabel.setText("Construction type");
+               optionTwoComboBox.removeAllItems();
+               optionTwoComboBox.addItem("Wood");
+               optionTwoComboBox.addItem("Fiberglass");
+               optionTwoComboBox.addItem("Steel");
+               break;
             case "Mercedes Benz":
+               optionOneLabel.setText("Fuel type");
+               optionOneComboBox.removeAllItems();
+               optionOneComboBox.addItem("Unleaded Petrol");
+               optionOneComboBox.addItem("Diesel");
+               optionTwoLabel.setText("Type of Drive");
+               optionTwoComboBox.removeAllItems();
+               optionTwoComboBox.addItem("FWD");
+               optionTwoComboBox.addItem("4Matic");
+               break;
             default:
          }
       }
