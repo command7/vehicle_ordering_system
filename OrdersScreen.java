@@ -11,6 +11,10 @@ public class OrdersScreen extends JFrame
    private JComboBox vehicleTypeComboBox;
    private JLabel modelLabel;
    private JComboBox modelComboBox;
+   private JLabel colorLabel;
+   private JComboBox colorComboBox;
+   private JLabel costLabel;
+   private JComboBox costComboBox;
    private JPanel comboBoxes = new JPanel();
    private JPanel bottomButtons = new JPanel();
    private JButton saveButton;
@@ -35,15 +39,21 @@ public class OrdersScreen extends JFrame
 
       vehicleTypeLabel = new JLabel("Vehicle Type", SwingConstants.RIGHT);
       vehicleTypeComboBox = new JComboBox(vehicleTypes);
-      this.add(vehicleTypeLabel);
-      this.add(vehicleTypeComboBox);
+
       
-      modelLabel = new JLabel("Vehicle Type", SwingConstants.RIGHT);
+      modelLabel = new JLabel("Model", SwingConstants.RIGHT);
       modelComboBox = new JComboBox(vehicleTypes);
       modelLabel.setLabelFor(modelComboBox);
-      this.add(modelLabel);
-      this.add(modelComboBox);
+
       
+      colorLabel = new JLabel("Color", SwingConstants.RIGHT);
+      colorComboBox = new JComboBox(vehicleTypes);
+      colorLabel.setLabelFor(colorComboBox);
+      
+      costLabel = new JLabel("Cost", SwingConstants.RIGHT);
+      costComboBox = new JComboBox(vehicleTypes);
+      costLabel.setLabelFor(costComboBox);
+ 
       saveButton = new JButton("SAVE");
       firstButton = new JButton("FIRST");
       prevButton = new JButton("PREV");
@@ -53,8 +63,15 @@ public class OrdersScreen extends JFrame
       
       //middle menus
       comboBoxes.setLayout(new FlowLayout(FlowLayout.CENTER));
+      comboBoxes.add(vehicleTypeLabel);
       comboBoxes.add(vehicleTypeComboBox);
+      comboBoxes.add(modelLabel);
       comboBoxes.add(modelComboBox);
+      comboBoxes.add(colorLabel);
+      comboBoxes.add(colorComboBox);
+      comboBoxes.add(costLabel);
+      comboBoxes.add(costComboBox);
+      comboBoxes.setPreferredSize(new Dimension(280,400));
       this.add(comboBoxes,BorderLayout.EAST);
       
       //bottom Jpanel
