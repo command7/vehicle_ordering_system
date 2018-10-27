@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class OrdersScreen extends JFrame
+public class OrdersScreen extends JFrame implements ActionListener
 {
    private String [] vehicleTypes = {"Car", "Boat", "Truck", "Sled", "Mercedes Benz"};
    
@@ -15,12 +15,18 @@ public class OrdersScreen extends JFrame
    private JComboBox colorComboBox;
    private JLabel costLabel;
    private JComboBox costComboBox;
+   private JLabel optionOneLabel;
+   private JComboBox optionOneComboBox;
+   private JLabel optionTwoLabel;
+   private JComboBox optionTwoComboBox;
    private JPanel typeComboContainer = new JPanel();
    private JPanel modelComboContainer = new JPanel();
    private JPanel colorComboContainer = new JPanel();
    private JPanel costComboContainer = new JPanel();
    private JPanel comboContainer = new JPanel();
    private JPanel bottomButtons = new JPanel();
+   private JPanel optionOneComboContainer = new JPanel();
+   private JPanel optionTwoComboContainer = new JPanel();
    private JButton saveButton;
    private JButton firstButton;
    private JButton prevButton;
@@ -49,20 +55,27 @@ public class OrdersScreen extends JFrame
 
       vehicleTypeLabel = new JLabel("Vehicle Type", SwingConstants.RIGHT);
       vehicleTypeComboBox = new JComboBox(vehicleTypes);
-
+      vehicleTypeComboBox.addActionListener(this);
       
       modelLabel = new JLabel("Model", SwingConstants.RIGHT);
-      modelComboBox = new JComboBox(vehicleTypes);
+      modelComboBox = new JComboBox();
       modelLabel.setLabelFor(modelComboBox);
-
       
       colorLabel = new JLabel("Color", SwingConstants.RIGHT);
-      colorComboBox = new JComboBox(vehicleTypes);
+      colorComboBox = new JComboBox();
       colorLabel.setLabelFor(colorComboBox);
       
       costLabel = new JLabel("Cost", SwingConstants.RIGHT);
-      costComboBox = new JComboBox(vehicleTypes);
+      costComboBox = new JComboBox();
       costLabel.setLabelFor(costComboBox);
+      
+      optionOneLabel = new JLabel("", SwingConstants.RIGHT);
+      optionOneComboBox = new JComboBox();
+      optionOneLabel.setLabelFor(optionOneComboBox);
+      
+      optionTwoLabel = new JLabel("", SwingConstants.RIGHT);
+      optionTwoComboBox = new JComboBox();
+      optionTwoLabel.setLabelFor(optionTwoComboBox);
  
       saveButton = new JButton("SAVE");
       firstButton = new JButton("FIRST");
@@ -96,11 +109,21 @@ public class OrdersScreen extends JFrame
       costComboContainer.add(costLabel);
       costComboContainer.add(costComboBox);
       
+      optionOneComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
+      optionOneComboContainer.add(optionOneLabel);
+      optionOneComboContainer.add(optionOneComboBox);
+      
+      optionTwoComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
+      optionTwoComboContainer.add(optionTwoLabel);
+      optionTwoComboContainer.add(optionTwoComboBox);
+      
       comboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
       comboContainer.add(typeComboContainer);
       comboContainer.add(modelComboContainer);
       comboContainer.add(colorComboContainer);
       comboContainer.add(costComboContainer);
+      comboContainer.add(optionOneComboContainer);
+      comboContainer.add(optionTwoComboContainer);
       comboContainer.setPreferredSize(new Dimension(350,400));
       this.add(comboContainer, BorderLayout.CENTER);
       
@@ -113,17 +136,30 @@ public class OrdersScreen extends JFrame
       bottomButtons.add(lastButton);
       bottomButtons.add(exitButton);
       this.add(bottomButtons, BorderLayout.SOUTH);
-      
-      
-      
+         
       this.setTitle("Orders Screen");
       this.setSize(600,300);
       this.setVisible(true);
-      this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
-
-      
-      
-      
+      this.setDefaultCloseOperation(this.EXIT_ON_CLOSE); 
+   }
+   
+   public void actionPerformed(ActionEvent ae) 
+   {
+      if (ae.getSource() == vehicleTypeComboBox)
+      {
+         String vehicleTypeSelection  = vehicleTypeComboBox.getSelectedItem().toString();
+         switch(vehicleTypeSelection) 
+         {
+            case "Truck":
+               modelComboBox.addItem("");
+               break;
+            case "Car":
+            case "Sled":
+            case "Boat":
+            case "Mercedes Benz":
+            default:
+         }
+      }
    }
    public static void main(String [] args) 
    {
