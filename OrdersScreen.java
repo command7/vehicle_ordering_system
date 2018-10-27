@@ -29,7 +29,7 @@ public class OrdersScreen extends JFrame
    {
       this.setLayout(new BorderLayout());
             
-      String headerText = "<html><b><font color='red' size=5>Student Management System</font><b></html>";
+      String headerText = "<html><b><font color='red' size=5>Vijay Raj Saravanan's Ordering System</font><b></html>";
   		windowHeader = new JLabel(headerText, SwingConstants.CENTER);
       this.add(windowHeader, BorderLayout.NORTH);
 
@@ -40,6 +40,7 @@ public class OrdersScreen extends JFrame
       
       modelLabel = new JLabel("Vehicle Type", SwingConstants.RIGHT);
       modelComboBox = new JComboBox(vehicleTypes);
+      modelLabel.setLabelFor(modelComboBox);
       this.add(modelLabel);
       this.add(modelComboBox);
       
