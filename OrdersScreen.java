@@ -27,6 +27,12 @@ public class OrdersScreen extends JFrame
    private JButton nextButton;
    private JButton lastButton;
    private JButton exitButton;
+   private JMenuBar menuBar = new JMenuBar();
+   private JMenu fileMenu = new JMenu("File");
+   private JMenu helpMenu = new JMenu("Help");
+   private JMenuItem loadMenuItem = new JMenuItem("Load");
+   private JMenuItem exitMenuItem = new JMenuItem("Exit");
+   private JMenuItem aboutMenuItem = new JMenuItem("About");
    
    public OrdersScreen()
    {
@@ -65,6 +71,14 @@ public class OrdersScreen extends JFrame
       lastButton = new JButton("LAST");
       exitButton = new JButton("Exit");
       
+      //menu
+      this.setJMenuBar(menuBar);
+      menuBar.add(fileMenu);
+      menuBar.add(helpMenu);
+      fileMenu.add(loadMenuItem);
+      fileMenu.add(exitMenuItem);
+      helpMenu.add(aboutMenuItem);
+      
       //middle menus
       typeComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
       typeComboContainer.add(vehicleTypeLabel);
@@ -81,10 +95,6 @@ public class OrdersScreen extends JFrame
       costComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
       costComboContainer.add(costLabel);
       costComboContainer.add(costComboBox);
-      // comboBoxes.add(colorLabel);
-//       comboBoxes.add(colorComboBox);
-//       comboBoxes.add(costLabel);
-//       comboBoxes.add(costComboBox);
       
       comboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
       comboContainer.add(typeComboContainer);
@@ -92,7 +102,7 @@ public class OrdersScreen extends JFrame
       comboContainer.add(colorComboContainer);
       comboContainer.add(costComboContainer);
       comboContainer.setPreferredSize(new Dimension(350,400));
-      this.add(comboContainer, BorderLayout.EAST);
+      this.add(comboContainer, BorderLayout.CENTER);
       
       //bottom Jpanel
       bottomButtons.setLayout(new FlowLayout());
