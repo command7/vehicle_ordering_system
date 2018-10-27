@@ -15,7 +15,9 @@ public class OrdersScreen extends JFrame
    private JComboBox colorComboBox;
    private JLabel costLabel;
    private JComboBox costComboBox;
-   private JPanel comboBoxes = new JPanel();
+   private JPanel comboBoxOne = new JPanel();
+   private JPanel comboBoxTwo = new JPanel();
+   private JPanel comboContainer = new JPanel();
    private JPanel bottomButtons = new JPanel();
    private JButton saveButton;
    private JButton firstButton;
@@ -62,17 +64,23 @@ public class OrdersScreen extends JFrame
       exitButton = new JButton("Exit");
       
       //middle menus
-      comboBoxes.setLayout(new FlowLayout(FlowLayout.CENTER));
-      comboBoxes.add(vehicleTypeLabel);
-      comboBoxes.add(vehicleTypeComboBox);
-      comboBoxes.add(modelLabel);
-      comboBoxes.add(modelComboBox);
-      comboBoxes.add(colorLabel);
-      comboBoxes.add(colorComboBox);
-      comboBoxes.add(costLabel);
-      comboBoxes.add(costComboBox);
-      comboBoxes.setPreferredSize(new Dimension(280,400));
-      this.add(comboBoxes,BorderLayout.EAST);
+      comboBoxOne.setLayout(new FlowLayout(FlowLayout.LEFT));
+      comboBoxOne.add(vehicleTypeLabel);
+      comboBoxOne.add(vehicleTypeComboBox);
+      
+      comboBoxTwo.setLayout(new FlowLayout(FlowLayout.LEFT));
+      comboBoxTwo.add(modelLabel);
+      comboBoxTwo.add(modelComboBox);
+      // comboBoxes.add(colorLabel);
+//       comboBoxes.add(colorComboBox);
+//       comboBoxes.add(costLabel);
+//       comboBoxes.add(costComboBox);
+      
+      comboContainer.setLayout(new FlowLayout(FlowLayout.LEFT));
+      comboContainer.add(comboBoxOne);
+      comboContainer.add(comboBoxTwo);
+      comboContainer.setPreferredSize(new Dimension(280,400));
+      this.add(comboContainer, BorderLayout.EAST);
       
       //bottom Jpanel
       bottomButtons.setLayout(new FlowLayout());
