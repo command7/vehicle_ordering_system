@@ -56,6 +56,8 @@ public class OrdersScreen extends JFrame implements ActionListener
       vehicleTypeLabel = new JLabel("Vehicle Type", SwingConstants.RIGHT);
       vehicleTypeComboBox = new JComboBox(vehicleTypes);
       vehicleTypeComboBox.addActionListener(this);
+      vehicleTypeComboBox.insertItemAt("", 0);
+      vehicleTypeComboBox.setSelectedIndex(0);
       
       modelLabel = new JLabel("Model", SwingConstants.RIGHT);
       modelComboBox = new JComboBox();
@@ -205,6 +207,7 @@ public class OrdersScreen extends JFrame implements ActionListener
                optionTwoComboBox.addItem("4Matic");
                break;
             default:
+               break;
          }
       }
    }
