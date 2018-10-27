@@ -85,6 +85,7 @@ public class OrdersScreen extends JFrame implements ActionListener
       nextButton = new JButton("NEXT");
       lastButton = new JButton("LAST");
       exitButton = new JButton("Exit");
+      exitButton.addActionListener(this);
       
       //menu
       this.setJMenuBar(menuBar);
@@ -138,6 +139,8 @@ public class OrdersScreen extends JFrame implements ActionListener
       bottomButtons.add(lastButton);
       bottomButtons.add(exitButton);
       this.add(bottomButtons, BorderLayout.SOUTH);
+         
+      exitMenuItem.addActionListener(this);   
          
       this.setTitle("Orders Screen");
       this.setSize(600,300);
@@ -209,6 +212,14 @@ public class OrdersScreen extends JFrame implements ActionListener
             default:
                break;
          }
+      }
+      if (ae.getSource() == exitButton)
+      {
+         System.exit(0);
+      }
+      if (ae.getSource() == exitMenuItem)
+      {
+         System.exit(1);
       }
    }
    public static void main(String [] args) 
