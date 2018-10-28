@@ -216,14 +216,21 @@ public class OrdersScreen extends JFrame implements ActionListener
                }
                break;
             case "Mercedes Benz":
-               optionOneLabel.setText("Fuel type");
+               optionOneOptions = MercedesBenz.getFuelTypeOptions();
+               optionTwoOptions = MercedesBenz.getDriveTypeOptions();
+               attributeLabels = MercedesBenz.getAttributeLabels();
+               optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               optionOneComboBox.addItem("Unleaded Petrol");
-               optionOneComboBox.addItem("Diesel");
-               optionTwoLabel.setText("Type of Drive");
+               for (String fuelType : optionOneOptions) 
+               {
+                  optionOneComboBox.addItem(fuelType);
+               }
+               optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               optionTwoComboBox.addItem("FWD");
-               optionTwoComboBox.addItem("4Matic");
+               for (String driveType : optionTwoOptions)
+               {
+                  optionTwoComboBox.addItem(driveType);
+               }
                break;
             default:
                break;

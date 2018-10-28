@@ -43,6 +43,7 @@ public interface Vinfo {
    final static double BENZ_AWD_MILEAGE_REDUCTION = 2.0;
    /** Calculates and returns the Mileage of a vehicle */
 	public abstract double gasMileage();
+   final static String [] MBENZ_ATTRIBUTE_LABELS = {"Type of fuel", "Type of drive"};
    
    final static String [] SLED_ATTRIBUTE_LABELS = {"Used for", "Type of sled"};
 }

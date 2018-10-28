@@ -110,6 +110,21 @@ public class MercedesBenz extends Vehicle
       return mileage;
    }//end of gasMileage() method
    
+   public static String[] getFuelTypeOptions()
+   {
+      return FUEL_TYPES;
+   }
+   
+   public static String[] getDriveTypeOptions()
+   {
+      return ALL_DRIVES;
+   }
+   
+   public static String[] getAttributeLabels()
+   {
+      return MBENZ_ATTRIBUTE_LABELS;
+   }
+
 /**
 *  Input method used to request the type of make from the user
 *  and store it in respective variables.
