@@ -82,6 +82,21 @@ public class Car extends Vehicle
      
    }//end of setTowingPackage() method
          
+   public static String[] getCarTypeOptions()
+   {
+      return TYPES_OF_CARS;
+   }
+   
+   public static String[] getTowingOptions()
+   {
+      return TOWING_CAPABILITY;
+   }
+   
+   public static String[] getAttributeLabels()
+   {
+      return CAR_ATTRIBUTE_LABELS;
+   }
+
 /**
 *  Input method that requests user for the type of car and stores 
 *  in respective variable.

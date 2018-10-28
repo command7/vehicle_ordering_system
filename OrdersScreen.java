@@ -165,15 +165,21 @@ public class OrdersScreen extends JFrame implements ActionListener
                }
                break;
             case "Car":
-               optionOneLabel.setText("Car type");
+               optionOneOptions = Car.getCarTypeOptions();
+               optionTwoOptions = Car.getTowingOptions();
+               attributeLabels = Car.getAttributeLabels();
+               optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               optionOneComboBox.addItem("Sedan");
-               optionOneComboBox.addItem("Coupe");
-               optionOneComboBox.addItem("Wagon");
-               optionTwoLabel.setText("Towing");
+               for (String carType : optionOneOptions) 
+               {
+                  optionOneComboBox.addItem(carType);
+               }
+               optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               optionTwoComboBox.addItem("Towing package");
-               optionTwoComboBox.addItem("No towing package");
+               for (String towing : optionTwoOptions)
+               {
+                  optionTwoComboBox.addItem(towing);
+               }
                break;
             case "Sled":
                optionOneOptions = Sled.getSledUseOptions();

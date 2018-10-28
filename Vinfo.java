@@ -11,6 +11,7 @@ public interface Vinfo {
    final static double WAGON_MPG = 19.5;
    /** Mileage that is to be deducted if the car has towing capability */
    final static double TOWING_MPG_REDUCTION = 3;
+   static final String [] CAR_ATTRIBUTE_LABELS = {"Type of car", "Towing package"};
    
    /** Stores various sizes of truck as menu options for the user to select from */ 
    static final String [] ALL_TRUCK_SIZES = {"Half-ton", "Full ton"};
