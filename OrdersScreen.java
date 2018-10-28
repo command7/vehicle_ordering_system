@@ -19,14 +19,8 @@ public class OrdersScreen extends JFrame implements ActionListener
    private JComboBox optionOneComboBox;
    private JLabel optionTwoLabel;
    private JComboBox optionTwoComboBox;
-   private JPanel typeComboContainer = new JPanel();
-   private JPanel modelComboContainer = new JPanel();
-   private JPanel colorComboContainer = new JPanel();
-   private JPanel costComboContainer = new JPanel();
    private JPanel comboContainer = new JPanel();
    private JPanel bottomButtons = new JPanel();
-   private JPanel optionOneComboContainer = new JPanel();
-   private JPanel optionTwoComboContainer = new JPanel();
    private JButton saveButton;
    private JButton firstButton;
    private JButton prevButton;
@@ -110,30 +104,6 @@ public class OrdersScreen extends JFrame implements ActionListener
       helpMenu.add(aboutMenuItem);
       
       //middle menus
-      typeComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
-      typeComboContainer.add(vehicleTypeLabel);
-      typeComboContainer.add(vehicleTypeComboBox);
-      
-      modelComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
-      modelComboContainer.add(modelLabel);
-      modelComboContainer.add(modelComboBox);
-      
-      colorComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
-      colorComboContainer.add(colorLabel);
-      colorComboContainer.add(colorComboBox);
-      
-      costComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
-      costComboContainer.add(costLabel);
-      costComboContainer.add(costComboBox);
-      
-      optionOneComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
-      optionOneComboContainer.add(optionOneLabel);
-      optionOneComboContainer.add(optionOneComboBox);
-      
-      optionTwoComboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
-      optionTwoComboContainer.add(optionTwoLabel);
-      optionTwoComboContainer.add(optionTwoComboBox);
-      
       comboContainer.setLayout(new GridLayout(0,2));
       comboContainer.add(vehicleTypeLabel);
       comboContainer.add(vehicleTypeComboBox);
