@@ -31,6 +31,22 @@ public class Boat extends Vehicle
       boatConstructionMenu();
    }//end of constructor
    
+   
+   public static String[] getBoatTypeOptions()
+   {
+      return TYPES_OF_BOATS;
+   }
+   
+   public static String[] getBoatConstructionOptions()
+   {
+      return TYPES_OF_BOAT_CONSTRUCTION;
+   }
+   
+   public static String[] getAttributeLabels()
+   {
+      return BOAT_ATTRIBUTE_LABELS;
+   }
+
 /**
 *  Accessor method that returns the type of the boat.
 */

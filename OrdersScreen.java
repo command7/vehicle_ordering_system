@@ -193,16 +193,21 @@ public class OrdersScreen extends JFrame implements ActionListener
                }
                break;
             case "Boat":
-               optionOneLabel.setText("Type of boat");
+               optionOneOptions = Boat.getBoatTypeOptions();
+               optionTwoOptions = Boat.getBoatConstructionOptions();
+               attributeLabels = Boat.getAttributeLabels();
+               optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               optionOneComboBox.addItem("Pontoon");
-               optionOneComboBox.addItem("PWC");
-               optionOneComboBox.addItem("Sailboat");
-               optionTwoLabel.setText("Construction type");
+               for (String boatType : optionOneOptions) 
+               {
+                  optionOneComboBox.addItem(boatType);
+               }
+               optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               optionTwoComboBox.addItem("Wood");
-               optionTwoComboBox.addItem("Fiberglass");
-               optionTwoComboBox.addItem("Steel");
+               for (String boatConstruction : optionTwoOptions)
+               {
+                  optionTwoComboBox.addItem(boatConstruction);
+               }
                break;
             case "Mercedes Benz":
                optionOneLabel.setText("Fuel type");

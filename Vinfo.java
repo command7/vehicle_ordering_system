@@ -28,6 +28,7 @@ public interface Vinfo {
    final static double PWC_MPG = 2.2;
    /** Mileage of a SailBoat */
    final static double SAIL_BOAT_MPG = 0;
+   static final String [] BOAT_ATTRIBUTE_LABELS = {"Type of boat", "Construction"};
    
    /** Contains all options of makes for Mercedes Benz */
    final static String [] FUEL_TYPES = {"Unleaded Petrol", "Diesel"};
