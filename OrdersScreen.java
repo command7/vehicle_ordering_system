@@ -10,11 +10,11 @@ public class OrdersScreen extends JFrame implements ActionListener
    private JLabel windowHeader;
    private JComboBox vehicleTypeComboBox;
    private JLabel modelLabel;
-   private JComboBox modelComboBox;
+   private JTextField modelTextField;
    private JLabel colorLabel;
-   private JComboBox colorComboBox;
+   private JTextField colorTextField;
    private JLabel costLabel;
-   private JComboBox costComboBox;
+   private JTextField costTextField;
    private JLabel optionOneLabel;
    private JComboBox optionOneComboBox;
    private JLabel optionTwoLabel;
@@ -55,19 +55,19 @@ public class OrdersScreen extends JFrame implements ActionListener
       vehicleTypeComboBox.setPreferredSize(new Dimension(250,20));
       
       modelLabel = new JLabel("Model", SwingConstants.RIGHT);
-      modelComboBox = new JComboBox();
-      modelLabel.setLabelFor(modelComboBox);
-      modelComboBox.setPreferredSize(new Dimension(250,20));
+      modelTextField = new JTextField();
+      modelLabel.setLabelFor(modelTextField);
+      //modelTextField.setMaximumSize(new Dimension(250,10));
       
       colorLabel = new JLabel("Color", SwingConstants.RIGHT);
-      colorComboBox = new JComboBox();
-      colorLabel.setLabelFor(colorComboBox);
-      colorComboBox.setPreferredSize(new Dimension(250,20));
+      colorTextField = new JTextField();
+      colorLabel.setLabelFor(colorTextField);
+     // colorTextField.setPreferredSize(new Dimension(250,20));
       
       costLabel = new JLabel("Cost", SwingConstants.RIGHT);
-      costComboBox = new JComboBox();
-      costLabel.setLabelFor(costComboBox);
-      costComboBox.setPreferredSize(new Dimension(250,20));
+      costTextField = new JTextField();
+      costLabel.setLabelFor(costTextField);
+      //costTextField.setPreferredSize(new Dimension(250,20));
       
       optionOneLabel = new JLabel("", SwingConstants.RIGHT);
       optionOneComboBox = new JComboBox();
@@ -108,9 +108,11 @@ public class OrdersScreen extends JFrame implements ActionListener
       comboContainer.add(vehicleTypeLabel);
       comboContainer.add(vehicleTypeComboBox);
       comboContainer.add(modelLabel);
-      comboContainer.add(modelComboBox);
+      comboContainer.add(modelTextField);
       comboContainer.add(colorLabel);
-      comboContainer.add(colorComboBox);
+      comboContainer.add(colorTextField);
+      comboContainer.add(costLabel);
+      comboContainer.add(costTextField);
       comboContainer.add(optionOneLabel);
       comboContainer.add(optionOneComboBox);
       comboContainer.add(optionTwoLabel);
