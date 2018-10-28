@@ -134,15 +134,19 @@ public class OrdersScreen extends JFrame implements ActionListener
       optionTwoComboContainer.add(optionTwoLabel);
       optionTwoComboContainer.add(optionTwoComboBox);
       
-      comboContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
-      comboContainer.add(typeComboContainer);
-      comboContainer.add(modelComboContainer);
-      comboContainer.add(colorComboContainer);
-      comboContainer.add(costComboContainer);
-      comboContainer.add(optionOneComboContainer);
-      comboContainer.add(optionTwoComboContainer);
-      comboContainer.setPreferredSize(new Dimension(350,400));
-      this.add(comboContainer, BorderLayout.EAST);
+      comboContainer.setLayout(new GridLayout(0,2));
+      comboContainer.add(vehicleTypeLabel);
+      comboContainer.add(vehicleTypeComboBox);
+      comboContainer.add(modelLabel);
+      comboContainer.add(modelComboBox);
+      comboContainer.add(colorLabel);
+      comboContainer.add(colorComboBox);
+      comboContainer.add(optionOneLabel);
+      comboContainer.add(optionOneComboBox);
+      comboContainer.add(optionTwoLabel);
+      comboContainer.add(optionTwoComboBox);
+      //comboContainer.setPreferredSize(new Dimension(350,400));
+      this.add(comboContainer, BorderLayout.CENTER);
       
       //bottom Jpanel
       bottomButtons.setLayout(new FlowLayout());
