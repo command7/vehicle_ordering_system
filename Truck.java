@@ -20,6 +20,7 @@ public class Truck extends Vehicle
    /** Stores the  index for engine size of the truck */
    private int engineSize = -1;
    final static String VEHICLE_IS = "Truck";
+
    
 /**
 *  Constructor asks the details of the truck and stores them in respective
@@ -30,6 +31,21 @@ public class Truck extends Vehicle
       super(VEHICLE_IS);
       truckSizeMenu();
       engineSizeMenu();
+   }
+   
+   public static String[] getTruckSizeOptions()
+   {
+      return ALL_TRUCK_SIZES;
+   }
+   
+   public static String[] getEngineSizeOptions()
+   {
+      return ALL_ENGINE_SIZES;
+   }
+   
+   public static String[] getAttributeLabels()
+   {
+      return TRUCK_ATTRIBUTE_LABELS;
    }
    
 /**

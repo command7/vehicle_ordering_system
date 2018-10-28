@@ -11,6 +11,7 @@ public class OrdersScreen extends JFrame implements ActionListener
    private JComboBox vehicleTypeComboBox;
    private JLabel modelLabel;
    private JTextField modelTextField;
+   private JPanel modelPanel;
    private JLabel colorLabel;
    private JTextField colorTextField;
    private JLabel costLabel;
@@ -131,7 +132,7 @@ public class OrdersScreen extends JFrame implements ActionListener
       this.add(bottomButtons, BorderLayout.SOUTH);   
          
       this.setTitle("Orders Screen");
-      this.setSize(600,400);
+      this.setSize(500,400);
       this.setVisible(true);
       this.setDefaultCloseOperation(this.EXIT_ON_CLOSE); 
    }
@@ -144,14 +145,21 @@ public class OrdersScreen extends JFrame implements ActionListener
          switch(vehicleTypeSelection) 
          {
             case "Truck":
-               optionOneLabel.setText("Truck size");
+               String [] truckSizes = Truck.getTruckSizeOptions();
+               String [] engineSizes = Truck.getEngineSizeOptions();
+               String [] attributeLabels = Truck.getAttributeLabels();
+               optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               optionOneComboBox.addItem("Half Ton");
-               optionOneComboBox.addItem("Full Ton");
-               optionTwoLabel.setText("Engine size");
+               for (String truckSize : truckSizes) 
+               {
+                  optionOneComboBox.addItem(truckSize);
+               }
+               optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               optionTwoComboBox.addItem("1000cc");
-               optionTwoComboBox.addItem("2000cc");
+               for (String engineSize : engineSizes)
+               {
+                  optionTwoComboBox.addItem(engineSize);
+               }
                break;
             case "Car":
                optionOneLabel.setText("Car type");
@@ -213,5 +221,7 @@ public class OrdersScreen extends JFrame implements ActionListener
    public static void main(String [] args) 
    {
       OrdersScreen test = new OrdersScreen();
+      String a = Boat.TYPES_OF_BOATS[0];
+      System.out.println(a);
    }
 }
