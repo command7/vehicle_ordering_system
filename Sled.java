@@ -32,6 +32,21 @@ public class Sled extends Vehicle
    }
    
    // Methods
+   public static String[] getSledUseOptions()
+   {
+      return USE;
+   }
+   
+   public static String[] getSledCategoryOptions()
+   {
+      return CATEGORY;
+   }
+   
+   public static String[] getAttributeLabels()
+   {
+      return SLED_ATTRIBUTE_LABELS;
+   }
+
    
    // Start getter/setter methods   
    public String getUse(){

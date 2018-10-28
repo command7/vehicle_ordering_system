@@ -139,24 +139,27 @@ public class OrdersScreen extends JFrame implements ActionListener
    
    public void actionPerformed(ActionEvent ae) 
    {
+      String [] optionOneOptions;
+      String [] optionTwoOptions;
+      String [] attributeLabels;
       if (ae.getSource() == vehicleTypeComboBox)
       {
          String vehicleTypeSelection  = vehicleTypeComboBox.getSelectedItem().toString();
          switch(vehicleTypeSelection) 
          {
             case "Truck":
-               String [] truckSizes = Truck.getTruckSizeOptions();
-               String [] engineSizes = Truck.getEngineSizeOptions();
-               String [] attributeLabels = Truck.getAttributeLabels();
+               optionOneOptions = Truck.getTruckSizeOptions();
+               optionTwoOptions = Truck.getEngineSizeOptions();
+               attributeLabels = Truck.getAttributeLabels();
                optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               for (String truckSize : truckSizes) 
+               for (String truckSize : optionOneOptions) 
                {
                   optionOneComboBox.addItem(truckSize);
                }
                optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               for (String engineSize : engineSizes)
+               for (String engineSize : optionTwoOptions)
                {
                   optionTwoComboBox.addItem(engineSize);
                }
@@ -173,15 +176,21 @@ public class OrdersScreen extends JFrame implements ActionListener
                optionTwoComboBox.addItem("No towing package");
                break;
             case "Sled":
-               optionOneLabel.setText("Sled purpose");
+               optionOneOptions = Sled.getSledUseOptions();
+               optionTwoOptions = Sled.getSledCategoryOptions();
+               attributeLabels = Sled.getAttributeLabels();
+               optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               optionOneComboBox.addItem("Recreational Sledding");
-               optionOneComboBox.addItem("Competitive Sledding");
-               optionTwoLabel.setText("Sled type");
+               for (String sledUse : optionOneOptions) 
+               {
+                  optionOneComboBox.addItem(sledUse);
+               }
+               optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               optionTwoComboBox.addItem("Inflatable Sled");
-               optionTwoComboBox.addItem("Toboggan");
-               optionTwoComboBox.addItem("Bob Sled");
+               for (String sledCategory : optionTwoOptions)
+               {
+                  optionTwoComboBox.addItem(sledCategory);
+               }
                break;
             case "Boat":
                optionOneLabel.setText("Type of boat");
