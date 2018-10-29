@@ -90,7 +90,7 @@ public class OrdersScreen extends JFrame implements ActionListener
       //Setting Border Layout for the frame
       this.setLayout(new BorderLayout());
             
-      String headerText = "<html><b><font color='red' size=5>Vijay Raj Saravanan's Ordering System</font><b></html>";
+      String headerText = "<html><b><font color='blue' size=6>Vijay Raj Saravanan's Ordering System</font><b></html>";
   		windowHeader = new JLabel(headerText, SwingConstants.CENTER);
       this.add(windowHeader, BorderLayout.NORTH);
       
