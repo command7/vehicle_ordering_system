@@ -3,7 +3,7 @@
 *           type of car and whether towing package is included and stores it. <br/>
 *                                                            <br/>
 *Caveats:   It uses Vehicle class to accept inputs. <br/>
-*Date:      September 23, 2018
+*Date:      October 29, 2018
 *@author    Vijay Raj Saravanan Radhakrishnan
 *@version   1.1
 */
@@ -20,7 +20,9 @@ public class Car extends Vehicle
    static final String [] TYPES_OF_CARS = {"Sedan", "Coupe", "Wagon"};
    /** An array containing possible towing capabilities for car */
    static final String [] TOWING_CAPABILITY = {"Towing Package", "No towing package"};
+   /** Attribute labels to display in GUI */
    static final String [] CAR_ATTRIBUTE_LABELS = {"Type of car", "Towing package"};
+   /** Describes the type of vehicle */
    final static String VEHICLE_IS = "Car";
 
 /**
@@ -86,21 +88,30 @@ public class Car extends Vehicle
       }
      
    }//end of setTowingPackage() method
-         
+   
+/**
+*  Accessor method that returns the care type menu options
+*/          
    public static String[] getCarTypeOptions()
    {
       return TYPES_OF_CARS;
-   }
+   }//end of getCarTypeOptions()
    
+/**
+*  Accessor method that returns the car towing package menu options
+*/ 
    public static String[] getTowingOptions()
    {
       return TOWING_CAPABILITY;
-   }
+   }//end of getTowingOptions()
    
+/**
+*  Accessor method that returns the car attribute labels
+*/    
    public static String[] getAttributeLabels()
    {
       return CAR_ATTRIBUTE_LABELS;
-   }
+   }//end of getAttributeLabels()
 
 /**
 *  Input method that requests user for the type of car and stores 

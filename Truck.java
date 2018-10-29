@@ -6,7 +6,7 @@
 *Caveats:   This class uses Vehicle class to accept input.ww
 *           User must select truck size and engine size from the options provided.
 *                     <br/>
-*Date:      September 23, 2018
+*Date:      October 29, 2018
 *@author    Vijay Raj Saravanan Radhakrishnan
 *@version   1.1
 */
@@ -23,8 +23,9 @@ public class Truck extends Vehicle
    static final String [] ALL_TRUCK_SIZES = {"Half-ton", "Full ton"};
    /** Stores various engine sizes as menu options for the user to select from  */
    static final String [] ALL_ENGINE_SIZES = {"1000cc", "2000cc"};
+   /** Contains attribute labels to be displayed in GUI */
    static final String [] TRUCK_ATTRIBUTE_LABELS = {"Truck size", "Engine size"};
-
+   /** Describes the type of vehicle */
    final static String VEHICLE_IS = "Truck";
 
    
@@ -39,20 +40,29 @@ public class Truck extends Vehicle
       engineSizeMenu();
    }
    
+/**
+*  Accessor method that returns truck size menu options
+*/    
    public static String[] getTruckSizeOptions()
    {
       return ALL_TRUCK_SIZES;
-   }
+   }//end of getTruckSizeOptions()
    
+/**
+*  Accessor method that returns engine size menu options
+*/ 
    public static String[] getEngineSizeOptions()
    {
       return ALL_ENGINE_SIZES;
-   }
+   }//end of getEngineSizeOptions
    
+/**
+*  Accessor method that returns attribute labels
+*/ 
    public static String[] getAttributeLabels()
    {
       return TRUCK_ATTRIBUTE_LABELS;
-   }
+   }//end of getAttributeLabels()
    
 /**
 *  Accessor method that returns the size of the truck.

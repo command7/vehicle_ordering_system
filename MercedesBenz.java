@@ -6,7 +6,7 @@
 *Caveats:   This class uses Vehicle class to accept certain input.
 *           User must select make of car and type of drive from the options provided.
 *                     <br/>
-*Date:      October 11, 2018
+*Date:      October 29, 2018
 *@author    Vijay Raj Saravanan Radhakrishnan
 *@version   1.1
 */
@@ -18,11 +18,13 @@ public class MercedesBenz extends Vehicle
    private int typeOfFuel = -1;
    /** Stores the index of the type of drive */
    private int typeOfDrive = -1;
+   /** Describes type of vehicle */
    final static String VEHICLE_IS = "Mercedes Benz";
    /** Contains all options of makes for Mercedes Benz */
    final static String [] FUEL_TYPES = {"Unleaded Petrol", "Diesel"};
    /** Contains all driving types available for Mercedes Benz */
    final static String [] ALL_DRIVES = {"FWD", "4Matic"};
+   /** Describes attribute labels to be displayed in GUI */
    final static String [] MBENZ_ATTRIBUTE_LABELS = {"Type of fuel", "Type of drive"};
 
    
@@ -115,20 +117,29 @@ public class MercedesBenz extends Vehicle
       return mileage;
    }//end of gasMileage() method
    
+/**
+*  Accessor method that returns the fuel type menu options
+*/    
    public static String[] getFuelTypeOptions()
    {
       return FUEL_TYPES;
-   }
+   }//end of getFuelTypeOptions()
    
+/**
+*  Accessor method that returns the drive type menu options
+*/    
    public static String[] getDriveTypeOptions()
    {
       return ALL_DRIVES;
-   }
+   }//end of getDriveTypeOptions()
    
+/**
+*  Accessor method that returns the attribute labels
+*/    
    public static String[] getAttributeLabels()
    {
       return MBENZ_ATTRIBUTE_LABELS;
-   }
+   }//end of getAttributeLabels()
 
 /**
 *  Input method used to request the type of make from the user

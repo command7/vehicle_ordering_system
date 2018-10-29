@@ -6,7 +6,7 @@
 *Caveats:   It uses Vehicle class to accept user input.
 *           User must select boat type and construction type from the options provided.
 *                     <br/>
-*Date:      September 30, 2018
+*Date:      October  29, 2018
 *@author    Vijay Raj Saravanan Radhakrishnan
 *@version   1.0
 */
@@ -22,8 +22,9 @@ public class Boat extends Vehicle
    static final String [] TYPES_OF_BOATS = {"Pontoon", "PWC", "Sailboat"};
    /** A String array containing options for construction types of boat menu */
    static final String [] TYPES_OF_BOAT_CONSTRUCTION = {"Wood", "Fiberglass", "Steel"};
+   /** Attribute labels to display with menu in GUI */
    static final String [] BOAT_ATTRIBUTE_LABELS = {"Type of boat", "Construction"};
-
+   /** Describes the type of vehicle */
    final static String VEHICLE_IS = "Boat";
    
 /**
@@ -37,21 +38,29 @@ public class Boat extends Vehicle
       boatConstructionMenu();
    }//end of constructor
    
-   
+/**
+*  Accessor method that returns the boat type menu options
+*/   
    public static String[] getBoatTypeOptions()
    {
       return TYPES_OF_BOATS;
-   }
+   }//end of getBoatTypeOptions()
    
+/**
+*  Accessor method that returns the boat construction menu options
+*/ 
    public static String[] getBoatConstructionOptions()
    {
       return TYPES_OF_BOAT_CONSTRUCTION;
-   }
+   }//end of getBoatConstructionOptions()
    
+/**
+*  Accessor method that returns the boat menu labels
+*/    
    public static String[] getAttributeLabels()
    {
       return BOAT_ATTRIBUTE_LABELS;
-   }
+   }//end of getAttributeLabels()
 
 /**
 *  Accessor method that returns the type of the boat.

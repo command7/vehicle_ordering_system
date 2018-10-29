@@ -86,34 +86,33 @@ public class OrdersScreen extends JFrame implements ActionListener
  * Method that creates menus, text fields, combo boxes, buttons and adds them to the layout appropriately
  */
    public void createFrame()
-   {
+   {  
+      //Setting Border Layout for the frame
       this.setLayout(new BorderLayout());
             
       String headerText = "<html><b><font color='red' size=5>Vijay Raj Saravanan's Ordering System</font><b></html>";
   		windowHeader = new JLabel(headerText, SwingConstants.CENTER);
       this.add(windowHeader, BorderLayout.NORTH);
-
+      
+      //Creating label and combo box to display vehicle options.
       vehicleTypeLabel = new JLabel("Vehicle Type", SwingConstants.RIGHT);
       vehicleTypeComboBox = new JComboBox(vehicleTypes);
-      vehicleTypeComboBox.addActionListener(this);
       vehicleTypeComboBox.insertItemAt("", 0);
       vehicleTypeComboBox.setSelectedIndex(0);
       vehicleTypeComboBox.setPreferredSize(new Dimension(250,20));
       
+      //Creating text fields and labels for model, color and cost
       modelLabel = new JLabel("Model", SwingConstants.RIGHT);
       modelTextField = new JTextField();
       modelLabel.setLabelFor(modelTextField);
-      //modelTextField.setMaximumSize(new Dimension(250,10));
       
       colorLabel = new JLabel("Color", SwingConstants.RIGHT);
       colorTextField = new JTextField();
       colorLabel.setLabelFor(colorTextField);
-     // colorTextField.setPreferredSize(new Dimension(250,20));
       
       costLabel = new JLabel("Cost", SwingConstants.RIGHT);
       costTextField = new JTextField();
       costLabel.setLabelFor(costTextField);
-      //costTextField.setPreferredSize(new Dimension(250,20));
       
       optionOneLabel = new JLabel("", SwingConstants.RIGHT);
       optionOneComboBox = new JComboBox();
@@ -124,24 +123,24 @@ public class OrdersScreen extends JFrame implements ActionListener
       optionTwoComboBox = new JComboBox();
       optionTwoLabel.setLabelFor(optionTwoComboBox);
       optionTwoComboBox.setPreferredSize(new Dimension(250,20));
- 
+      
+      //Creating buttons
       saveButton = new JButton("SAVE");
       firstButton = new JButton("FIRST");
       prevButton = new JButton("PREV");
       nextButton = new JButton("NEXT");
       lastButton = new JButton("LAST");
       exitButton = new JButton("Exit");
-      exitButton.addActionListener(this);
       
+      //Creating menu bar items
       menuBar = new JMenuBar();
       fileMenu = new JMenu("File");
       helpMenu = new JMenu("Help");
       loadMenuItem = new JMenuItem("Load");
       exitMenuItem = new JMenuItem("Exit");
-      aboutMenuItem = new JMenuItem("About");
-      exitMenuItem.addActionListener(this);
+      aboutMenuItem = new JMenuItem("About");    
       
-      //menu
+      //Adding menu bar to layout
       this.setJMenuBar(menuBar);
       menuBar.add(fileMenu);
       menuBar.add(helpMenu);
@@ -163,7 +162,6 @@ public class OrdersScreen extends JFrame implements ActionListener
       comboContainer.add(optionOneComboBox);
       comboContainer.add(optionTwoLabel);
       comboContainer.add(optionTwoComboBox);
-      //comboContainer.setPreferredSize(new Dimension(350,400));
       this.add(comboContainer, BorderLayout.CENTER);
       
       //bottom Jpanel
@@ -174,7 +172,12 @@ public class OrdersScreen extends JFrame implements ActionListener
       bottomButtons.add(nextButton);
       bottomButtons.add(lastButton);
       bottomButtons.add(exitButton);
-      this.add(bottomButtons, BorderLayout.SOUTH);   
+      this.add(bottomButtons, BorderLayout.SOUTH); 
+      
+      //Adding action listeners
+      vehicleTypeComboBox.addActionListener(this);
+      exitMenuItem.addActionListener(this); 
+      exitButton.addActionListener(this);
          
       this.setTitle("Orders Screen");
       this.setSize(500,300);
@@ -182,9 +185,10 @@ public class OrdersScreen extends JFrame implements ActionListener
       this.setDefaultCloseOperation(this.EXIT_ON_CLOSE); 
    }
    
- /**
- * Method that handles events based on the type of component that causes it.
- */
+/**
+*  Method that handles events such as setting additional menu options based on the 
+*  type of component that causes it.
+*/
    public void actionPerformed(ActionEvent ae) 
    {
       String [] optionOneOptions;
