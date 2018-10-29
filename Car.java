@@ -16,6 +16,11 @@ public class Car extends Vehicle
    private int carType = -1;
    /** Stores the index for whether towing package is included or not. */
    private int towingPackage = -1;
+   /** An array containing types of cars for the user to select one*/
+   static final String [] TYPES_OF_CARS = {"Sedan", "Coupe", "Wagon"};
+   /** An array containing possible towing capabilities for car */
+   static final String [] TOWING_CAPABILITY = {"Towing Package", "No towing package"};
+   static final String [] CAR_ATTRIBUTE_LABELS = {"Type of car", "Towing package"};
    final static String VEHICLE_IS = "Car";
 
 /**

@@ -1,45 +1,90 @@
+/**
+*Purpose:   This program creates a Graphical User Interface for vehicle ordering
+*           system. <br/>
+*                   <br/>
+*Caveats:   It needs the attribute labels and menu options of others classes
+*           in order to display them in combo boxes and labels.
+*           Only menu options, exit button and file->exit menu implemented.
+*                   <br/>
+*Date:      October 29, 2018
+*@author    Vijay Raj Saravanan Radhakrishnan
+*@version   1.0
+*/
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class OrdersScreen extends JFrame implements ActionListener
 {
+   /** An array storing options of vehicles to display in vehicle type combo box */
    private String [] vehicleTypes = {"Car", "Boat", "Truck", "Sled", "Mercedes Benz"};
-   
+   /** Contains the vehicle type label*/
    private JLabel vehicleTypeLabel;
+   /** Contains the heading of the window to be displayed */
    private JLabel windowHeader;
+   /** Combo box that displays different vehicle options to be ordered */
    private JComboBox vehicleTypeComboBox;
+   /** Contains text to be displayed aside model text field */
    private JLabel modelLabel;
+   /** Text field that allows users to enter the model of the vehicle */
    private JTextField modelTextField;
-   private JPanel modelPanel;
+   /** Label to be displayed aside color text field */
    private JLabel colorLabel;
+   /** Text field for the user to enter the color of the vehicle.*/
    private JTextField colorTextField;
+   /** Label to be displayed aside cost text field */
    private JLabel costLabel;
+   /** Text field that allows users to enter the cost of the vehicle*/
    private JTextField costTextField;
+   /** Displays label of an additional menu based on the type of vehicle */
    private JLabel optionOneLabel;
+   /** Combo box containing options of the additional menu based on the type of vehicle */
    private JComboBox optionOneComboBox;
+   /** Displays label of an additional menu based on the type of vehicle */
    private JLabel optionTwoLabel;
+   /** Combo box containing options of the additional menu based on the type of vehicle */
    private JComboBox optionTwoComboBox;
+   /** JPanel containing all menu labels, text fields and combo boxes */
    private JPanel comboContainer = new JPanel();
+   /** JPanel containing all buttons of the GUI */
    private JPanel bottomButtons = new JPanel();
+   /** Button that allows the user to save order*/
    private JButton saveButton;
+   /** First Button */
    private JButton firstButton;
+   /** Previous Button*/
    private JButton prevButton;
+   /** Next Button */
    private JButton nextButton;
+   /** Last Button */
    private JButton lastButton;
+   /** Exit Button */
    private JButton exitButton;
+   /** Contains the entire Menu bar */
    private JMenuBar menuBar;
+   /** File Menu present in the Menu bar */
    private JMenu fileMenu;
+   /** Help Menu present in the Menu bar */
    private JMenu helpMenu;
+   /** Menu item present under file menu */
    private JMenuItem loadMenuItem;
+   /** Menu item present under file menu */
    private JMenuItem exitMenuItem;
+   /** About Menu present in the Menu bar */
    private JMenuItem aboutMenuItem;
    
+ /**
+ * Constructor creates the Graphical User Interface and implements action events for menu options and exit button
+ */
    public OrdersScreen()
    {
       createFrame();
    }
    
+ /**
+ * Method that creates menus, text fields, combo boxes, buttons and adds them to the layout appropriately
+ */
    public void createFrame()
    {
       this.setLayout(new BorderLayout());
@@ -132,11 +177,14 @@ public class OrdersScreen extends JFrame implements ActionListener
       this.add(bottomButtons, BorderLayout.SOUTH);   
          
       this.setTitle("Orders Screen");
-      this.setSize(500,400);
+      this.setSize(500,300);
       this.setVisible(true);
       this.setDefaultCloseOperation(this.EXIT_ON_CLOSE); 
    }
    
+ /**
+ * Method that handles events based on the type of component that causes it.
+ */
    public void actionPerformed(ActionEvent ae) 
    {
       String [] optionOneOptions;
@@ -245,10 +293,12 @@ public class OrdersScreen extends JFrame implements ActionListener
          System.exit(1);
       }
    }
+   
+ /**
+ * Main block instantiating OrdersScreen class
+ */
    public static void main(String [] args) 
    {
       OrdersScreen test = new OrdersScreen();
-      String a = Boat.TYPES_OF_BOATS[0];
-      System.out.println(a);
    }
 }

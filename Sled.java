@@ -21,6 +21,7 @@ public class Sled extends Vehicle
    private final String ques1 = "What is this sled used for?";
    private final String ques2 = "What kind of sled is this?";
    final static String VEHICLE_IS = "Sled";
+   final static String [] SLED_ATTRIBUTE_LABELS = {"Used for", "Type of sled"};
    
    // Constructor
    public Sled(){

@@ -18,6 +18,12 @@ public class Boat extends Vehicle
    private int boatType = -1;
    /** Saves the index of construction type of the boat */
    private int boatConstruction = -1;
+   /** A String array containing options for types of boat menu*/
+   static final String [] TYPES_OF_BOATS = {"Pontoon", "PWC", "Sailboat"};
+   /** A String array containing options for construction types of boat menu */
+   static final String [] TYPES_OF_BOAT_CONSTRUCTION = {"Wood", "Fiberglass", "Steel"};
+   static final String [] BOAT_ATTRIBUTE_LABELS = {"Type of boat", "Construction"};
+
    final static String VEHICLE_IS = "Boat";
    
 /**
