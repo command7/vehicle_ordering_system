@@ -40,6 +40,15 @@ public class Truck extends Vehicle
       engineSizeMenu();
    }
    
+   public Truck(String truckModel, String truckColor, double truckCost, 
+   int truckSizeIndex, int engineSizeIndex)
+   {
+      super(truckModel, truckColor, truckCost);
+      this.setTruckSize(truckSizeIndex);
+      this.setEngineSize(engineSizeIndex);
+   }
+      
+   
 /**
 *  Accessor method that returns truck size menu options
 */    
