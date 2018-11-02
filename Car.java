@@ -35,6 +35,15 @@ public class Car extends Vehicle
       typeOfCarMenu();
       towingPackageMenu();   
    }//end of Car constructor
+   
+   public Car(String carModel, String carColor, double carCost, 
+   int carTypeIndex, int towingPackageIndex)
+   {
+      super(carModel, carColor, carCost);
+      this.setCarType(carTypeIndex);
+      this.setTowingPackage(towingPackageIndex);
+   }
+
   
 /**
 *  Accessor method that returns the type of car.

@@ -39,6 +39,14 @@ public class MercedesBenz extends Vehicle
       typeOfDriveMenu();   
    }//end of constructor
    
+   public MercedesBenz(String benzModel, String benzColor, double benzCost, 
+   int fuelTypeIndex, int driveTypeIndex)
+   {
+      super(benzModel, benzColor, benzCost);
+      this.setTypeOfFuel(fuelTypeIndex);
+      this.setTypeOfDrive(driveTypeIndex);
+   }
+   
 /**
 *  Accessor method that returns the make
 */

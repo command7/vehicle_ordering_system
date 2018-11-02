@@ -135,21 +135,36 @@ public class OrdersScreen extends JFrame implements ActionListener
       String vehicleTypeSelection  = vehicleTypeComboBox.getSelectedItem().toString();
       String model = modelTextField.getText();
       String color = colorTextField.getText();
-      String cost = costTextField.getText();
-      String optionOneSelection = optionOneComboBox.getSelectedItem().toString();
-      String optionTwoSelection = optionTwoComboBox.getSelectedItem().toString();
+      double cost = Double.parseDouble(costTextField.getText());
+      int optionOneIndex = optionOneComboBox.getSelectedIndex();
+      int optionTwoIndex = optionTwoComboBox.getSelectedIndex();
+      System.out.println(model);
+      System.out.println(color);
+      System.out.println(cost);
+      System.out.println(optionOneIndex);
+      System.out.println(optionTwoIndex);
       switch (vehicleTypeSelection)
       {
          case "Truck":
-            Truck newTruck = new Truck();
+            Truck newTruck = new Truck(model, color, cost, optionOneIndex, optionTwoIndex);
+            ordersMade.add(newTruck);
+            break;
          case "Car":
-            Car newCar = new Car();
+            Car newCar = new Car(model, color, cost, optionOneIndex, optionTwoIndex);
+            ordersMade.add(newCar);
+            break;
          case "Boat":
-            Boat newBoat = new Boat();
+            Boat newBoat = new Boat(model, color, cost, optionOneIndex, optionTwoIndex);
+            ordersMade.add(newBoat);
+            break;
          case "Mercedes Benz":
-            MercedesBenz newMBenz = new MercedesBenz();
+            MercedesBenz newMBenz = new MercedesBenz(model, color, cost, optionOneIndex, optionTwoIndex);
+            ordersMade.add(newMBenz);
+            break;
          case "Sled":
-            Sled newSled = new Sled();
+            Sled newSled = new Sled(model, color, cost, optionOneIndex, optionTwoIndex);
+            ordersMade.add(newSled);
+            break;
          default:
       }
    } 
@@ -253,6 +268,7 @@ public class OrdersScreen extends JFrame implements ActionListener
       exitButton.addActionListener(this);
       loadMenuItem.addActionListener(this);
       firstButton.addActionListener(this);
+      saveButton.addActionListener(this);
          
       this.setTitle("Orders Screen");
       this.setSize(500,300);
@@ -380,7 +396,7 @@ public class OrdersScreen extends JFrame implements ActionListener
       }
       if (ae.getSource() == saveButton)
       {
-         saveOrders();
+         registerOrder();
       }
       if (ae.getSource() == firstButton)
       {

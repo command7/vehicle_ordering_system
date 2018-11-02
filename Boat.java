@@ -38,6 +38,15 @@ public class Boat extends Vehicle
       boatConstructionMenu();
    }//end of constructor
    
+   public Boat(String boatModel, String boatColor, double boatCost, 
+   int boatTypeIndex, int boatConstructionIndex)
+   {
+      super(boatModel, boatColor, boatCost);
+      this.setBoatType(boatTypeIndex);
+      this.setBoatConstruction(boatConstructionIndex);
+   }
+
+   
 /**
 *  Accessor method that returns the boat type menu options
 */   
