@@ -28,6 +28,13 @@ public abstract class Vehicle implements Vinfo, Serializable
       generalDetailsMenu(typeOfVehicle);
    }
    
+   public Vehicle(String vehicleModel, String vehicleColor, double vehicleCost)
+   {
+      this.setVehicleModel(vehicleModel);
+      this.setVehicleColor(vehicleColor);
+      this.setVehicleCost(vehicleCost);
+   }
+   
 /**
 *  Accessor method that returns the model of the vehicle.
 */
