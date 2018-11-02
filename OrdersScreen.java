@@ -75,6 +75,7 @@ public class OrdersScreen extends JFrame implements ActionListener
    private JMenuItem exitMenuItem;
    /** About Menu present in the Menu bar */
    private JMenuItem aboutMenuItem;
+   private JOptionPane popup = new JOptionPane();
    ArrayList ordersMade = new ArrayList();
    int currentOrder = 0;
    
@@ -326,8 +327,12 @@ public class OrdersScreen extends JFrame implements ActionListener
       exitMenuItem.addActionListener(this); 
       exitButton.addActionListener(this);
       loadMenuItem.addActionListener(this);
+      aboutMenuItem.addActionListener(this);
       firstButton.addActionListener(this);
       saveButton.addActionListener(this);
+      nextButton.addActionListener(this);
+      prevButton.addActionListener(this);
+      lastButton.addActionListener(this);
          
       this.setTitle("Orders Screen");
       this.setSize(500,300);
@@ -337,103 +342,101 @@ public class OrdersScreen extends JFrame implements ActionListener
    
    public void loadAttributes()
    {
-         String [] optionOneOptions;
-         String [] optionTwoOptions;
-         String [] attributeLabels;
-         String vehicleTypeSelection  = vehicleTypeComboBox.getSelectedItem().toString();
-         switch(vehicleTypeSelection) 
-         {
-            case "Truck":
-               optionOneOptions = Truck.getTruckSizeOptions();
-               optionTwoOptions = Truck.getEngineSizeOptions();
-               attributeLabels = Truck.getAttributeLabels();
-               optionOneLabel.setText(attributeLabels[0]);
-               optionOneComboBox.removeAllItems();
-               for (String option : optionOneOptions) 
-               {
-                  optionOneComboBox.addItem(option);
-               }
-               optionTwoLabel.setText(attributeLabels[1]);
-               optionTwoComboBox.removeAllItems();
-               for (String option : optionTwoOptions)
-               {
-                  optionTwoComboBox.addItem(option);
-               }
-               break;
-            case "Car":
-               optionOneOptions = Car.getCarTypeOptions();
-               optionTwoOptions = Car.getTowingOptions();
-               attributeLabels = Car.getAttributeLabels();
-               optionOneLabel.setText(attributeLabels[0]);
-               optionOneComboBox.removeAllItems();
-               for (String option : optionOneOptions) 
-               {
-                  optionOneComboBox.addItem(option);
-               }
-               optionTwoLabel.setText(attributeLabels[1]);
-               optionTwoComboBox.removeAllItems();
-               for (String option : optionTwoOptions)
-               {
-                  optionTwoComboBox.addItem(option);
-               }
-
-               break;
-            case "Sled":
-               optionOneOptions = Sled.getSledUseOptions();
-               optionTwoOptions = Sled.getSledCategoryOptions();
-               attributeLabels = Sled.getAttributeLabels();
-               optionOneLabel.setText(attributeLabels[0]);
-               optionOneComboBox.removeAllItems();
-               for (String option : optionOneOptions) 
-               {
-                  optionOneComboBox.addItem(option);
-               }
-               optionTwoLabel.setText(attributeLabels[1]);
-               optionTwoComboBox.removeAllItems();
-               for (String option : optionTwoOptions)
-               {
-                  optionTwoComboBox.addItem(option);
-               }
-               break;
-            case "Boat":
-               optionOneOptions = Boat.getBoatTypeOptions();
-               optionTwoOptions = Boat.getBoatConstructionOptions();
-               attributeLabels = Boat.getAttributeLabels();
-               optionOneLabel.setText(attributeLabels[0]);
-               optionOneComboBox.removeAllItems();
-               for (String option : optionOneOptions) 
-               {
-                  optionOneComboBox.addItem(option);
-               }
-               optionTwoLabel.setText(attributeLabels[1]);
-               optionTwoComboBox.removeAllItems();
-               for (String option : optionTwoOptions)
-               {
-                  optionTwoComboBox.addItem(option);
-               }
-               break;
-            case "Mercedes Benz":
-               optionOneOptions = MercedesBenz.getFuelTypeOptions();
-               optionTwoOptions = MercedesBenz.getDriveTypeOptions();
-               attributeLabels = MercedesBenz.getAttributeLabels();
-               optionOneLabel.setText(attributeLabels[0]);
-               optionOneComboBox.removeAllItems();
-               for (String option : optionOneOptions) 
-               {
-                  optionOneComboBox.addItem(option);
-               }
-               optionTwoLabel.setText(attributeLabels[1]);
-               optionTwoComboBox.removeAllItems();
-               for (String option : optionTwoOptions)
-               {
-                  optionTwoComboBox.addItem(option);
-               }
-
-               break;
-            default:
-               break;
-         }
+      String [] optionOneOptions;
+      String [] optionTwoOptions;
+      String [] attributeLabels;
+      String vehicleTypeSelection  = vehicleTypeComboBox.getSelectedItem().toString();
+      switch(vehicleTypeSelection) 
+      {
+         case "Truck":
+            optionOneOptions = Truck.getTruckSizeOptions();
+            optionTwoOptions = Truck.getEngineSizeOptions();
+            attributeLabels = Truck.getAttributeLabels();
+            optionOneLabel.setText(attributeLabels[0]);
+            optionOneComboBox.removeAllItems();
+            for (String option : optionOneOptions) 
+            {
+               optionOneComboBox.addItem(option);
+            }
+            optionTwoLabel.setText(attributeLabels[1]);
+            optionTwoComboBox.removeAllItems();
+            for (String option : optionTwoOptions)
+            {
+               optionTwoComboBox.addItem(option);
+            }
+            break;
+         case "Car":
+            optionOneOptions = Car.getCarTypeOptions();
+            optionTwoOptions = Car.getTowingOptions();
+            attributeLabels = Car.getAttributeLabels();
+            optionOneLabel.setText(attributeLabels[0]);
+            optionOneComboBox.removeAllItems();
+            for (String option : optionOneOptions) 
+            {
+               optionOneComboBox.addItem(option);
+            }
+            optionTwoLabel.setText(attributeLabels[1]);
+            optionTwoComboBox.removeAllItems();
+            for (String option : optionTwoOptions)
+            {
+               optionTwoComboBox.addItem(option);
+            }
+            break;
+         case "Sled":
+            optionOneOptions = Sled.getSledUseOptions();
+            optionTwoOptions = Sled.getSledCategoryOptions();
+            attributeLabels = Sled.getAttributeLabels();
+            optionOneLabel.setText(attributeLabels[0]);
+            optionOneComboBox.removeAllItems();
+            for (String option : optionOneOptions) 
+            {
+               optionOneComboBox.addItem(option);
+            }
+            optionTwoLabel.setText(attributeLabels[1]);
+            optionTwoComboBox.removeAllItems();
+            for (String option : optionTwoOptions)
+            {
+               optionTwoComboBox.addItem(option);
+            }
+            break;
+         case "Boat":
+            optionOneOptions = Boat.getBoatTypeOptions();
+            optionTwoOptions = Boat.getBoatConstructionOptions();
+            attributeLabels = Boat.getAttributeLabels();
+            optionOneLabel.setText(attributeLabels[0]);
+            optionOneComboBox.removeAllItems();
+            for (String option : optionOneOptions) 
+            {
+               optionOneComboBox.addItem(option);
+            }
+            optionTwoLabel.setText(attributeLabels[1]);
+            optionTwoComboBox.removeAllItems();
+            for (String option : optionTwoOptions)
+            {
+               optionTwoComboBox.addItem(option);
+            }
+            break;
+         case "Mercedes Benz":
+            optionOneOptions = MercedesBenz.getFuelTypeOptions();
+            optionTwoOptions = MercedesBenz.getDriveTypeOptions();
+            attributeLabels = MercedesBenz.getAttributeLabels();
+            optionOneLabel.setText(attributeLabels[0]);
+            optionOneComboBox.removeAllItems();
+            for (String option : optionOneOptions) 
+            {
+               optionOneComboBox.addItem(option);
+            }
+            optionTwoLabel.setText(attributeLabels[1]);
+            optionTwoComboBox.removeAllItems();
+            for (String option : optionTwoOptions)
+            {
+               optionTwoComboBox.addItem(option);
+            }
+            break;
+         default:
+            break;
       }
+   }
 
 
    
@@ -468,19 +471,63 @@ public class OrdersScreen extends JFrame implements ActionListener
       }
       if (ae.getSource() == firstButton)
       {
-         displayOrder(0);
+         if(!ordersMade.isEmpty())
+         {
+            displayOrder(0);
+            currentOrder = 0;
+         }
+         else 
+         {
+            popup.showMessageDialog(this, "There are no orders to be displayed.");
+         }
       }
       if (ae.getSource() == prevButton)
       {
-         saveOrders();
+         if(currentOrder > 0)
+         {
+            displayOrder(currentOrder - 1);
+            currentOrder -= 1;
+         }
+         else
+         {
+            popup.showMessageDialog(this, "This is the first order.");
+         }
       }
       if (ae.getSource() == nextButton)
       {
-         saveOrders();
+         if(ordersMade.isEmpty())
+         {
+            popup.showMessageDialog(this, "There are no more orders.");
+         }
+         else if(currentOrder < ordersMade.size()-1)
+         {
+            displayOrder(currentOrder + 1);
+            currentOrder += 1;
+         }
+         else 
+         {
+            popup.showMessageDialog(this, "There are no more orders.");
+         }
       }
       if (ae.getSource() == lastButton)
       {
-         saveOrders();
+         if(ordersMade.isEmpty())
+         {
+            popup.showMessageDialog(this, "There are no more orders.");
+         }
+         else if(!ordersMade.isEmpty())
+         {
+            displayOrder(ordersMade.size() - 1);
+            currentOrder = ordersMade.size() - 1;
+         }
+         else 
+         {
+            popup.showMessageDialog(this, "There are no orders to be displayed.");
+         }
+      }
+      if (ae.getSource() == aboutMenuItem)
+      {
+         popup.showMessageDialog(this, "Homework : GUI Ordering \n Author : Vijay Raj Saravanan Radhakrishnan");
       }
    }
    
@@ -490,6 +537,5 @@ public class OrdersScreen extends JFrame implements ActionListener
    public static void main(String [] args) 
    {
       OrdersScreen test = new OrdersScreen();
-      System.out.println(test.ordersMade);
    }
 }
