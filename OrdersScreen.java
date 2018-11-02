@@ -14,6 +14,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+import java.util.*;
 
 public class OrdersScreen extends JFrame implements ActionListener
 {
@@ -73,6 +75,7 @@ public class OrdersScreen extends JFrame implements ActionListener
    private JMenuItem exitMenuItem;
    /** About Menu present in the Menu bar */
    private JMenuItem aboutMenuItem;
+   ArrayList ordersMade = new ArrayList();
    
  /**
  * Constructor creates the Graphical User Interface and implements action events for menu options and exit button
@@ -82,6 +85,76 @@ public class OrdersScreen extends JFrame implements ActionListener
       createFrame();
    }
    
+   public void loadOrders() 
+   {
+      try
+      {
+         File file = new File("VehicleOrders.dat");
+         if (file.exists())
+         {
+            ObjectInputStream objReader = new ObjectInputStream(new BufferedInputStream(new FileInputStream("VehicleOrders.dat")));
+            ordersMade = (ArrayList)objReader.readObject();
+            objReader.close();
+         }
+         else
+         {
+            System.out.println("File not found");
+         }
+      }
+      catch (IOException ioe) 
+      {
+         ioe.printStackTrace();
+      }
+      catch (Exception e)
+      {
+         System.out.println("UKNOWN");
+      }   
+   }
+   
+   public void saveOrders()
+   {
+      try
+      {
+         ObjectOutputStream objWriter = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("VehicleOrders.dat")));
+         objWriter.writeObject(ordersMade);
+         objWriter.flush();
+         objWriter.close();
+      }
+      catch (IOException ioe)
+      {
+         ioe.printStackTrace();
+      }
+      catch (Exception e)
+      {
+         System.out.print("Unknown Error");
+      }
+   }
+   
+   public void registerOrder()
+   {
+      String vehicleTypeSelection  = vehicleTypeComboBox.getSelectedItem().toString();
+      String model = modelTextField.getText();
+      String color = colorTextField.getText();
+      String cost = costTextField.getText();
+      String optionOneSelection = optionOneComboBox.getSelectedItem().toString();
+      String optionTwoSelection = optionTwoComboBox.getSelectedItem().toString();
+      switch (vehicleTypeSelection)
+      {
+         case "Truck":
+            Truck newTruck = new Truck();
+         case "Car":
+            Car newCar = new Car();
+         case "Boat":
+            Boat newBoat = new Boat();
+         case "Mercedes Benz":
+            MercedesBenz newMBenz = new MercedesBenz();
+         case "Sled":
+            Sled newSled = new Sled();
+         default:
+      }
+   } 
+
+
  /**
  * Method that creates menus, text fields, combo boxes, buttons and adds them to the layout appropriately
  */
@@ -178,6 +251,8 @@ public class OrdersScreen extends JFrame implements ActionListener
       vehicleTypeComboBox.addActionListener(this);
       exitMenuItem.addActionListener(this); 
       exitButton.addActionListener(this);
+      loadMenuItem.addActionListener(this);
+      firstButton.addActionListener(this);
          
       this.setTitle("Orders Screen");
       this.setSize(500,300);
@@ -188,6 +263,7 @@ public class OrdersScreen extends JFrame implements ActionListener
 /**
 *  Method that handles events such as setting additional menu options based on the 
 *  type of component that causes it.
+*  @param ae ActionEvent the triggers the event
 */
    public void actionPerformed(ActionEvent ae) 
    {
@@ -290,11 +366,37 @@ public class OrdersScreen extends JFrame implements ActionListener
       }
       if (ae.getSource() == exitButton)
       {
+         saveOrders();
          System.exit(0);
       }
       if (ae.getSource() == exitMenuItem)
       {
+         saveOrders();
          System.exit(1);
+      }
+      if (ae.getSource() == loadMenuItem)
+      {
+         loadOrders();
+      }
+      if (ae.getSource() == saveButton)
+      {
+         saveOrders();
+      }
+      if (ae.getSource() == firstButton)
+      {
+         System.out.println(ordersMade.get(0));
+      }
+      if (ae.getSource() == prevButton)
+      {
+         saveOrders();
+      }
+      if (ae.getSource() == nextButton)
+      {
+         saveOrders();
+      }
+      if (ae.getSource() == lastButton)
+      {
+         saveOrders();
       }
    }
    
@@ -304,5 +406,6 @@ public class OrdersScreen extends JFrame implements ActionListener
    public static void main(String [] args) 
    {
       OrdersScreen test = new OrdersScreen();
+      System.out.println(test.ordersMade);
    }
 }

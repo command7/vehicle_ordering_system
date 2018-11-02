@@ -1,48 +1,8 @@
 Car
-     Model:     afd
-     Color:     asfd
-     Cost:      $1234.00
-     MPG/GPH:   20.7
-     Type:      Sedan
-     Towing:    Towing Package
-
-Mercedes Benz
-     Model:     asdf
-     Color:     asdf
-     Cost:      $12000.00
-     MPG/GPH:   20.8
-     Fuel Type: Unleaded Petrol
-     Drive:     FWD
-
-Boat
-     Model:     ASF
-     Color:     ASD
-     Cost:      $123.00
-     MPG/GPH:   3.5
-     Type:      Pontoon
-     Made of:   Wood
-
-Car
-     Model:     Ford
-     Color:     Green
-     Cost:      $14000.00
-     MPG/GPH:   28.2
-     Type:      Coupe
-     Towing:    No towing package
-
-Truck
-     Model:     Dodge
-     Color:     Re
-     Cost:      $25234.56
-     MPG/GPH:   34.1
-     Load:      Full ton
-     Engine:    1000cc
-
-Car
      Model:     asfd
      Color:     asdf
      Cost:      $123.00
-     MPG/GPH:   25.2
-     Type:      Coupe
+     MPG/GPH:   20.7
+     Type:      Sedan
      Towing:    Towing Package
 
