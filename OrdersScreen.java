@@ -76,6 +76,7 @@ public class OrdersScreen extends JFrame implements ActionListener
    /** About Menu present in the Menu bar */
    private JMenuItem aboutMenuItem;
    ArrayList ordersMade = new ArrayList();
+   int currentOrder = 0;
    
  /**
  * Constructor creates the Graphical User Interface and implements action events for menu options and exit button
@@ -138,11 +139,6 @@ public class OrdersScreen extends JFrame implements ActionListener
       double cost = Double.parseDouble(costTextField.getText());
       int optionOneIndex = optionOneComboBox.getSelectedIndex();
       int optionTwoIndex = optionTwoComboBox.getSelectedIndex();
-      System.out.println(model);
-      System.out.println(color);
-      System.out.println(cost);
-      System.out.println(optionOneIndex);
-      System.out.println(optionTwoIndex);
       switch (vehicleTypeSelection)
       {
          case "Truck":
@@ -168,6 +164,69 @@ public class OrdersScreen extends JFrame implements ActionListener
          default:
       }
    } 
+   
+   public void displayOrder(int orderIndex)
+   {
+      Object vehicle = ordersMade.get(orderIndex);
+      if (vehicle instanceof Car)
+      {
+         Car orderedCar = (Car)vehicle;
+         vehicleTypeComboBox.setSelectedItem("Car");
+         modelTextField.setText(orderedCar.getVehicleModel());
+         colorTextField.setText(orderedCar.getVehicleColor());
+         costTextField.setText(Double.toString(orderedCar.getVehicleCost()));
+         optionOneComboBox.setSelectedItem(orderedCar.getCarType());
+         optionTwoComboBox.setSelectedItem(orderedCar.getTowingPackage());
+      }
+      else if (vehicle instanceof Truck)
+      {
+         Truck orderedTruck = (Truck)vehicle;
+         vehicleTypeComboBox.setSelectedItem("Truck");
+         loadAttributes();
+         modelTextField.setText(orderedTruck.getVehicleModel());
+         colorTextField.setText(orderedTruck.getVehicleColor());
+         costTextField.setText(Double.toString(orderedTruck.getVehicleCost()));
+         optionOneComboBox.setSelectedItem(orderedTruck.getTruckSize());
+         optionTwoComboBox.setSelectedItem(orderedTruck.getEngineSize());
+      }
+      else if (vehicle instanceof Boat)
+      {
+         Boat orderedBoat = (Boat)vehicle;
+         vehicleTypeComboBox.setSelectedItem("Boat");
+         loadAttributes();
+         modelTextField.setText(orderedBoat.getVehicleModel());
+         colorTextField.setText(orderedBoat.getVehicleColor());
+         costTextField.setText(Double.toString(orderedBoat.getVehicleCost()));
+         optionOneComboBox.setSelectedItem(orderedBoat.getBoatType());
+         optionTwoComboBox.setSelectedItem(orderedBoat.getBoatConstruction());
+      }
+      else if (vehicle instanceof MercedesBenz)
+      {
+         MercedesBenz orderedMbenz = (MercedesBenz)vehicle;
+         vehicleTypeComboBox.setSelectedItem("Mercedes Benz");
+         loadAttributes();
+         modelTextField.setText(orderedMbenz.getVehicleModel());
+         colorTextField.setText(orderedMbenz.getVehicleColor());
+         costTextField.setText(Double.toString(orderedMbenz.getVehicleCost()));
+         optionOneComboBox.setSelectedItem(orderedMbenz.getTypeOfFuel());
+         optionTwoComboBox.setSelectedItem(orderedMbenz.getTypeOfDrive());
+      }
+      else if (vehicle instanceof Sled)
+      {
+         Sled orderedSled = (Sled)vehicle;
+         vehicleTypeComboBox.setSelectedItem("Sled");
+         loadAttributes();
+         modelTextField.setText(orderedSled.getVehicleModel());
+         colorTextField.setText(orderedSled.getVehicleColor());
+         costTextField.setText(Double.toString(orderedSled.getVehicleCost()));
+         optionOneComboBox.setSelectedItem(orderedSled.getUse());
+         optionTwoComboBox.setSelectedItem(orderedSled.getCategory());
+      }
+      else
+      {
+         System.out.println("Invalid object type");
+      }
+   }
 
 
  /**
@@ -276,18 +335,11 @@ public class OrdersScreen extends JFrame implements ActionListener
       this.setDefaultCloseOperation(this.EXIT_ON_CLOSE); 
    }
    
-/**
-*  Method that handles events such as setting additional menu options based on the 
-*  type of component that causes it.
-*  @param ae ActionEvent the triggers the event
-*/
-   public void actionPerformed(ActionEvent ae) 
+   public void loadAttributes()
    {
-      String [] optionOneOptions;
-      String [] optionTwoOptions;
-      String [] attributeLabels;
-      if (ae.getSource() == vehicleTypeComboBox)
-      {
+         String [] optionOneOptions;
+         String [] optionTwoOptions;
+         String [] attributeLabels;
          String vehicleTypeSelection  = vehicleTypeComboBox.getSelectedItem().toString();
          switch(vehicleTypeSelection) 
          {
@@ -297,15 +349,15 @@ public class OrdersScreen extends JFrame implements ActionListener
                attributeLabels = Truck.getAttributeLabels();
                optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               for (String truckSize : optionOneOptions) 
+               for (String option : optionOneOptions) 
                {
-                  optionOneComboBox.addItem(truckSize);
+                  optionOneComboBox.addItem(option);
                }
                optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               for (String engineSize : optionTwoOptions)
+               for (String option : optionTwoOptions)
                {
-                  optionTwoComboBox.addItem(engineSize);
+                  optionTwoComboBox.addItem(option);
                }
                break;
             case "Car":
@@ -314,16 +366,17 @@ public class OrdersScreen extends JFrame implements ActionListener
                attributeLabels = Car.getAttributeLabels();
                optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               for (String carType : optionOneOptions) 
+               for (String option : optionOneOptions) 
                {
-                  optionOneComboBox.addItem(carType);
+                  optionOneComboBox.addItem(option);
                }
                optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               for (String towing : optionTwoOptions)
+               for (String option : optionTwoOptions)
                {
-                  optionTwoComboBox.addItem(towing);
+                  optionTwoComboBox.addItem(option);
                }
+
                break;
             case "Sled":
                optionOneOptions = Sled.getSledUseOptions();
@@ -331,15 +384,15 @@ public class OrdersScreen extends JFrame implements ActionListener
                attributeLabels = Sled.getAttributeLabels();
                optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               for (String sledUse : optionOneOptions) 
+               for (String option : optionOneOptions) 
                {
-                  optionOneComboBox.addItem(sledUse);
+                  optionOneComboBox.addItem(option);
                }
                optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               for (String sledCategory : optionTwoOptions)
+               for (String option : optionTwoOptions)
                {
-                  optionTwoComboBox.addItem(sledCategory);
+                  optionTwoComboBox.addItem(option);
                }
                break;
             case "Boat":
@@ -348,15 +401,15 @@ public class OrdersScreen extends JFrame implements ActionListener
                attributeLabels = Boat.getAttributeLabels();
                optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               for (String boatType : optionOneOptions) 
+               for (String option : optionOneOptions) 
                {
-                  optionOneComboBox.addItem(boatType);
+                  optionOneComboBox.addItem(option);
                }
                optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               for (String boatConstruction : optionTwoOptions)
+               for (String option : optionTwoOptions)
                {
-                  optionTwoComboBox.addItem(boatConstruction);
+                  optionTwoComboBox.addItem(option);
                }
                break;
             case "Mercedes Benz":
@@ -365,20 +418,35 @@ public class OrdersScreen extends JFrame implements ActionListener
                attributeLabels = MercedesBenz.getAttributeLabels();
                optionOneLabel.setText(attributeLabels[0]);
                optionOneComboBox.removeAllItems();
-               for (String fuelType : optionOneOptions) 
+               for (String option : optionOneOptions) 
                {
-                  optionOneComboBox.addItem(fuelType);
+                  optionOneComboBox.addItem(option);
                }
                optionTwoLabel.setText(attributeLabels[1]);
                optionTwoComboBox.removeAllItems();
-               for (String driveType : optionTwoOptions)
+               for (String option : optionTwoOptions)
                {
-                  optionTwoComboBox.addItem(driveType);
+                  optionTwoComboBox.addItem(option);
                }
+
                break;
             default:
                break;
          }
+      }
+
+
+   
+/**
+*  Method that handles events such as setting additional menu options based on the 
+*  type of component that causes it.
+*  @param ae ActionEvent the triggers the event
+*/
+   public void actionPerformed(ActionEvent ae) 
+   {
+      if (ae.getSource() == vehicleTypeComboBox)
+      {
+         loadAttributes();
       }
       if (ae.getSource() == exitButton)
       {
@@ -400,7 +468,7 @@ public class OrdersScreen extends JFrame implements ActionListener
       }
       if (ae.getSource() == firstButton)
       {
-         System.out.println(ordersMade.get(0));
+         displayOrder(0);
       }
       if (ae.getSource() == prevButton)
       {
