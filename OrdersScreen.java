@@ -4,11 +4,11 @@
 *                   <br/>
 *Caveats:   It needs the attribute labels and menu options of others classes
 *           in order to display them in combo boxes and labels.
-*           Only menu options, exit button and file->exit menu implemented.
+*           All buttons and menu items implemented.
 *                   <br/>
-*Date:      October 29, 2018
+*Date:      November 3, 2018
 *@author    Vijay Raj Saravanan Radhakrishnan
-*@version   1.0
+*@version   2.0
 */
 
 import javax.swing.*;
@@ -75,9 +75,12 @@ public class OrdersScreen extends JFrame implements ActionListener
    private JMenuItem exitMenuItem;
    /** About Menu present in the Menu bar */
    private JMenuItem aboutMenuItem;
+   /** Popup used to display messages to user */
    private JOptionPane popup = new JOptionPane();
+   /** Stores all orders that have been made and new orders */
    ArrayList ordersMade = new ArrayList();
-   int currentOrder = 0;
+   /** counter used for displaying orders */
+   private int currentOrder = 0;
    
  /**
  * Constructor creates the Graphical User Interface and implements action events for menu options and exit button
@@ -87,6 +90,9 @@ public class OrdersScreen extends JFrame implements ActionListener
       createFrame();
    }
    
+/**
+*  Loads all orders from vehicleOrders.dat file into ArrayList
+*/
    public void loadOrders() 
    {
       try
@@ -111,8 +117,11 @@ public class OrdersScreen extends JFrame implements ActionListener
       {
          System.out.println("UKNOWN");
       }   
-   }
+   }//end of loadOrders()
    
+/**
+*  Saves all the orders made to vehicleOrders.dat file
+*/   
    public void saveOrders()
    {
       try
@@ -130,8 +139,11 @@ public class OrdersScreen extends JFrame implements ActionListener
       {
          System.out.print("Unknown Error");
       }
-   }
+   }//end of saveOrders()
    
+/**
+*  Saves the order from the GUI to the ordersMade ArrayList
+*/ 
    public void registerOrder()
    {
       String vehicleTypeSelection  = vehicleTypeComboBox.getSelectedItem().toString();
@@ -164,8 +176,12 @@ public class OrdersScreen extends JFrame implements ActionListener
             break;
          default:
       }
-   } 
+   }//end of registerOrder() 
    
+/**
+*  Displays an order in the GUI based on the index supplied as argument.
+*  @param orderIndex index of the element to be displayed in GUI.
+*/
    public void displayOrder(int orderIndex)
    {
       Object vehicle = ordersMade.get(orderIndex);
@@ -227,11 +243,12 @@ public class OrdersScreen extends JFrame implements ActionListener
       {
          System.out.println("Invalid object type");
       }
-   }
+   }//end of displayOrder()
 
 
  /**
- * Method that creates menus, text fields, combo boxes, buttons and adds them to the layout appropriately
+ * Method that creates menus, text fields, combo boxes, buttons, adds actions listeners and 
+ * adds them to the layout appropriately
  */
    public void createFrame()
    {  
@@ -249,7 +266,7 @@ public class OrdersScreen extends JFrame implements ActionListener
       vehicleTypeComboBox.setSelectedIndex(0);
       vehicleTypeComboBox.setPreferredSize(new Dimension(250,20));
       
-      //Creating text fields and labels for model, color and cost
+      //Creating text fields and labels for model, color, cost, additional options one and two
       modelLabel = new JLabel("Model", SwingConstants.RIGHT);
       modelTextField = new JTextField();
       modelLabel.setLabelFor(modelTextField);
@@ -340,6 +357,10 @@ public class OrdersScreen extends JFrame implements ActionListener
       this.setDefaultCloseOperation(this.EXIT_ON_CLOSE); 
    }
    
+/**
+*  Loads lables and combo box options for addition option one and two
+*  based on vehicle type combo box selection.
+*/
    public void loadAttributes()
    {
       String [] optionOneOptions;

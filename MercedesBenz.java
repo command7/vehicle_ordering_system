@@ -39,16 +39,26 @@ public class MercedesBenz extends Vehicle
       typeOfDriveMenu();   
    }//end of constructor
    
+/**
+*  Constructor obtains model, color, cost,  fuel type, drive type
+*  and saves them to the object.
+*  @param benzModel Model of the benz
+*  @param benzColor Color of the benz
+*  @param benzCost Cost of the benz
+*  @param fuelTypeIndex Index of fuel type
+*  @param driveTypeIndex Index of type of drive
+*/
    public MercedesBenz(String benzModel, String benzColor, double benzCost, 
    int fuelTypeIndex, int driveTypeIndex)
    {
       super(benzModel, benzColor, benzCost);
       this.setTypeOfFuel(fuelTypeIndex);
       this.setTypeOfDrive(driveTypeIndex);
-   }
+   }//end of constructor
    
 /**
 *  Accessor method that returns the make
+*  @return Type of fuel
 */
    public String getTypeOfFuel()
    {
@@ -64,6 +74,7 @@ public class MercedesBenz extends Vehicle
    
 /**
 *  Accessor method that returns the driving type
+*  @return Type of drive
 */
    public String getTypeOfDrive()
    {
@@ -78,7 +89,8 @@ public class MercedesBenz extends Vehicle
    }//end of getTypeOfDrive() method
    
 /**
-* Accessor method that sets/modifes the type of make  
+*  Accessor method that sets/modifes the type of make  
+*  @param _typeOfFuel Index of type of fuel
 */
    public void setTypeOfFuel(int _typeOfFuel)
    {
@@ -90,6 +102,7 @@ public class MercedesBenz extends Vehicle
    
 /**
 *  Accessor method that sets/modifies the type of drive
+*  @param _typeOfDrive Index of type of drive
 */
    public void setTypeOfDrive(int _typeOfDrive)
    {
@@ -101,11 +114,7 @@ public class MercedesBenz extends Vehicle
    
 /** 
 *  This method estimates the mileage based on the type of make and type of drive
-*/
-/* gasMileage Constants for this class 
-      final static double benzPetrolMpg = 20.8;
-      final static double benzDieselMpg = 22.0;
-      final static double benzAwdMileageReduction = 2.0; 
+*  @return Mileage of benz based on type of fuel
 */
    public double gasMileage()
    {
@@ -127,6 +136,7 @@ public class MercedesBenz extends Vehicle
    
 /**
 *  Accessor method that returns the fuel type menu options
+*  @return Array of all fuel types
 */    
    public static String[] getFuelTypeOptions()
    {
@@ -135,6 +145,7 @@ public class MercedesBenz extends Vehicle
    
 /**
 *  Accessor method that returns the drive type menu options
+*  @return Array of all drive types
 */    
    public static String[] getDriveTypeOptions()
    {
@@ -143,6 +154,7 @@ public class MercedesBenz extends Vehicle
    
 /**
 *  Accessor method that returns the attribute labels
+*  @return Array of attribute labels of menu display
 */    
    public static String[] getAttributeLabels()
    {
@@ -169,6 +181,7 @@ public class MercedesBenz extends Vehicle
    
 /**
 *  Print statement for MercedesBenz class
+*  @return Printing Statement
 */
    public String toString()
    {

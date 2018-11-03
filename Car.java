@@ -36,17 +36,28 @@ public class Car extends Vehicle
       towingPackageMenu();   
    }//end of Car constructor
    
+/**
+*  Constructor obtains model, color, cost, type of car, towing package presence
+*  and saves them to the object.
+*  @param carModel Model of the car
+*  @param carColor Color of the car
+*  @param carCost Cost of the car
+*  @param carTypeIndex Index of type of car
+*  @param towingPackageIndex Index of towing package presence
+*/
+
    public Car(String carModel, String carColor, double carCost, 
    int carTypeIndex, int towingPackageIndex)
    {
       super(carModel, carColor, carCost);
       this.setCarType(carTypeIndex);
       this.setTowingPackage(towingPackageIndex);
-   }
+   }//end of constructor
 
   
 /**
 *  Accessor method that returns the type of car.
+*  @return Type of car
 */
    public String getCarType()
    {
@@ -62,6 +73,7 @@ public class Car extends Vehicle
    
 /**
 *  Accessor method that returns whether towing package exists or not.
+*  @return Presence or absence of towing package
 */
    public String getTowingPackage()
    {
@@ -77,6 +89,7 @@ public class Car extends Vehicle
    
 /**
 *  Mutator method that is used to set/modify the type of the car.
+*  @param _carType Index of type of car to be set
 */
    public void setCarType(int _carType)
    {
@@ -88,6 +101,7 @@ public class Car extends Vehicle
    
 /**
 *  Mutator method that is used to set/modify the towing package status of the car.
+*  @param _towingPackage Index of towing package presence
 */
    public void setTowingPackage(int _towingPackage)
    {
@@ -100,6 +114,7 @@ public class Car extends Vehicle
    
 /**
 *  Accessor method that returns the care type menu options
+*  @return Array of all types of cars
 */          
    public static String[] getCarTypeOptions()
    {
@@ -108,6 +123,7 @@ public class Car extends Vehicle
    
 /**
 *  Accessor method that returns the car towing package menu options
+*  @return Array of all towing package options
 */ 
    public static String[] getTowingOptions()
    {
@@ -116,6 +132,7 @@ public class Car extends Vehicle
    
 /**
 *  Accessor method that returns the car attribute labels
+*  @return Array of attribute labels for menu display
 */    
    public static String[] getAttributeLabels()
    {
@@ -142,6 +159,7 @@ public class Car extends Vehicle
    
 /**
 *  Estimates the mileage of the Car
+*  @return The mileage of the car based on its type
 */
    public double gasMileage()
    {
@@ -167,6 +185,7 @@ public class Car extends Vehicle
 
 /**
 *  Method that specifies the printing statement of Car object
+*  @return Printing statement of this object
 */   
    public String toString()
    {

@@ -23,7 +23,9 @@ public interface Vinfo {
    final static double BENZ_DIESEL_MPG = 22.0;
    /** Mileage reduction for benz 4matic All Wheel Drive */
    final static double BENZ_AWD_MILEAGE_REDUCTION = 2.0;
-   /** Calculates and returns the Mileage of a vehicle */
+   /** Calculates and returns the Mileage of a vehicle 
+   *@return Mileage of the vehicle
+   */
 	public abstract double gasMileage();
    
    

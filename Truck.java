@@ -40,6 +40,15 @@ public class Truck extends Vehicle
       engineSizeMenu();
    }
    
+/**
+*  Constructor obtains model, color, cost, type of truck, type of construction
+*  and saves them to the object.
+*  @param truckModel Model of the truck
+*  @param truckColor Color of the truck
+*  @param truckCost Cost of the truck
+*  @param truckSizeIndex Index of size of truck
+*  @param engineSizeIndex Index of engine size
+*/
    public Truck(String truckModel, String truckColor, double truckCost, 
    int truckSizeIndex, int engineSizeIndex)
    {
@@ -51,6 +60,7 @@ public class Truck extends Vehicle
    
 /**
 *  Accessor method that returns truck size menu options
+*  @return Array of all truck sizes
 */    
    public static String[] getTruckSizeOptions()
    {
@@ -59,6 +69,7 @@ public class Truck extends Vehicle
    
 /**
 *  Accessor method that returns engine size menu options
+*  @return Array of all engine sizes
 */ 
    public static String[] getEngineSizeOptions()
    {
@@ -67,6 +78,7 @@ public class Truck extends Vehicle
    
 /**
 *  Accessor method that returns attribute labels
+*  @return Array of attribute labels for menu display
 */ 
    public static String[] getAttributeLabels()
    {
@@ -75,6 +87,7 @@ public class Truck extends Vehicle
    
 /**
 *  Accessor method that returns the size of the truck.
+*  @return Size of truck
 */
    public String getTruckSize()
    {
@@ -90,6 +103,7 @@ public class Truck extends Vehicle
    
 /**
 *  Accessor method that return the engine size of the truck.
+*  @return Engize size of truck
 */
    public String getEngineSize()
    {
@@ -105,6 +119,7 @@ public class Truck extends Vehicle
       
 /**
 *  Mutator method that is used to set/modify the size of the truck.
+*  @param _truckSize Index of truck size
 */
    public void setTruckSize(int _truckSize) 
    {
@@ -117,6 +132,7 @@ public class Truck extends Vehicle
  
 /**
 *  Mutator method that is used to set/modify the engine size of the truck.
+*  @param _engineSize Index of engine size
 */
    public void setEngineSize(int _engineSize)
    {
@@ -146,6 +162,7 @@ public class Truck extends Vehicle
    
 /**
 *  Estimates the mileage of the Truck
+*  @return Mileage of truck based on cost
 */
    public double gasMileage()
    {
@@ -154,6 +171,7 @@ public class Truck extends Vehicle
    
 /**
 *  Method that is used to specify the print statement of truck object.
+*  @return Printing Statement
 */
    public String toString()
    {

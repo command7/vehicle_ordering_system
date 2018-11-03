@@ -38,6 +38,15 @@ public class Boat extends Vehicle
       boatConstructionMenu();
    }//end of constructor
    
+/**
+*  Constructor obtains model, color, cost, type of boat, type of construction
+*  and saves them to the object.
+*  @param boatModel Model of the boat
+*  @param boatColor Color of the boat
+*  @param boatCost Cost of the boat
+*  @param boatTypeIndex Index of type of boat
+*  @param boatConstructionIndex Index of boat construction
+*/
    public Boat(String boatModel, String boatColor, double boatCost, 
    int boatTypeIndex, int boatConstructionIndex)
    {
@@ -49,6 +58,7 @@ public class Boat extends Vehicle
    
 /**
 *  Accessor method that returns the boat type menu options
+*  @return Array of types of boats
 */   
    public static String[] getBoatTypeOptions()
    {
@@ -57,6 +67,7 @@ public class Boat extends Vehicle
    
 /**
 *  Accessor method that returns the boat construction menu options
+*  @return Array of type of boat construction 
 */ 
    public static String[] getBoatConstructionOptions()
    {
@@ -65,6 +76,7 @@ public class Boat extends Vehicle
    
 /**
 *  Accessor method that returns the boat menu labels
+*  @return Array of attribute lables for meny display
 */    
    public static String[] getAttributeLabels()
    {
@@ -73,6 +85,7 @@ public class Boat extends Vehicle
 
 /**
 *  Accessor method that returns the type of the boat.
+*  @return Type of the boat
 */
    public String getBoatType()
    {
@@ -88,6 +101,7 @@ public class Boat extends Vehicle
    
 /**
 *  Accessor method that returns the construction type of the boat.
+*  @return Type of construction of the boat
 */
    public String getBoatConstruction()
    {
@@ -103,6 +117,7 @@ public class Boat extends Vehicle
    
 /**
 *  Mutator method that is used to set/modify the type of the boat.
+*  @param _boatType index of boat type to be set
 */
    public void setBoatType(int _boatType)
    {
@@ -114,6 +129,7 @@ public class Boat extends Vehicle
    
 /**
 *  Mutator method that is used to set/modify the construction type of the boat.
+*  @param _boatConstruction Index of construction type
 */
    public void setBoatConstruction(int _boatConstruction)
    {
@@ -143,6 +159,7 @@ public class Boat extends Vehicle
    
 /**
 *  Estimates the mileage of the boat
+*  @return Mileage of the boat based on its type
 */
    public double gasMileage()
    {
@@ -162,6 +179,7 @@ public class Boat extends Vehicle
    
 /**
 *  Method that specifies the printing statement of boat object
+*  @return Printing statement for the boat
 */
    public String toString()
    {
