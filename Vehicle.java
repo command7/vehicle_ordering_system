@@ -1,11 +1,10 @@
 /**
 *Purpose:   This program is a parent class that has methods and attributes that will be used
-*           by car, boat and truck class.It also provides a menu system that can be used
-*           to provide various types of menu systems to the user. <br/>
+*           by car, boat,truck, Sled and MercedesBenz classes.<br/>
 *                                                            <br/>
 *Caveats:   Child classes need to use super keyword to access these functions. <br/>
-*           The program will keep repeating until a valid input is entered.
-*Date:      September 30, 2018
+*           
+*Date:      November 3, 2018
 *@author    Vijay Raj Saravanan Radhakrishnan
 *@version   1.0
 */

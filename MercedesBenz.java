@@ -1,12 +1,12 @@
 /**
-*Purpose:   This program is used to create a MercedesBenz order. It will ask
-*           the user for the model, color, cost, fuel type and type of drive
+*Purpose:   This program is used to create a MercedesBenz order. It will receive
+*           the model, color, cost, fuel type and type of drive
 *           and store it. <br/>
 *                         <br/>
-*Caveats:   This class uses Vehicle class to accept certain input.
+*Caveats:   It is a child class of Vehicle Class.
 *           User must select make of car and type of drive from the options provided.
 *                     <br/>
-*Date:      October 29, 2018
+*Date:      November 3, 2018
 *@author    Vijay Raj Saravanan Radhakrishnan
 *@version   1.1
 */

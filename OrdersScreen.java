@@ -149,33 +149,42 @@ public class OrdersScreen extends JFrame implements ActionListener
       String vehicleTypeSelection  = vehicleTypeComboBox.getSelectedItem().toString();
       String model = modelTextField.getText();
       String color = colorTextField.getText();
-      double cost = Double.parseDouble(costTextField.getText());
-      int optionOneIndex = optionOneComboBox.getSelectedIndex();
-      int optionTwoIndex = optionTwoComboBox.getSelectedIndex();
-      switch (vehicleTypeSelection)
+      try
       {
-         case "Truck":
-            Truck newTruck = new Truck(model, color, cost, optionOneIndex, optionTwoIndex);
-            ordersMade.add(newTruck);
-            break;
-         case "Car":
-            Car newCar = new Car(model, color, cost, optionOneIndex, optionTwoIndex);
-            ordersMade.add(newCar);
-            break;
-         case "Boat":
-            Boat newBoat = new Boat(model, color, cost, optionOneIndex, optionTwoIndex);
-            ordersMade.add(newBoat);
-            break;
-         case "Mercedes Benz":
-            MercedesBenz newMBenz = new MercedesBenz(model, color, cost, optionOneIndex, optionTwoIndex);
-            ordersMade.add(newMBenz);
-            break;
-         case "Sled":
-            Sled newSled = new Sled(model, color, cost, optionOneIndex, optionTwoIndex);
-            ordersMade.add(newSled);
-            break;
-         default:
+         double cost = Double.parseDouble(costTextField.getText());
+         int optionOneIndex = optionOneComboBox.getSelectedIndex();
+         int optionTwoIndex = optionTwoComboBox.getSelectedIndex();
+         switch (vehicleTypeSelection)
+         {
+            case "Truck":
+               Truck newTruck = new Truck(model, color, cost, optionOneIndex, optionTwoIndex);
+               ordersMade.add(newTruck);
+               break;
+            case "Car":
+               Car newCar = new Car(model, color, cost, optionOneIndex, optionTwoIndex);
+               ordersMade.add(newCar);
+               break;
+            case "Boat":
+               Boat newBoat = new Boat(model, color, cost, optionOneIndex, optionTwoIndex);
+               ordersMade.add(newBoat);
+               break;
+            case "Mercedes Benz":
+               MercedesBenz newMBenz = new MercedesBenz(model, color, cost, optionOneIndex, optionTwoIndex);
+               ordersMade.add(newMBenz);
+               break;
+            case "Sled":
+               Sled newSled = new Sled(model, color, cost, optionOneIndex, optionTwoIndex);
+               ordersMade.add(newSled);
+               break;
+            default:
+               break;
+         }
       }
+      catch (Exception e)
+      {
+         popup.showMessageDialog(this, "Enter a valid number");
+
+      }  
    }//end of registerOrder() 
    
 /**

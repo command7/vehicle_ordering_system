@@ -1,9 +1,9 @@
 /**
-*Purpose:   This program is used to create a car order. It asks the user for the model, color ,cost,
+*Purpose:   This program is used to create a car order. It receives the model, color ,cost,
 *           type of car and whether towing package is included and stores it. <br/>
 *                                                            <br/>
-*Caveats:   It uses Vehicle class to accept inputs. <br/>
-*Date:      October 29, 2018
+*Caveats:   It is the child class of Vehicle Class <br/>
+*Date:      November 3, 2018
 *@author    Vijay Raj Saravanan Radhakrishnan
 *@version   1.1
 */

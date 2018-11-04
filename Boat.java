@@ -1,12 +1,12 @@
 /**
-*Purpose:   This program is used to create a boat order. It will ask
-*           the user for the model, color, cost, boat type, construction type and
+*Purpose:   This program is used to create a boat order. It will receive
+*           the model, color, cost, boat type, construction type and
 *           store it. <br/>
 *                     <br/>
-*Caveats:   It uses Vehicle class to accept user input.
+*Caveats:   It is a child of Vehicle Class.
 *           User must select boat type and construction type from the options provided.
 *                     <br/>
-*Date:      October  29, 2018
+*Date:      November  3, 2018
 *@author    Vijay Raj Saravanan Radhakrishnan
 *@version   1.0
 */

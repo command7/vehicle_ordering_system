@@ -1,12 +1,12 @@
 /**
-*Purpose:   This program is used to create a truck order. It will ask
-*           the user for the model, color, cost, truck size, engine size and
+*Purpose:   This program is used to create a truck order. It will receive
+*           the model, color, cost, truck size, engine size and
 *           store it. <br/>
 *                     <br/>
-*Caveats:   This class uses Vehicle class to accept input.ww
+*Caveats:   It is a child class of Vehicle class.
 *           User must select truck size and engine size from the options provided.
 *                     <br/>
-*Date:      October 29, 2018
+*Date:      November 3, 2018
 *@author    Vijay Raj Saravanan Radhakrishnan
 *@version   1.1
 */
