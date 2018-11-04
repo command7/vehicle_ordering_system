@@ -27,18 +27,6 @@ public class Truck extends Vehicle
    static final String [] TRUCK_ATTRIBUTE_LABELS = {"Truck size", "Engine size"};
    /** Describes the type of vehicle */
    final static String VEHICLE_IS = "Truck";
-
-   
-/**
-*  Constructor asks the details of the truck and stores them in respective
-*  variables using mutators.
-*/
-   public Truck()
-   {
-      super(VEHICLE_IS);
-      truckSizeMenu();
-      engineSizeMenu();
-   }
    
 /**
 *  Constructor obtains model, color, cost, type of truck, type of construction
@@ -52,7 +40,7 @@ public class Truck extends Vehicle
    public Truck(String truckModel, String truckColor, double truckCost, 
    int truckSizeIndex, int engineSizeIndex)
    {
-      super(truckModel, truckColor, truckCost);
+      super(truckModel, truckColor, truckCost, VEHICLE_IS);
       this.setTruckSize(truckSizeIndex);
       this.setEngineSize(engineSizeIndex);
    }
@@ -141,24 +129,6 @@ public class Truck extends Vehicle
          this.engineSize = _engineSize;
       }  
    }//end of setEngineSize() method
-         
-/**
-*  Input method that is used to request the size of the truck from the user,
-*  and store it in its respective variable.
-*/
-   public void truckSizeMenu()
-   {
-      setTruckSize(super.showMenu("What size truck is this? ",ALL_TRUCK_SIZES));
-   }//end of truckSizeMenu() method
-   
-/**
-*  Input method that is used to request the engine size of the truck
-*  from the user and store it in its respective variable.
-*/
-   public void engineSizeMenu()
-   {
-      setEngineSize(super.showMenu("What is the engine size of the truck? ",ALL_ENGINE_SIZES));
-   }//end of engineSizeMenu() method
    
 /**
 *  Estimates the mileage of the Truck

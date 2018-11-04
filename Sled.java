@@ -22,20 +22,11 @@ public class Sled extends Vehicle
    private final String ques2 = "What kind of sled is this?";
    final static String VEHICLE_IS = "Sled";
    final static String [] SLED_ATTRIBUTE_LABELS = {"Used for", "Type of sled"};
-   
-   // Constructor
-   public Sled(){
-      //System.out.println("Entering Sled order:");
-      super(VEHICLE_IS);  
-      //this.makeVehicle();
-      this.setUse( this.showMenu(ques1, USE) ); 
-      this.setCategory( this.showMenu(ques2, CATEGORY) );
-   }
-   
+
    public Sled(String sledModel, String sledColor, double sledCost, 
    int sledUseIndex, int sledCategoryIndex)
    {
-      super(sledModel, sledColor, sledCost);
+      super(sledModel, sledColor, sledCost, VEHICLE_IS);
       this.setUse(sledUseIndex);
       this.setCategory(sledCategoryIndex);
    }

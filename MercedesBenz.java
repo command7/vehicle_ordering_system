@@ -26,18 +26,6 @@ public class MercedesBenz extends Vehicle
    final static String [] ALL_DRIVES = {"FWD", "4Matic"};
    /** Describes attribute labels to be displayed in GUI */
    final static String [] MBENZ_ATTRIBUTE_LABELS = {"Type of fuel", "Type of drive"};
-
-   
-/**
-*  Constructor asks the details of the Benz and stores them in respective
-*  variables using mutators. 
-*/
-   public MercedesBenz ()
-   {
-      super(VEHICLE_IS);
-      typeOfFuelMenu();
-      typeOfDriveMenu();   
-   }//end of constructor
    
 /**
 *  Constructor obtains model, color, cost,  fuel type, drive type
@@ -51,7 +39,7 @@ public class MercedesBenz extends Vehicle
    public MercedesBenz(String benzModel, String benzColor, double benzCost, 
    int fuelTypeIndex, int driveTypeIndex)
    {
-      super(benzModel, benzColor, benzCost);
+      super(benzModel, benzColor, benzCost, VEHICLE_IS);
       this.setTypeOfFuel(fuelTypeIndex);
       this.setTypeOfDrive(driveTypeIndex);
    }//end of constructor
@@ -161,24 +149,6 @@ public class MercedesBenz extends Vehicle
       return MBENZ_ATTRIBUTE_LABELS;
    }//end of getAttributeLabels()
 
-/**
-*  Input method used to request the type of make from the user
-*  and store it in respective variables.
-*/
-   public void typeOfFuelMenu()
-   {
-      setTypeOfFuel(super.showMenu("What type of fuel is used?", FUEL_TYPES));
-   }//end of typeOfFuelMenu() method
-   
-/**
-*  Input method used to request the type of drive from the user
-*  and store it in respective variables.
-*/
-   public void typeOfDriveMenu()
-   {
-      setTypeOfDrive(super.showMenu("What type of Drive is this?", ALL_DRIVES));
-   }//end of typeOfDriveMenu() method
-   
 /**
 *  Print statement for MercedesBenz class
 *  @return Printing Statement

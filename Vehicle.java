@@ -23,23 +23,18 @@ public abstract class Vehicle implements Vinfo, Serializable
    transient Scanner scan = new Scanner(System.in);
    private String vehIs;
    
-   
-   public Vehicle(String typeOfVehicle)
-   {
-      generalDetailsMenu(typeOfVehicle);
-   }
-   
 /**
 *  Constructor takes in the model, color and cost of the vehicle and stores it
 *  @param vehicleModel Model of vehicle
 *  @param vehicleColor Color of vehicle
 *  @param vehicleCost Cost of vehicle
 */   
-   public Vehicle(String vehicleModel, String vehicleColor, double vehicleCost)
+   public Vehicle(String vehicleModel, String vehicleColor, double vehicleCost, String _vehIs)
    {
       this.setVehicleModel(vehicleModel);
       this.setVehicleColor(vehicleColor);
       this.setVehicleCost(vehicleCost);
+      this.setVehIs(_vehIs);
    }
    
 /**
@@ -111,130 +106,6 @@ public abstract class Vehicle implements Vinfo, Serializable
    {
       this.vehIs = _vehIs;
    }
-/**
-*  Input method that is used to request general details such as model name, color,
-*  and cost of the vehicle from the user. 
-*/
-   public void generalDetailsMenu(String typeOfVehicle)
-   {
-      while(true)
-      {
-         System.out.print(String.format("%5s%-5s","","Model: "));
-         if(!scan.hasNextLine())
-         {
-            System.out.println("Enter valid input.");
-            continue;
-         }
-         else
-         {
-            String vehicleModelInput = scan.nextLine();
-            if (vehicleModelInput.equals(""))
-            {
-               System.out.println("You cannot leave this field blank.");
-               continue;
-            }
-            else
-            {
-               setVehicleModel(vehicleModelInput);
-               break;
-            }
-         }
-      }
-      while(true)
-      {
-         System.out.print(String.format("%5s%-5s","","Color: "));
-         if(!scan.hasNextLine())
-         {
-            System.out.println("Enter valid input.");
-            continue;
-         }
-         else
-         {
-            String vehicleColorInput = scan.nextLine();
-            if (vehicleColorInput.equals(""))
-            {
-               System.out.println("You cannot leave this field blank.");
-               continue;
-            }
-            else
-            {
-               setVehicleColor(vehicleColorInput);
-               break;
-            }
-         }
-      }
-      while(true)
-      { 
-            try
-            {
-               System.out.print(String.format("%5s%-5s","","Cost: "));
-               setVehicleCost(Double.parseDouble(scan.nextLine()));
-               break;
-            }
-            catch (NumberFormatException nfe)
-            {
-               System.out.println("Invalid dollar amount. Do not use $ or , for the cost. Try again.");
-               continue;
-            }
-            catch (Exception e)
-            {
-               System.out.println("Invalid Input");
-               continue;
-            }
-      }
-      this.setVehIs(typeOfVehicle);   
-   }//end of generalDetailsMenu() method
-
-
-/**
-*  This method is used to print menus and obtain input from the user
-*  based on the menu choices. It takes the choice number as input 
-*  and outputs index (-1)
-*  @param prompt The prompt that is to be displayed to the user.
-*  @param choices choices that need to be displayed to that user.
-*/
-   public int showMenu(String prompt, String [] choices)
-   {
-      System.out.println(prompt);
-      // for (int i = 0; i<choices.length; i++)
-//       {
-//          System.out.println((i+1) + ". " + choices[i]);
-//       }
-      boolean controlVar = true;
-      int userInput = 0;
-      do
-      {
-         try
-         {
-            for (int i = 0; i<choices.length; i++)
-            {
-               System.out.println((i+1) + ". " + choices[i]);
-            }
-            System.out.print(String.format("%5s%-5s","","Choice: "));
-            userInput = scan.nextInt();
-            scan.nextLine();
-            if (userInput > 0 && userInput <= (choices.length))
-            {
-               controlVar = false;
-            }
-            else
-            {
-               System.out.println("Please enter a number from 1 through " + choices.length);
-            }  
-         }
-         catch (InputMismatchException ime)
-         {
-            System.out.println("Only numeric characters are allowed.");
-            scan.nextLine();
-         }
-         catch (Exception e)
-         {
-            System.out.println("Invalid Input");
-            scan.nextLine();
-         }
-     }while(controlVar);
-     return (userInput-1);
-   }//end of showMenu() method.
    
 /**
 *  Abstract class that estimates the mileage of a vehicle.

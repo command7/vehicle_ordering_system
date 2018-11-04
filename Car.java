@@ -24,17 +24,6 @@ public class Car extends Vehicle
    static final String [] CAR_ATTRIBUTE_LABELS = {"Type of car", "Towing package"};
    /** Describes the type of vehicle */
    final static String VEHICLE_IS = "Car";
-
-/**
-*  Constructor uses methods to asks user for the model, color, cost, car type, towing package existence
-*  and stores in in private variables.
-*/
-   public Car()
-   {
-      super(VEHICLE_IS);
-      typeOfCarMenu();
-      towingPackageMenu();   
-   }//end of Car constructor
    
 /**
 *  Constructor obtains model, color, cost, type of car, towing package presence
@@ -49,7 +38,7 @@ public class Car extends Vehicle
    public Car(String carModel, String carColor, double carCost, 
    int carTypeIndex, int towingPackageIndex)
    {
-      super(carModel, carColor, carCost);
+      super(carModel, carColor, carCost, VEHICLE_IS);
       this.setCarType(carTypeIndex);
       this.setTowingPackage(towingPackageIndex);
    }//end of constructor
@@ -139,24 +128,6 @@ public class Car extends Vehicle
       return CAR_ATTRIBUTE_LABELS;
    }//end of getAttributeLabels()
 
-/**
-*  Input method that requests user for the type of car and stores 
-*  in respective variable.
-*/
-   public void typeOfCarMenu()
-   {
-      setCarType(super.showMenu("What type of Car is this?", TYPES_OF_CARS));
-   }//end of typeOfCarMenu() method
-   
-/**
-* Input method that request the user for towing package status
-* and stores it in respective variable.
-*/   
-   public void towingPackageMenu()
-   {
-      setTowingPackage(super.showMenu("Does this car have a towing package? ",TOWING_CAPABILITY));
-   }//end of towingPackageMenu() method
-   
 /**
 *  Estimates the mileage of the Car
 *  @return The mileage of the car based on its type

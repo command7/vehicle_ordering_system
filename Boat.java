@@ -25,18 +25,7 @@ public class Boat extends Vehicle
    /** Attribute labels to display with menu in GUI */
    static final String [] BOAT_ATTRIBUTE_LABELS = {"Type of boat", "Construction"};
    /** Describes the type of vehicle */
-   final static String VEHICLE_IS = "Boat";
-   
-/**
-*  Constructor asks the details of the boat and stores them in respective
-*  variables using mutators.
-*/
-   public Boat()
-   { 
-      super(VEHICLE_IS);
-      typeOfBoatMenu();
-      boatConstructionMenu();
-   }//end of constructor
+   final static String VEHICLE_IS = "Boat";   
    
 /**
 *  Constructor obtains model, color, cost, type of boat, type of construction
@@ -50,7 +39,7 @@ public class Boat extends Vehicle
    public Boat(String boatModel, String boatColor, double boatCost, 
    int boatTypeIndex, int boatConstructionIndex)
    {
-      super(boatModel, boatColor, boatCost);
+      super(boatModel, boatColor, boatCost, VEHICLE_IS);
       this.setBoatType(boatTypeIndex);
       this.setBoatConstruction(boatConstructionIndex);
    }
@@ -139,23 +128,6 @@ public class Boat extends Vehicle
       }
    }//end of setBoatConstruction() method
    
-/**
-*  Input method that is used to request the type of the boat from the user,
-*  and store it in its respective variable.
-*/
-   public void typeOfBoatMenu()
-   {
-      setBoatType(super.showMenu("What type of boat is this? ", TYPES_OF_BOATS));
-   }//end of typeOfBoatMenu() method
-   
-/**
-*  Input method that is used to request the construction type of the boat from the user,
-*  and store it in its respective variable.
-*/
-   public void boatConstructionMenu()
-   {
-      setBoatConstruction(super.showMenu("What is the boat's construction? ", TYPES_OF_BOAT_CONSTRUCTION));
-   }//end of boatConstructionMenu() method
    
 /**
 *  Estimates the mileage of the boat
