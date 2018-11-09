@@ -50,9 +50,11 @@ public class Races extends JFrame
       }
    }
    
-   public synchronized void announceWinner(Contestant winner)
+   public synchronized void announceWinner(Contestant winnerContestant)
    {
       finishedFirst = true;
+      winnerContestant.winner = true;
+      winnerContestant.repaint();
             
    }
    
@@ -74,11 +76,11 @@ public class Races extends JFrame
    {
       private int xCoordinate = 0;
       private int contestNum;
+      private boolean winner = false;
       
       public Contestant(int _contestNum)
       {
          this.contestNum = _contestNum;
-         System.out.println(this.contestNum);
       }
       public void run()
       {
@@ -110,6 +112,10 @@ public class Races extends JFrame
          super.paint(g);
          newContestant.paintIcon(this, g, xCoordinate, 0);
          g.drawLine(this.getWidth() - (newContestant.getIconWidth() * 2),0, this.getWidth() - (newContestant.getIconWidth()*2), this.getHeight());
+         if(winner)
+         {
+            g.drawString("Winner is: #" + this.contestNum, 20, this.getHeight()-70);
+         }
       }
       
           
