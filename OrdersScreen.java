@@ -88,7 +88,7 @@ public class OrdersScreen extends JFrame implements ActionListener
    public OrdersScreen()
    {
       createFrame();
-   }
+   }//end of constructor
    
 /**
 *  Loads all orders from vehicleOrders.dat file into ArrayList
@@ -513,7 +513,11 @@ public class OrdersScreen extends JFrame implements ActionListener
       }
       if (ae.getSource() == prevButton)
       {
-         if(currentOrder > 0)
+         if(ordersMade.isEmpty())
+         {
+            popup.showMessageDialog(this, "There are no orders to be displayed.");
+         }
+         else if(currentOrder > 0)
          {
             displayOrder(currentOrder - 1);
             currentOrder -= 1;
@@ -527,7 +531,7 @@ public class OrdersScreen extends JFrame implements ActionListener
       {
          if(ordersMade.isEmpty())
          {
-            popup.showMessageDialog(this, "There are no more orders.");
+            popup.showMessageDialog(this, "There are no orders to be displayed.");
          }
          else if(currentOrder < ordersMade.size()-1)
          {
@@ -543,7 +547,7 @@ public class OrdersScreen extends JFrame implements ActionListener
       {
          if(ordersMade.isEmpty())
          {
-            popup.showMessageDialog(this, "There are no more orders.");
+            popup.showMessageDialog(this, "There are no orders to be displayed.");
          }
          else if(!ordersMade.isEmpty())
          {
