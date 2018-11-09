@@ -13,6 +13,8 @@ public class Races extends JFrame
    private int finishLineX;
    private boolean winnerAnnounced = false;
    private int contestantNumber = 1;
+   private int iconWidth = newContestant.getIconWidth();
+   private int iconHeight = newContestant.getIconHeight();
    public Races(int _numberOfContestants)
    {
       this.numberOfContestants = _numberOfContestants;
@@ -29,13 +31,13 @@ public class Races extends JFrame
       this.setLayout(new GridLayout(0,1));
       for (int count=0; count < numberOfContestants; count++)
       {
-         Contestant newContestant = new Contestant(contestantNumber++);
-         this.add(newContestant);
-         contestants.add(newContestant);
+         Contestant newParticipant = new Contestant(contestantNumber++);
+         this.add(newParticipant);
+         contestants.add(newParticipant);
       }
       
-      this.setSize(20 * newContestant.getIconWidth(),newContestant.getIconHeight() * 2 * numberOfContestants);
-      finishLineX = this.getWidth() - (newContestant.getIconWidth() * 2);
+      this.setSize(20 * iconWidth,iconHeight * 2 * numberOfContestants);
+      finishLineX = this.getWidth() - (iconWidth * 2);
       this.setTitle("Off to the Races- by Vijay Raj Saravanan Radhakrishnan");
       this.setVisible(true);
       this.setLocationRelativeTo(null);
@@ -111,7 +113,7 @@ public class Races extends JFrame
       {
          super.paint(g);
          newContestant.paintIcon(this, g, xCoordinate, 0);
-         g.drawLine(this.getWidth() - (newContestant.getIconWidth() * 2),0, this.getWidth() - (newContestant.getIconWidth()*2), this.getHeight());
+         g.drawLine(this.getWidth() - (iconWidth * 2),0, this.getWidth() - (iconWidth*2), this.getHeight());
          if(winner)
          {
             g.drawString("Winner is: #" + this.contestNum, 20, this.getHeight()-70);
