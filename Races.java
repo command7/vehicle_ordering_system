@@ -15,12 +15,13 @@ public class Races extends JFrame
    private int contestantNumber = 1;
    private int iconWidth = newContestant.getIconWidth();
    private int iconHeight = newContestant.getIconHeight();
+   
    public Races(int _numberOfContestants)
    {
       this.numberOfContestants = _numberOfContestants;
       createMainFrame();
       try{
-      Thread.sleep(2000);
+      Thread.sleep(1000);
       }
       catch(Exception e) { }
       startRace();
