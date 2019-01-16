@@ -1,8 +1,0 @@
-Car
-     Model:     asfd
-     Color:     asdf
-     Cost:      $123.00
-     MPG/GPH:   20.7
-     Type:      Sedan
-     Towing:    Towing Package
-
